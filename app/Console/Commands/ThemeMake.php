@@ -89,7 +89,7 @@ class ThemeMake extends ComponentMakeCommand
         ));
 
         // print and confirm the information of theme
-        if($this->confirmInfo($attr) === false){
+        if ($this->confirmInfo($attr) === false) {
             return false;
         }
 
@@ -157,21 +157,21 @@ class ThemeMake extends ComponentMakeCommand
         $id = $this->option('id');
         $plugin = $this->getPlugin();
 
-        if(!$id) {
+        if (!$id) {
             $id = $plugin->getId().'@'.strtolower($this->argument('name'));
         } else {
-            if(strpos('theme/', $id) === 0) {
+            if (strpos('theme/', $id) === 0) {
                 $id = substr($id, 6);
             }
 
-            if(strpos($id, '@') === false) {
+            if (strpos($id, '@') === false) {
                 $id = $plugin->getId().'@'.$id;
             }
         }
 
         $theme = app('xe.theme')->getTheme($id = 'theme/'.$id);
 
-        if($theme !== null) {
+        if ($theme !== null) {
             throw new \Exception("Theme[$id] already exists.");
         }
 
@@ -214,7 +214,7 @@ class ThemeMake extends ComponentMakeCommand
                 $attr['id'],
                 $attr['title'],
                 $attr['description']
-              )
+            )
         );
 
         while ($confirm = $this->ask('Do you want to add theme? [yes|no]')) {

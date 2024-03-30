@@ -13,8 +13,7 @@ use Xpressengine\Interception\Proxy\ProxyConfig;
 
 class ClassPassTest extends \PHPUnit\Framework\TestCase
 {
-
-    const CODE = "namespace Xpressengine\\Interception\\Proxy;  class Proxy{ use ProxyTrait; }";
+    public const CODE = "namespace Xpressengine\\Interception\\Proxy;  class Proxy{ use ProxyTrait; }";
 
     public function setup()
     {

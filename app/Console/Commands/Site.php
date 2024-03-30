@@ -124,7 +124,7 @@ class Site extends Command
         ) {
             return $host;
         } else {
-            throw new InvalidArgumentException;
+            throw new InvalidArgumentException();
         }
     }
 }

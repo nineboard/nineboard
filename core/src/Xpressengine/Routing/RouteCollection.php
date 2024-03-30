@@ -29,7 +29,6 @@ use Illuminate\Routing\RouteCollection as LaravelRouteCollection;
  */
 class RouteCollection extends LaravelRouteCollection
 {
-
     /**
      * A look-up table of routes by xpressengine source.
      *

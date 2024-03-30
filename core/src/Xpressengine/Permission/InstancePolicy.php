@@ -39,7 +39,7 @@ class InstancePolicy extends Policy
          * @var $user
          * @var Instance $instance
          */
-        list ($user, $instance) = $arguments;
+        list($user, $instance) = $arguments;
 
         return $this->check($user, $this->get($instance->getName(), $instance->getSiteKey()), $name);
     }

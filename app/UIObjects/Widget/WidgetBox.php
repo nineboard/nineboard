@@ -55,17 +55,17 @@ class WidgetBox extends AbstractUIObject
         $widgetbox = null;
         $id = array_get($args, 'id');
 
-        if($id === null) {
+        if ($id === null) {
             $widgetbox = array_get($args, 'widgetbox');
         }
 
         $handler = app('xe.widgetbox');
 
-        if($widgetbox === null) {
+        if ($widgetbox === null) {
             $widgetbox = $handler->find($id);
         }
 
-        if($widgetbox) {
+        if ($widgetbox) {
             $class = $widgetbox->getPresenter();
             $presenter = new $class($widgetbox->content, $widgetbox->options);
         } else {

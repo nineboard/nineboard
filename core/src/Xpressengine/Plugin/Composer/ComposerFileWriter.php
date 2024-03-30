@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace Xpressengine\Plugin\Composer;
 
 use Xpressengine\Plugin\PluginScanner;
@@ -30,11 +31,11 @@ class ComposerFileWriter
     /**
      * @deprecated since 3.0.1, use \Xpressengine\Foundation\Operations\Operation
      */
-    const STATUS_READY     = 'ready';
-    const STATUS_RUNNING   = 'running';
-    const STATUS_SUCCESSED = 'successed';
-    const STATUS_FAILED    = 'failed';
-    const STATUS_EXPIRED   = 'expired';
+    public const STATUS_READY     = 'ready';
+    public const STATUS_RUNNING   = 'running';
+    public const STATUS_SUCCESSED = 'successed';
+    public const STATUS_FAILED    = 'failed';
+    public const STATUS_EXPIRED   = 'expired';
 
     /**
      * @var string

@@ -181,7 +181,7 @@ class JSFile
      */
     public function async()
     {
-        $this->attr('async','');
+        $this->attr('async', '');
         return $this;
     }
 

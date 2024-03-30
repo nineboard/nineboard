@@ -14,7 +14,6 @@ use Xpressengine\Plugin\PluginHandler;
  */
 class PluginSeederMake extends SeederMakeCommand
 {
-
     /**
      * @var PluginHandler
      */

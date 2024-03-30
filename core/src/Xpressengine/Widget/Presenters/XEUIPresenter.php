@@ -31,7 +31,7 @@ class XEUIPresenter extends BootstrapPresenter
      *
      * @var string
      */
-    const NAME = 'XE UI';
+    public const NAME = 'XE UI';
 
     /**
      * get row's class

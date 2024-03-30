@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace Xpressengine\Editor;
 
 use Illuminate\Support\Arr;
@@ -91,35 +92,35 @@ class EditorHandler
      *
      * @var string
      */
-    const NAME = 'editor';
+    public const NAME = 'editor';
 
     /**
      * The name of config prefix
      *
      * @var string
      */
-    const CONFIG_NAME = 'editor';
+    public const CONFIG_NAME = 'editor';
 
     /**
      * The name of map config
      *
      * @var string
      */
-    const MAP_CONFIG_NAME = 'editors';
+    public const MAP_CONFIG_NAME = 'editors';
 
     /**
      * The path for upload
      *
      * @var string
      */
-    const FILE_UPLOAD_PATH = 'public/editor';
+    public const FILE_UPLOAD_PATH = 'public/editor';
 
     /**
      * The type of thumbnail
      *
      * @var string
      */
-    const THUMBNAIL_TYPE = 'spill';
+    public const THUMBNAIL_TYPE = 'spill';
 
     /**
      * EditorHandler constructor.
@@ -185,7 +186,7 @@ class EditorHandler
     public function setInstance($instanceId, $editorId)
     {
         if ($editorId !== null && !$this->register->get($editorId)) {
-            throw new EditorNotFoundException;
+            throw new EditorNotFoundException();
         }
 
         $this->configManager->set(self::MAP_CONFIG_NAME, [$instanceId => $editorId]);

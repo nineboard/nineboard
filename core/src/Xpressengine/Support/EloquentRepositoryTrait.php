@@ -118,7 +118,7 @@ trait EloquentRepositoryTrait
     {
         $class = $this->getModel();
 
-        return new $class;
+        return new $class();
     }
 
     /**

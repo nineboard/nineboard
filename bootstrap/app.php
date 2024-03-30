@@ -25,8 +25,7 @@ if (!defined('__XE_VERSION__')) {
  * XE에서 새로운 request가 생성될 때에는 이 ReqeustFactory는 사용되어 항상 Xpressengine\Http\Request를 생성하도록 한다
  */
 Request::setFactory(
-    function ($query, $request, $attributes, $cookies, $files, $server, $content)
-    {
+    function ($query, $request, $attributes, $cookies, $files, $server, $content) {
         return new Request($query, $request, $attributes, $cookies, $files, $server, $content);
     }
 );

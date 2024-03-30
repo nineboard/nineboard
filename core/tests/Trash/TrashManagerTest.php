@@ -66,7 +66,6 @@ class TrashManagerTest extends TestCase
 
         $trash->clean([Bin::class]);
     }
-
 }
 
 /**
@@ -79,7 +78,6 @@ class TrashManagerTest extends TestCase
  */
 class Bin implements RecycleBinInterface
 {
-
     /**
      * 휴지통 이름 반환
      *

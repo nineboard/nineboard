@@ -10,8 +10,8 @@ namespace Xpressengine\Tests\Frontend;
 
 use Xpressengine\Presenter\Html\Tags\CSSFile;
 
-class CSSFileTest extends \PHPUnit\Framework\TestCase {
-
+class CSSFileTest extends \PHPUnit\Framework\TestCase
+{
     /**
      * @var CSSFileStub
      */
@@ -51,10 +51,12 @@ class CSSFileTest extends \PHPUnit\Framework\TestCase {
         $output = CSSFileStub::output();
 
         $this->assertEquals(
-'<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
+            '<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
 <link href="path/to/file2.css" type="text/css" rel="stylesheet" media="all">
 <link href="path/to/file3.css" type="text/css" rel="stylesheet" media="all">
-<link href="path/to/file4.css" type="text/css" rel="stylesheet" media="all">', trim($output));
+<link href="path/to/file4.css" type="text/css" rel="stylesheet" media="all">',
+            trim($output)
+        );
     }
 
     public function testTarget()
@@ -64,11 +66,13 @@ class CSSFileTest extends \PHPUnit\Framework\TestCase {
         $output = CSSFileStub::output();
 
         $this->assertEquals(
-'<!--[if gt IE 10]><!-->;<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
+            '<!--[if gt IE 10]><!-->;<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
 <![endif]--><!--[if gt IE 10]><!-->;<link href="path/to/file2.css" type="text/css" rel="stylesheet" media="all">
 <![endif]--><!--[if gt IE 10]><!-->;<link href="path/to/file3.css" type="text/css" rel="stylesheet" media="all">
 <![endif]--><!--[if gt IE 10]><!-->;<link href="path/to/file4.css" type="text/css" rel="stylesheet" media="all">
-<![endif]-->', trim($output));
+<![endif]-->',
+            trim($output)
+        );
     }
 
 
@@ -83,12 +87,14 @@ class CSSFileTest extends \PHPUnit\Framework\TestCase {
         $output = CSSFileStub::output();
 
         $this->assertEquals(
-'<!--[if gt IE 10]><!-->;<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
+            '<!--[if gt IE 10]><!-->;<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
 <![endif]--><!--[if gt IE 10]><!-->;<link href="path/to/file2.css" type="text/css" rel="stylesheet" media="all">
 <![endif]--><!--[if gt IE 10]><!-->;<link href="path/to/file3.css" type="text/css" rel="stylesheet" media="all">
 <![endif]--><link href="path/to/afterfile.css" type="text/css" rel="stylesheet" media="all">
 <!--[if gt IE 10]><!-->;<link href="path/to/file4.css" type="text/css" rel="stylesheet" media="all">
-<![endif]-->', trim($output));
+<![endif]-->',
+            trim($output)
+        );
     }
 
     public function testBefore2()
@@ -107,11 +113,13 @@ class CSSFileTest extends \PHPUnit\Framework\TestCase {
         $output = CSSFileStub::output();
 
         $this->assertEquals(
-'<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
+            '<link href="path/to/file1.css" type="text/css" rel="stylesheet" media="all">
 <link href="path/to/target.css" type="text/css" rel="stylesheet" media="all">
 <link href="path/to/file3.css" type="text/css" rel="stylesheet" media="all">
 <link href="path/to/file2.css" type="text/css" rel="stylesheet" media="all">
-<link href="path/to/file4.css" type="text/css" rel="stylesheet" media="all">', trim($output));
+<link href="path/to/file4.css" type="text/css" rel="stylesheet" media="all">',
+            trim($output)
+        );
     }
 
     public function testMin()

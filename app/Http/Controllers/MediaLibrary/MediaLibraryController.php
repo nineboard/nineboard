@@ -213,7 +213,7 @@ class MediaLibraryController extends Controller
     {
         $mediaLibraryFile = $this->handler->getMediaLibraryFileItem($mediaLibraryFileId);
         if ($mediaLibraryFile == null || $mediaLibraryFile->file == null) {
-            throw new NotFoundFileException;
+            throw new NotFoundFileException();
         }
 
         return \XeStorage::download($mediaLibraryFile->file);

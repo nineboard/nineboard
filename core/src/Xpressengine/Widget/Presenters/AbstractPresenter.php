@@ -34,19 +34,19 @@ abstract class AbstractPresenter implements PresenterInterface
      *
      * @var string
      */
-    const NAME = '';
+    public const NAME = '';
 
     /**
      * The number of columns supported by the presenter
      *
      * @var int
      */
-    const COLS = 0;
+    public const COLS = 0;
 
     /**
      * @var boolean
      */
-    const SUPPORT_CONTAINER = false;
+    public const SUPPORT_CONTAINER = false;
 
     /**
      * The data for contents
@@ -203,8 +203,7 @@ abstract class AbstractPresenter implements PresenterInterface
 
                     if (is_string($value)) {
                         $style = $value;
-                    }
-                    else if (is_array($value)) {
+                    } elseif (is_array($value)) {
                         foreach ($value as $styleKey => $styleValue) {
                             $style = $style . "$styleKey: $styleValue; ";
                         }

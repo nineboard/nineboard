@@ -64,7 +64,9 @@ class SettingTest extends \PHPUnit\Framework\TestCase
         $mockConfig->shouldReceive('set')->once()->with('uuid', $id);
 
         $cfg->shouldReceive('set')->once()->with(
-            m::on(function () { return true; }),
+            m::on(function () {
+                return true;
+            }),
             [
                 'foo' => 'bar',
                 'baz' => 'qux'

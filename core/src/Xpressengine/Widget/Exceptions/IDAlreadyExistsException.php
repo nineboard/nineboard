@@ -24,5 +24,4 @@ use Xpressengine\Widget\WidgetException;
  */
 class IDAlreadyExistsException extends WidgetException
 {
-
 }

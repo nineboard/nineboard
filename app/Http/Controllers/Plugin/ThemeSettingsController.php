@@ -359,7 +359,7 @@ class ThemeSettingsController extends Controller
             ]);
         }
 
-        foreach($files as $file => &$item) {
+        foreach ($files as $file => &$item) {
             $filePath = realpath($item);
             $ext = last(explode('.', $file));
 

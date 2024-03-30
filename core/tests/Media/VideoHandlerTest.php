@@ -111,7 +111,6 @@ class VideoHandlerTest extends \PHPUnit\Framework\TestCase
         $video = $instance->make($mockFile);
 
         $this->assertInstanceOf('Xpressengine\Media\Models\Video', $video);
-
     }
 
     public function testExtractInformation()

@@ -9,6 +9,7 @@
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

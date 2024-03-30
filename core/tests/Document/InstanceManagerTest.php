@@ -54,7 +54,6 @@ class InstanceManagerTest extends TestCase
 
         $configHandler = m::mock('Xpressengine\Document\ConfigHandler');
         $this->configHandler = $configHandler;
-
     }
 
     /**

@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace App\Http\Controllers;
 
 use Auth;
@@ -336,14 +337,14 @@ class EditorController extends Controller
         }
 
         if ($uploadedFile === null) {
-            throw new InvalidArgumentException;
+            throw new InvalidArgumentException();
         }
 
         $editor = XeEditor::get($instanceId);
         $config = $editor->getConfig();
 
         if (!$config->get('uploadActive') || Gate::denies('upload', new Instance(XeEditor::getPermKey($instanceId)))) {
-            throw new AccessDeniedHttpException;
+            throw new AccessDeniedHttpException();
         }
 
         if ($config->get('fileMaxSize') * 1024 * 1024 < $uploadedFile->getSize() && !$editor->isPrivileged()) {
@@ -396,7 +397,7 @@ class EditorController extends Controller
     public function fileSource($instanceId, $id)
     {
         if (empty($id)) {
-            throw new InvalidArgumentException;
+            throw new InvalidArgumentException();
         }
 
         $file = XeStorage::find($id);
@@ -427,11 +428,11 @@ class EditorController extends Controller
     public function fileDownload($instanceId, $id)
     {
         if (empty($id) || !$file = XeStorage::find($id)) {
-            throw new InvalidArgumentException;
+            throw new InvalidArgumentException();
         }
 
         if (Gate::denies('download', new Instance(XeEditor::getPermKey($instanceId)))) {
-            throw new AccessDeniedHttpException;
+            throw new AccessDeniedHttpException();
         }
 
         return XeStorage::download($file);
@@ -447,11 +448,11 @@ class EditorController extends Controller
     public function fileDestroy($instanceId, $id)
     {
         if (empty($id) || !$file = XeStorage::find($id)) {
-            throw new InvalidArgumentException;
+            throw new InvalidArgumentException();
         }
 
         if ($file->user_id !== Auth::id() && Auth::user()->getRating() != 'super') {
-            throw new AccessDeniedHttpException;
+            throw new AccessDeniedHttpException();
         }
 
         try {

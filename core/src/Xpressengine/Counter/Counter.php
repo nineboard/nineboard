@@ -375,6 +375,6 @@ class Counter
     {
         $class = $this->getModel();
 
-        return new $class;
+        return new $class();
     }
 }

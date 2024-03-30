@@ -34,13 +34,13 @@ class LogHandler
     /**
      * admin logger register key
      */
-    const ADMIN_LOGGER_KEY = 'admin/logger';
+    public const ADMIN_LOGGER_KEY = 'admin/logger';
 
     /**
      * plugin logger register key
      * plugin에 logger를 추가할 경우 사용
      */
-    const PLUGIN_LOGGER_KEY = 'plugin/logger';
+    public const PLUGIN_LOGGER_KEY = 'plugin/logger';
 
     protected $loggerKeys = [LogHandler::ADMIN_LOGGER_KEY, LogHandler::PLUGIN_LOGGER_KEY];
 

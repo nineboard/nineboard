@@ -71,8 +71,8 @@ class SeoHandlerTest extends \PHPUnit\Framework\TestCase
         $instance->shouldReceive('makeTitle')->once()->with($mockItem)->andReturn('this is sparta!');
 
         $setting->shouldReceive('get')->once()->with('mainTitle')->andReturn('site name');
-       // $setting->shouldReceive('get')->once()->with('description')->andReturn('');
-       // $setting->shouldReceive('get')->once()->with('keywords')->andReturn('');
+        // $setting->shouldReceive('get')->once()->with('description')->andReturn('');
+        // $setting->shouldReceive('get')->once()->with('keywords')->andReturn('');
 
         $translator->shouldReceive('trans')->once()->with('site name')->andReturn('site name');
 

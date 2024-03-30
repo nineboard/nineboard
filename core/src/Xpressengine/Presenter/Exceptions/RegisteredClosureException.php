@@ -28,5 +28,4 @@ use Xpressengine\Presenter\PresenterException;
  */
 class RegisteredClosureException extends PresenterException
 {
-    
 }

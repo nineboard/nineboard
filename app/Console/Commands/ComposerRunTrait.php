@@ -45,7 +45,7 @@ trait ComposerRunTrait
         if (!ini_get('allow_url_fopen')) {
             $key = 'xe';
             $config = [];
-            $file = sprintf( '%s/%s/%s.php', config_path(), env('APP_ENV', 'production'), $key);
+            $file = sprintf('%s/%s/%s.php', config_path(), env('APP_ENV', 'production'), $key);
             if (file_exists($file) == true) {
                 $config = include($file);
             }

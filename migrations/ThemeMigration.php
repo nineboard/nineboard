@@ -39,10 +39,10 @@ use Xpressengine\Support\Migration;
  */
 class ThemeMigration extends Migration
 {
-    const NOTICE_TYPE = 'notice';
-    const BLOG_TYPE = 'blog';
-    const BOARD_TYPE = 'board';
-    const GALLERY_TYPE = 'gallery';
+    public const NOTICE_TYPE = 'notice';
+    public const BLOG_TYPE = 'blog';
+    public const BOARD_TYPE = 'board';
+    public const GALLERY_TYPE = 'gallery';
 
     /**
      * Run after installation.
@@ -57,7 +57,7 @@ class ThemeMigration extends Migration
                 ['name' => 'theme.settings', 'vars' => '[]', 'site_key' => $site_key],
             ]
         );
-        if($site_key == 'default'){
+        if ($site_key == 'default') {
             \DB::table('config')->insert(
                 [
                     ['name' => 'theme.settings.theme/together@together', 'vars' => '[]', 'site_key' => $site_key]

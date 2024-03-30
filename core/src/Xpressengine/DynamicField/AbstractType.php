@@ -448,12 +448,12 @@ abstract class AbstractType implements ComponentInterface
 
         $tableName = $this->handler->getConfigHandler()->getTableName($this->config);
         if ($schema->hasTable($tableName) === false) {
-            throw new Exceptions\NotExistRevisionTableException;
+            throw new Exceptions\NotExistRevisionTableException();
         }
 
         foreach ($self->getColumns() as $column) {
             if ($schema->hasColumn($tableName, $column->name) === true) {
-                throw new Exceptions\AlreadyExistColumnException;
+                throw new Exceptions\AlreadyExistColumnException();
             }
         }
         $this->handler->connection()->getSchemaBuilder()->table(
@@ -487,12 +487,12 @@ abstract class AbstractType implements ComponentInterface
 
             $tableName = $this->handler->getConfigHandler()->getRevisionTableName($this->config);
             if ($schema->hasTable($tableName) === false) {
-                throw new Exceptions\NotExistRevisionTableException;
+                throw new Exceptions\NotExistRevisionTableException();
             }
 
             foreach ($self->getColumns() as $column) {
                 if ($schema->hasColumn($tableName, $column->name) === true) {
-                    throw new Exceptions\AlreadyExistColumnException;
+                    throw new Exceptions\AlreadyExistColumnException();
                 }
             }
             $this->handler->connection()->getSchemaBuilder()->table(
@@ -541,14 +541,14 @@ abstract class AbstractType implements ComponentInterface
 
         $tableName = $this->handler->getConfigHandler()->getTableName($this->config);
         if ($schema->hasTable($tableName) === false) {
-            throw new Exceptions\NotExistTableException;
+            throw new Exceptions\NotExistTableException();
         }
         $schema->drop($tableName);
 
         $tableName = $this->handler->getConfigHandler()->getRevisionTableName($this->config);
         if ($this->config->get('revision') == true) {
             if ($schema->hasTable($tableName) === false) {
-                throw new Exceptions\NotExistRevisionTableException;
+                throw new Exceptions\NotExistRevisionTableException();
             }
             $schema->drop($tableName);
         }
@@ -568,12 +568,12 @@ abstract class AbstractType implements ComponentInterface
 
         $tableName = $this->handler->getConfigHandler()->getTableName($this->config);
         if ($schema->hasTable($tableName) === false) {
-            throw new Exceptions\NotExistRevisionTableException;
+            throw new Exceptions\NotExistRevisionTableException();
         }
 
         foreach ($this->getColumns() as $column) {
             if ($schema->hasColumn($tableName, $column->name) === true) {
-                throw new Exceptions\AlreadyExistColumnException;
+                throw new Exceptions\AlreadyExistColumnException();
             }
         }
         $this->handler->connection()->getSchemaBuilder()->table(
@@ -591,12 +591,12 @@ abstract class AbstractType implements ComponentInterface
         if ($this->config->get('revision') == true) {
             $tableName = $this->handler->getConfigHandler()->getRevisionTableName($this->config);
             if ($schema->hasTable($tableName) === false) {
-                throw new Exceptions\NotExistRevisionTableException;
+                throw new Exceptions\NotExistRevisionTableException();
             }
 
             foreach ($self->getColumns() as $column) {
                 if ($schema->hasColumn($tableName, $column->name) === true) {
-                    throw new Exceptions\AlreadyExistColumnException;
+                    throw new Exceptions\AlreadyExistColumnException();
                 }
             }
             $this->handler->connection()->getSchemaBuilder()->table(
@@ -624,7 +624,7 @@ abstract class AbstractType implements ComponentInterface
         $config = $this->config;
 
         if (isset($args[$config->get('joinColumnName')]) === false) {
-            throw new Exceptions\RequiredJoinColumnException;
+            throw new Exceptions\RequiredJoinColumnException();
         }
 
         $insertParam = [];
@@ -793,7 +793,7 @@ abstract class AbstractType implements ComponentInterface
         $where = $this->getWhere($wheres, $config);
 
         if (isset($where['target_id']) === false) {
-            throw new Exceptions\RequiredDynamicFieldException;
+            throw new Exceptions\RequiredDynamicFieldException();
         }
 
         // event fire
@@ -947,7 +947,7 @@ abstract class AbstractType implements ComponentInterface
     public function insertRevision(array $args)
     {
         if (isset($args['id']) === false) {
-            throw new Exceptions\RequiredDynamicFieldException;
+            throw new Exceptions\RequiredDynamicFieldException();
         }
 
         $insertParam = [];

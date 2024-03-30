@@ -28,5 +28,4 @@ use Xpressengine\Support\Exceptions\XpressengineException;
  */
 class SkinException extends XpressengineException
 {
-
 }

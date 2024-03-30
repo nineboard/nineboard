@@ -6,18 +6,16 @@
  * @link      https://xpressengine.io
  */
 
-
 namespace Xpressengine\Tests\Plugin\Sample;
 
 class Board
 {
-
     /**
      * @var Board
      */
-    static protected $singleton;
+    protected static $singleton;
 
-    static public function getInstance()
+    public static function getInstance()
     {
         return self::$singleton = new static();
     }
@@ -33,7 +31,6 @@ class Board
 
     public function getList($bid)
     {
-
         if ($bid === null) {
             return 'bid가 없네...';
         }

@@ -31,21 +31,21 @@ class SkinInstanceStore
     /**
      * 지정된 스킨정보를 조회할 때 사용하는 key
      */
-    const PREFIX_KEY_SELECTED = 'skins.selected';
+    public const PREFIX_KEY_SELECTED = 'skins.selected';
 
     /**
      * 스킨의 설정정보를 조회할 때 사용하는 key
      */
-    const PREFIX_KEY_CONFIGS = 'skins.configs';
+    public const PREFIX_KEY_CONFIGS = 'skins.configs';
 
     /**
      * 데스크탑 버전
      */
-    const SKIN_MODE_DESKTOP = 'desktop';
+    public const SKIN_MODE_DESKTOP = 'desktop';
     /**
      * 모바일 버전
      */
-    const SKIN_MODE_MOBILE = 'mobile';
+    public const SKIN_MODE_MOBILE = 'mobile';
 
     /**
      * @var ConfigStore

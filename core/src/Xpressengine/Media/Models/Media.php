@@ -32,9 +32,9 @@ abstract class Media extends File
 {
     use MimeTypeFilter;
 
-    const TYPE_IMAGE = 'image';
-    const TYPE_VIDEO = 'video';
-    const TYPE_AUDIO = 'audio';
+    public const TYPE_IMAGE = 'image';
+    public const TYPE_VIDEO = 'video';
+    public const TYPE_AUDIO = 'audio';
 
     /**
      * Available mime type
@@ -95,7 +95,7 @@ abstract class Media extends File
     {
         $class = $this->getMetaModel();
 
-        $instance = new $class;
+        $instance = new $class();
 
         return $this->hasOne($class, $instance->getForeignKey());
     }

@@ -13,7 +13,6 @@ use Xpressengine\Plugin\PluginScanner;
 
 class PluginScannerTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -109,7 +108,7 @@ class PluginScannerTest extends \PHPUnit\Framework\TestCase
             ->withArgs([$dir.'/plugin_sample'])
             ->andReturn(
                 json_decode(
-                '{
+                    '{
                       "name": "xe/plugin_sample",
                       "description": "xe 플러그인입니다.",
                       "keywords": [
@@ -198,15 +197,16 @@ class PluginScannerTest extends \PHPUnit\Framework\TestCase
                         "xe3/ncenter": "*",
                         "vender/package": "x.x.x"
                       }
-                    }', true
-            )
+                    }',
+                    true
+                )
             );
 
         $reader->shouldReceive('read')
             ->withArgs([$dir.'/plugin_sample2'])
             ->andReturn(
                 json_decode(
-                '{
+                    '{
                       "name": "xe/plugin_sample2",
                       "description": "xe 플러그인입니다.",
                       "keywords": [
@@ -295,8 +295,9 @@ class PluginScannerTest extends \PHPUnit\Framework\TestCase
                         "xe3/ncenter": "*",
                         "vender/package": "x.x.x"
                       }
-                    }', true
-            )
+                    }',
+                    true
+                )
             );
 
 
@@ -304,7 +305,7 @@ class PluginScannerTest extends \PHPUnit\Framework\TestCase
             ->withArgs(['/home/DOMAINS/LOCALHOST/xe/xe3-core/core/tests/Plugin/invalid_plugins/plugin_sample2'])
             ->andReturn(
                 json_decode(
-                '{
+                    '{
                       "name": "xe/plugin_sample2",
                       "description": "xe 플러그인입니다.",
                       "keywords": [
@@ -393,8 +394,9 @@ class PluginScannerTest extends \PHPUnit\Framework\TestCase
                         "xe3/ncenter": "*",
                         "vender/package": "x.x.x"
                       }
-                    }', true
-            )
+                    }',
+                    true
+                )
             );
 
         return $reader;

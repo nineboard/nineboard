@@ -77,7 +77,7 @@ class CounterMigration extends Migration
      */
     public function checkUpdated($installedVersion = null)
     {
-        if(Schema::hasColumn('counter_log', 'site_key') == false) {
+        if (Schema::hasColumn('counter_log', 'site_key') == false) {
             return false;
         }
 
@@ -93,7 +93,7 @@ class CounterMigration extends Migration
      */
     public function update($installedVersion = null)
     {
-        if(Schema::hasColumn('counter_log', 'site_key') == false) {
+        if (Schema::hasColumn('counter_log', 'site_key') == false) {
             Schema::table('counter_log', function (Blueprint $table) {
                 $table->string('site_key', 50)->nullable()->default('default')->comment('site key. for multi web site support.');
                 $table->index('site_key');

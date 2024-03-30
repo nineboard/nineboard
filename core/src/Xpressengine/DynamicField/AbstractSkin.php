@@ -30,7 +30,6 @@ use Xpressengine\Plugin\ComponentInterface;
  */
 abstract class AbstractSkin implements ComponentInterface
 {
-
     use ComponentTrait;
 
     /**
@@ -212,7 +211,7 @@ abstract class AbstractSkin implements ComponentInterface
     {
         $this->mergeData = $data;
     }
-    
+
     /**
      * 등록 form 에 추가될 html 코드 반환
      * return html tag string

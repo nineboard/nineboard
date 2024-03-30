@@ -118,7 +118,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $this->assertInstanceOf('Illuminate\View\Factory', $presenter->getViewFactory());
@@ -143,7 +148,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $presenter->register('html', function () {
@@ -172,7 +182,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $skinTargetId = 'name';
@@ -201,7 +216,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $skinTargetId = 'name';
@@ -237,7 +257,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $presenter->htmlRenderPartial(true);
@@ -269,7 +294,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $presenter->htmlRenderPopup(true);
@@ -301,7 +331,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $presenter->share('key', 'value');
@@ -372,7 +407,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $htmlRenderer = m::mock('HtmlRenderer', Presentable::class);
@@ -414,7 +454,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $request->shouldReceive('format')->once()->andReturn('html');
@@ -438,7 +483,12 @@ class PresenterTest extends TestCase
         $instanceConfig = $this->instanceConfig;
 
         $presenter = new Presenter(
-            $view, $request, $theme, $skin, $settings, $instanceConfig
+            $view,
+            $request,
+            $theme,
+            $skin,
+            $settings,
+            $instanceConfig
         );
 
         $htmlPresenter = m::mock('HtmlPresenter');

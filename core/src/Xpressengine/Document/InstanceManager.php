@@ -33,7 +33,6 @@ use Xpressengine\Migrations\DocumentMigration;
  */
 class InstanceManager
 {
-
     /**
      * @var VirtualConnection
      */
@@ -90,7 +89,7 @@ class InstanceManager
         $table = $this->getDivisionTableName($config);
         $schema = $this->connection->getSchemaBuilder();
         if ($schema->hasTable($table)) {
-            throw new DivisionTableAlreadyExistsException;
+            throw new DivisionTableAlreadyExistsException();
         }
 
         $migration = new DocumentMigration();

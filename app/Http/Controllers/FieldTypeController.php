@@ -34,7 +34,7 @@ class FieldTypeController extends Controller
     public function storeCategory(Request $request, CategoryHandler $categoryHandler)
     {
         $this->validate($request, ['categoryName' => 'required']);
-        
+
         $category = $categoryHandler->createCate([
             'name' => $request->get('categoryName'),
         ]);

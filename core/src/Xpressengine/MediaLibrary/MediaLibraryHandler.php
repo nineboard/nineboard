@@ -34,7 +34,6 @@ use Xpressengine\Storage\File;
 use Xpressengine\Support\Tree\NodePositionTrait;
 use Xpressengine\User\Models\User;
 
-
 /**
  * Class MediaLibraryHandler
  *
@@ -49,8 +48,8 @@ class MediaLibraryHandler
 {
     use NodePositionTrait;
 
-    const MODE_ADMIN = 1;
-    const MODE_USER = 2;
+    public const MODE_ADMIN = 1;
+    public const MODE_USER = 2;
 
     /** @var MediaLibraryFileRepository $files */
     protected $files;
@@ -489,7 +488,6 @@ class MediaLibraryHandler
 
     public function storeMediaLibraryFile($uploadFile, $args = [], User $user, $force = false)
     {
-
         $mediaLibraryConfig = config('xe.media.mediaLibrary');
 
         //file size check
@@ -520,7 +518,7 @@ class MediaLibraryHandler
             );
         }
 
-        $file = XeStorage::upload($uploadFile, 'public/media_library', null, 'media', null , [], $force);
+        $file = XeStorage::upload($uploadFile, 'public/media_library', null, 'media', null, [], $force);
 
         if (XeMedia::is($file) == true) {
             $media = XeMedia::make($file);
@@ -531,7 +529,7 @@ class MediaLibraryHandler
         if ($instanceId = Arr::get($args, 'instance_id', null)) {
             $folderItem = $this->getInstanceFolderItem($instanceId);
         } else {
-            $folderItem = $this->getFolderItem( Arr::get($args, 'folder_id', ''));
+            $folderItem = $this->getFolderItem(Arr::get($args, 'folder_id', ''));
             if ($folderItem === null) {
                 throw new NotFoundFolderException();
             }
@@ -565,7 +563,7 @@ class MediaLibraryHandler
     {
         $uploadFile = $request->file('file');
         $user = \Auth::user();
-        $mediaLibraryFileItem = $this->storeMediaLibraryFile($uploadFile, $request->only('instance_id','folder_id'), $user);
+        $mediaLibraryFileItem = $this->storeMediaLibraryFile($uploadFile, $request->only('instance_id', 'folder_id'), $user);
 
         return $mediaLibraryFileItem;
     }

@@ -39,7 +39,7 @@ use Xpressengine\Plugin\PluginRegister;
  */
 class DynamicFieldHandler
 {
-    const CONFIG_NAME = 'DynamicField';
+    public const CONFIG_NAME = 'DynamicField';
 
     /**
      * @var PluginRegister
@@ -202,7 +202,7 @@ class DynamicFieldHandler
             throw new Exceptions\InvalidConfigException(['group' => $group, 'id' => $id]);
         }
         if ($this->configHandler->get($group, $id) !== null) {
-            throw new Exceptions\AlreadyExistException;
+            throw new Exceptions\AlreadyExistException();
         }
 
         if ($this->configHandler->parent($group) == null) {

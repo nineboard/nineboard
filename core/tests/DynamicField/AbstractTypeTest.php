@@ -35,7 +35,6 @@ use Xpressengine\DynamicField\ColumnEntity;
  */
 class AbstractTypeTest extends TestCase
 {
-
     /**
      * @var m\MockInterface|\Xpressengine\DynamicField\DynamicFieldHandler
      */
@@ -670,7 +669,6 @@ class AbstractTypeTest extends TestCase
 
 class TestType extends AbstractType
 {
-
     /**
      * get field type name
      *
@@ -741,7 +739,6 @@ class TestType extends AbstractType
 
 class TestSkin extends AbstractSkin
 {
-
     /**
      * get name of skin
      *

@@ -15,7 +15,6 @@ use Xpressengine\Plugin\PluginEntity;
 
 class PluginEntityTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         Mockery::close();
@@ -138,13 +137,13 @@ class PluginEntityTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetters($entity)
     {
-        $this->assertEquals('title',$entity->getTitle());
+        $this->assertEquals('title', $entity->getTitle());
         $this->assertEquals('sample plugin.', $entity->getDescription());
         $this->assertCount(6, $entity->getSupport());
         $this->assertEquals('xe/plugin_sample', $entity->getName());
         $this->assertEquals(['xpressengine', 'board'], $entity->getKeywords());
-        $this->assertEquals('xe',$entity->getAuthors()[0]['name']);
-        $this->assertEquals('LGPL-2.0',$entity->getLicense());
+        $this->assertEquals('xe', $entity->getAuthors()[0]['name']);
+        $this->assertEquals('LGPL-2.0', $entity->getLicense());
     }
 
     private function getMetaData()
@@ -244,6 +243,4 @@ class PluginEntityTest extends \PHPUnit\Framework\TestCase
             true
         );
     }
-
 }
-

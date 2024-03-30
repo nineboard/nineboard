@@ -37,11 +37,11 @@ abstract class RegisterFormPart
         ValidatesRequestsTrait::validate as traitValidate;
     }
 
-    const ID = '';
+    public const ID = '';
 
-    const NAME = '';
+    public const NAME = '';
 
-    const DESCRIPTION = '';
+    public const DESCRIPTION = '';
 
     /**
      * Request instance

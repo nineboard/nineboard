@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Facade;
  */
 class XeCategory extends Facade
 {
-
     /**
      * Get the registered name of the component.
      *

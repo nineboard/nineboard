@@ -27,7 +27,6 @@ namespace Xpressengine\Interception;
  */
 class Advisor
 {
-
     /**
      * @var string 이 advisor의 이름
      */

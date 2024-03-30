@@ -71,7 +71,8 @@ class CategoryItemRepository
         $item->ancestors()->attach($item->getKey(), [$item->getDepthName() => 0]);
 
         $this->dispatcher->dispatch(
-            'xe.category.categoryitem.created', $item
+            'xe.category.categoryitem.created',
+            $item
         );
 
         return $item;
@@ -91,7 +92,8 @@ class CategoryItemRepository
         $result = $this->traitDelete($item);
 
         $this->dispatcher->dispatch(
-            'xe.category.categoryitem.deleted', $item
+            'xe.category.categoryitem.deleted',
+            $item
         );
 
         return $result;

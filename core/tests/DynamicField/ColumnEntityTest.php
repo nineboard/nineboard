@@ -60,6 +60,4 @@ class ColumnEntityTest extends TestCase
         $column->add($table);
         $column->drop($table);
     }
-
-
 }

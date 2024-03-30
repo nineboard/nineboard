@@ -55,7 +55,7 @@ class PresenterServiceProvider extends ServiceProvider
     public function boot()
     {
         if (app()->runningInConsole() === false && !request()->ajax()) {
-            intercept('Presenter@make' , 'frontend.load.default', function ($method, $id, array $data = [], array $mergeData = [], $html = true, $api = false) {
+            intercept('Presenter@make', 'frontend.load.default', function ($method, $id, array $data = [], array $mergeData = [], $html = true, $api = false) {
                 $frontendHandler = app('xe.frontend');
                 // set site title
                 $this->loadTitle($frontendHandler);
@@ -77,7 +77,6 @@ class PresenterServiceProvider extends ServiceProvider
     private function registerPresenter()
     {
         $this->app->singleton('xe.presenter', function ($app) {
-
             $proxyClass = $app['xe.interception']->proxy(Presenter::class, 'Presenter');
 
             /** @var \Xpressengine\Presenter\Presenter $presenter */

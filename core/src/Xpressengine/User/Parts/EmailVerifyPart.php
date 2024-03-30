@@ -31,11 +31,11 @@ use Xpressengine\Http\Request;
  */
 class EmailVerifyPart extends RegisterFormPart
 {
-    const ID = 'email';
+    public const ID = 'email';
 
-    const NAME = 'xe::emailConfirmationCode';
+    public const NAME = 'xe::emailConfirmationCode';
 
-    const DESCRIPTION = 'xe::descEmailConfirmationCode';
+    public const DESCRIPTION = 'xe::descEmailConfirmationCode';
 
     /**
      * Indicates if the form part is implicit

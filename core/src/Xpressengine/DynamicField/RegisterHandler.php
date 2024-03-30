@@ -30,8 +30,8 @@ use Illuminate\Events\Dispatcher;
  */
 class RegisterHandler
 {
-    const FIELD_TYPE = 'fieldType';
-    const FIELD_SKIN = 'fieldSkin';
+    public const FIELD_TYPE = 'fieldType';
+    public const FIELD_SKIN = 'fieldSkin';
 
     /**
      * @var PluginRegister

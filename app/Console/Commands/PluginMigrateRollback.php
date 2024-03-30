@@ -66,7 +66,9 @@ class PluginMigrateRollback extends RollbackCommand
         $this->migrator->setConnection($this->option('database'));
 
         $this->migrator->setOutput($this->output)->rollbackForPlugin(
-            $this->getMigrationPaths(), $options, $this->getFileList()
+            $this->getMigrationPaths(),
+            $options,
+            $this->getFileList()
         );
     }
 }

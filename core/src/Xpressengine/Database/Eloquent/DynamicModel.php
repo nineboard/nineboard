@@ -130,7 +130,7 @@ abstract class DynamicModel extends Model
     public function getKeyGen()
     {
         if (self::$keyGenerator === null) {
-            throw new KeyGeneratorNotFoundException;
+            throw new KeyGeneratorNotFoundException();
         }
         return self::$keyGenerator;
     }

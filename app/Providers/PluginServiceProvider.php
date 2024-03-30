@@ -136,7 +136,11 @@ class PluginServiceProvider extends ServiceProvider
             $interception = $app['xe.interception'];
             $pluginHandler = $interception->proxy(PluginHandler::class, 'XePlugin');
             $pluginHandler = new $pluginHandler(
-                $repo, $app['xe.plugin.provider'], $app['view'], $app['xe.pluginRegister'], $app
+                $repo,
+                $app['xe.plugin.provider'],
+                $app['view'],
+                $app['xe.pluginRegister'],
+                $app
             );
 
             $pluginHandler->setConfig($app['xe.config']);

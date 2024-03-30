@@ -32,7 +32,6 @@ use XeSite;
  */
 class EditorMigration extends Migration
 {
-
     /**
      * Run after service activation.
      *
@@ -69,6 +68,8 @@ class EditorMigration extends Migration
     public function installed($siteKey = 'default')
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
-        if($siteKey != 'default') $this->init();
+        if ($siteKey != 'default') {
+            $this->init();
+        }
     }
 }

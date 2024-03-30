@@ -6,7 +6,6 @@
  * @link      https://xpressengine.io
  */
 
-
 namespace Xpressengine\User {
     function xe_trans($id = null, $parameters = array(), $domain = 'messages', $locale = null)
     {
@@ -56,7 +55,7 @@ namespace Xpressengine\Tests\User {
             $configManager = $this->getConfigManager();
 
             /** @var Mockery\MockInterface $handler */
-            $handler = $this->getHandlerMock(null,null,null,null,null,null,$hasher, null, $configManager);
+            $handler = $this->getHandlerMock(null, null, null, null, null, null, $hasher, null, $configManager);
             $handler->shouldReceive('validateForCreate')->withAnyArgs()->andReturn(true);
 
             $data = [
@@ -91,7 +90,7 @@ namespace Xpressengine\Tests\User {
             $configManager = $this->getConfigManager();
 
             /** @var Mockery\MockInterface $handler */
-            $handler = $this->getHandlerMock(null,null,null,null,null,null,$hasher, null, $configManager);
+            $handler = $this->getHandlerMock(null, null, null, null, null, null, $hasher, null, $configManager);
             $handler->shouldReceive('validateForCreate')->withAnyArgs()->andReturn(true);
 
             $data = [
@@ -146,7 +145,7 @@ namespace Xpressengine\Tests\User {
             $configManager = $this->getConfigManager();
 
             /** @var Mockery\MockInterface $handler */
-            $handler = $this->getHandlerMock(null,null,null,null,null,null,$hasher, null, $configManager);
+            $handler = $this->getHandlerMock(null, null, null, null, null, null, $hasher, null, $configManager);
             $handler->shouldReceive('validateForCreate')->withAnyArgs()->andReturn(true);
 
             $data = [
@@ -203,7 +202,7 @@ namespace Xpressengine\Tests\User {
             $configManager = $this->getConfigManager();
 
             /** @var Mockery\MockInterface $handler */
-            $handler = $this->getHandlerMock(null,null,null,null,null,null,$hasher, null, $configManager);
+            $handler = $this->getHandlerMock(null, null, null, null, null, null, $hasher, null, $configManager);
             $handler->shouldReceive('validateForCreate')->withAnyArgs()->andReturn(true);
 
             $data = [
@@ -241,7 +240,7 @@ namespace Xpressengine\Tests\User {
             $configManager = $this->getConfigManager();
 
             /** @var Mockery\MockInterface $handler */
-            $handler = $this->getHandlerMock(null,null,null,null,null,null,$hasher, null, $configManager);
+            $handler = $this->getHandlerMock(null, null, null, null, null, null, $hasher, null, $configManager);
             $handler->shouldReceive('validateForCreate')->withAnyArgs()->andReturn(true);
 
             $data = [

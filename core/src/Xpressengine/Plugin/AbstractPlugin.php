@@ -28,7 +28,6 @@ use ReflectionClass;
  */
 abstract class AbstractPlugin
 {
-
     /**
      * 플러그인 인스턴스를 생성한다
      * 기본적으로 그 디렉토리명을 id로 사용한다.

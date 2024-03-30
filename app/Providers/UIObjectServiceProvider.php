@@ -14,7 +14,6 @@
 
 namespace App\Providers;
 
-
 use Illuminate\Support\ServiceProvider;
 use Xpressengine\UIObject\UIObjectHandler;
 use App\UIObjects\Form\Form;
@@ -58,7 +57,6 @@ class UIObjectServiceProvider extends ServiceProvider
         $this->app->singleton(
             'xe.uiobject',
             function ($app) {
-
                 $aliases = $app['config']->get('xe.uiobject.aliases');
 
                 $uiObjectHandler = $app['xe.interception']->proxy(UIObjectHandler::class, 'UIObejct');

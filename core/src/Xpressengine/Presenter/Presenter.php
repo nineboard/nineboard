@@ -41,17 +41,17 @@ class Presenter
     /**
      * render type
      */
-    const RENDER_ALL = 'all';
+    public const RENDER_ALL = 'all';
 
     /**
      * render type
      */
-    const RENDER_POPUP = 'popup';
+    public const RENDER_POPUP = 'popup';
 
     /**
      * render type
      */
-    const RENDER_CONTENT = 'content';
+    public const RENDER_CONTENT = 'content';
 
     /**
      * output id

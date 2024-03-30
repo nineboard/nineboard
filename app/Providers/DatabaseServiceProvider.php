@@ -45,7 +45,6 @@ class DatabaseServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app['config']->get('app.debug') === true) {
-
             \DB::listen(function (QueryExecuted $executed) {
                 $query = $executed->sql;
                 $bindings = $executed->bindings;
@@ -57,7 +56,8 @@ class DatabaseServiceProvider extends ServiceProvider
                 foreach ($bindings as $binding) {
                     if ($binding instanceof \DateTimeInterface) {
                         $binding = new Carbon(
-                            $binding->format('Y-m-d H:i:s.u'), $binding->getTimezone()
+                            $binding->format('Y-m-d H:i:s.u'),
+                            $binding->getTimezone()
                         );
                     }
 

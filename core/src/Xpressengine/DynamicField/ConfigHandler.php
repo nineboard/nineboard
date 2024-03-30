@@ -31,10 +31,10 @@ use XeSite;
  */
 class ConfigHandler
 {
-    const CONFIG_NAME = 'dynamicField';
-    const CREATE_TABLE_METHOD = false;
-    const ALTER_TABLE_METHOD = true;
-    const DEFAULT_JOIN_COLUMN_NAME = 'id';
+    public const CONFIG_NAME = 'dynamicField';
+    public const CREATE_TABLE_METHOD = false;
+    public const ALTER_TABLE_METHOD = true;
+    public const DEFAULT_JOIN_COLUMN_NAME = 'id';
 
     /**
      * @var string
@@ -109,7 +109,7 @@ class ConfigHandler
     public function add(ConfigEntity $config, $siteKey = null)
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
-        $this->configManager->add($this->getConfigName($config), $config->getPureAll(),$siteKey);
+        $this->configManager->add($this->getConfigName($config), $config->getPureAll(), $siteKey);
     }
 
     /**
@@ -121,7 +121,7 @@ class ConfigHandler
     public function put(ConfigEntity $config, $siteKey = null)
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
-        $this->configManager->put($this->getConfigName($config), $config->getPureAll(),false,null,$siteKey);
+        $this->configManager->put($this->getConfigName($config), $config->getPureAll(), false, null, $siteKey);
     }
 
     /**
@@ -145,7 +145,7 @@ class ConfigHandler
     public function get($group, $id, $siteKey = null)
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
-        return $this->configManager->get(sprintf('%s.%s.%s', self::CONFIG_NAME, $group, $id),false,$siteKey);
+        return $this->configManager->get(sprintf('%s.%s.%s', self::CONFIG_NAME, $group, $id), false, $siteKey);
     }
 
     /**
@@ -157,7 +157,7 @@ class ConfigHandler
     public function gets($group, $siteKey = null)
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
-        $config = $this->parent($group,$siteKey);
+        $config = $this->parent($group, $siteKey);
         if ($config === null) {
             return [];
         }
@@ -175,7 +175,8 @@ class ConfigHandler
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
         return $this->configManager->get(
-            sprintf('%s.%s', self::CONFIG_NAME, $group),$siteKey
+            sprintf('%s.%s', self::CONFIG_NAME, $group),
+            $siteKey
         );
     }
 
@@ -189,7 +190,7 @@ class ConfigHandler
     public function setParent($group, $siteKey = null)
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
-        $this->configManager->add(sprintf('%s.%s', self::CONFIG_NAME, $group), [],$siteKey);
+        $this->configManager->add(sprintf('%s.%s', self::CONFIG_NAME, $group), [], $siteKey);
     }
 
     /**

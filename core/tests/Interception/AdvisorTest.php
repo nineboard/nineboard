@@ -12,7 +12,6 @@ use Xpressengine\Interception\Advisor;
 
 class AdvisorTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -22,9 +21,11 @@ class AdvisorTest extends \PHPUnit\Framework\TestCase
     public function testCreate()
     {
         $advisor = new Advisor(
-            'ad1', 'TargetClass@originMethod', function ($target, $args) {
-            return $target($args);
-        }
+            'ad1',
+            'TargetClass@originMethod',
+            function ($target, $args) {
+                return $target($args);
+            }
         );
 
         $this->assertNotNull($advisor);
@@ -34,11 +35,12 @@ class AdvisorTest extends \PHPUnit\Framework\TestCase
 
     public function testCreateWithBefore()
     {
-
         $advisor = new Advisor(
-            'ad1', 'TargetClass@originMethod', function ($target, $args) {
-            return $target($args);
-        }
+            'ad1',
+            'TargetClass@originMethod',
+            function ($target, $args) {
+                return $target($args);
+            }
         );
 
         $this->assertNotNull($advisor);

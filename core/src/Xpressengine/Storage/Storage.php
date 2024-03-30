@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace Xpressengine\Storage;
 
 use Illuminate\Contracts\Auth\Guard;
@@ -151,7 +152,6 @@ class Storage
         $option = [],
         $force = false
     ) {
-
         $this->validateUploadedFile($uploaded, $force);
 
         $id = $this->keygen->generate();
@@ -169,7 +169,7 @@ class Storage
         $user = $user ?: $this->auth->user();
 
         if (!$this->files->store(file_get_contents($uploaded->getPathname()), $path . '/' . $name, $disk, $option)) {
-            throw new WritingFailException;
+            throw new WritingFailException();
         }
 
         $mime = $uploaded->getClientMimeType();
@@ -261,7 +261,7 @@ class Storage
         $user = $user ?: $this->auth->user();
 
         if (!$this->files->store($content, $path . '/' . $name, $disk, $option)) {
-            throw new WritingFailException;
+            throw new WritingFailException();
         }
 
         $file = $this->repo->create([

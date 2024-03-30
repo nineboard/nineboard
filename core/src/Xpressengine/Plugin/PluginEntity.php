@@ -80,7 +80,7 @@ class PluginEntity implements Arrayable, Jsonable
     /**
      * @var string
      */
-    protected  $status;
+    protected $status;
 
     /**
      * @var null
@@ -492,7 +492,6 @@ class PluginEntity implements Arrayable, Jsonable
      */
     public function getChangeLog()
     {
-
         if ($this->hasRemoteData()) {
             $logs = '';
             foreach (data_get($this->remoteData, 'releases', []) as $release) {

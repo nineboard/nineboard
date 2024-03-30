@@ -115,7 +115,7 @@ class WidgetParser
     {
         foreach ((array) $xmlObject as $index => $node) {
             $value = (is_object($node)) ? $this->xml2array($node) : $node;
-            $out[$index] = $value ? : '';
+            $out[$index] = $value ?: '';
         }
         return $out;
     }

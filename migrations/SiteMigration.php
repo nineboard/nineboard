@@ -59,7 +59,9 @@ class SiteMigration extends Migration
      */
     public function installed($site_key = false)
     {
-        if($site_key !== false) return;
+        if ($site_key !== false) {
+            return;
+        }
         $url = \Config::get('app.url');
         $url = preg_replace('#^https?://#', '', $url);
         \DB::table('site')->insert(['host' => $url, 'site_key' => 'default']);

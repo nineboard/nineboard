@@ -31,7 +31,6 @@ use Xpressengine\Menu\AbstractModule;
 
 class DirectLink extends AbstractModule
 {
-
     /**
      * @var string $id id of menuType
      */

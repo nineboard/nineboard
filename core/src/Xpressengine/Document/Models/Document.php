@@ -69,8 +69,7 @@ use Xpressengine\Support\PurifierModules\Html5;
  */
 class Document extends DynamicModel
 {
-
-    const TABLE_NAME = 'documents';
+    public const TABLE_NAME = 'documents';
 
     public $table = self::TABLE_NAME;
 
@@ -103,37 +102,37 @@ class Document extends DynamicModel
     protected static $replyCharLen = 3;
 
     // status
-    const STATUS_TRASH = 0;
-    const STATUS_TEMP = 10;
-    const STATUS_PRIVATE = 20;
-    const STATUS_PUBLIC = 30;
-    const STATUS_NOTICE = 50;
-    const STATUS_TRASH_NOTICE = 55;
+    public const STATUS_TRASH = 0;
+    public const STATUS_TEMP = 10;
+    public const STATUS_PRIVATE = 20;
+    public const STATUS_PUBLIC = 30;
+    public const STATUS_NOTICE = 50;
+    public const STATUS_TRASH_NOTICE = 55;
 
     // approved
-    const APPROVED_REJECTED = 0;
-    const APPROVED_WAITING = 10;
-    const APPROVED_APPROVED = 30;
+    public const APPROVED_REJECTED = 0;
+    public const APPROVED_WAITING = 10;
+    public const APPROVED_APPROVED = 30;
 
     // published
-    const PUBLISHED_REJECTED = 0;
-    const PUBLISHED_WAITING = 10;
-    const PUBLISHED_RESERVED = 20;
-    const PUBLISHED_PUBLISHED = 30;
+    public const PUBLISHED_REJECTED = 0;
+    public const PUBLISHED_WAITING = 10;
+    public const PUBLISHED_RESERVED = 20;
+    public const PUBLISHED_PUBLISHED = 30;
 
     // display
-    const DISPLAY_HIDDEN = 0;
-    const DISPLAY_SECRET = 10;
-    const DISPLAY_VISIBLE = 20;
+    public const DISPLAY_HIDDEN = 0;
+    public const DISPLAY_SECRET = 10;
+    public const DISPLAY_VISIBLE = 20;
 
-    const FORMAT_NONE = 0;
-    const FORMAT_HTML = 10;
+    public const FORMAT_NONE = 0;
+    public const FORMAT_HTML = 10;
 
     // user type
-    const USER_TYPE_GUEST = 'guest';
-    const USER_TYPE_ANONYMITY = 'anonymity';
-    const USER_TYPE_NORMAL = 'normal';
-    const USER_TYPE_USER = 'user';
+    public const USER_TYPE_GUEST = 'guest';
+    public const USER_TYPE_ANONYMITY = 'anonymity';
+    public const USER_TYPE_NORMAL = 'normal';
+    public const USER_TYPE_USER = 'user';
 
     /**
      * @var array
@@ -190,8 +189,8 @@ class Document extends DynamicModel
     {
         $site_key = $site_key == null ? \XeSite::getCurrentSiteKey() : $site_key;
         /** @var Document $instance */
-        $instance = new static;
-        $instance->setDivision($instanceId,$site_key);
+        $instance = new static();
+        $instance->setDivision($instanceId, $site_key);
 
         return $instance;
     }
@@ -202,7 +201,7 @@ class Document extends DynamicModel
      * @param string $instanceId instance id
      * @return $this
      */
-    public function setDivision($instanceId,$site_key = null)
+    public function setDivision($instanceId, $site_key = null)
     {
         $site_key = $site_key == null ? \XeSite::getCurrentSiteKey() : $site_key;
         /** @var DocumentHandler $handler */
@@ -343,7 +342,7 @@ class Document extends DynamicModel
         } elseif ($this->parent_id !== $this->id) {
             $parent = static::find($this->parent_id);
             if ($parent === null) {
-                throw new ParentDocumentNotFoundException;
+                throw new ParentDocumentNotFoundException();
             }
             $this->setAttribute('reply', $this->getReplyChar($parent));
             $this->setAttribute('head', $parent->head);
@@ -410,7 +409,7 @@ class Document extends DynamicModel
 
         if ($prevChars[strlen($prevChars)-1] == end($std)) {
             if (strlen($prevChars) < 2) {
-                throw new ReplyLimitationException;
+                throw new ReplyLimitationException();
             }
             reset($std);
             $new = $this->makeReplyChar(substr($prevChars, 0, strlen($prevChars)-1)) . current($std);
@@ -648,8 +647,8 @@ class Document extends DynamicModel
     {
         parent::boot();
 
-        self::creating(function($model){
-            if(!isset($model->site_key)){
+        self::creating(function ($model) {
+            if (!isset($model->site_key)) {
                 $model->site_key = \XeSite::getCurrentSiteKey();
             }
 
@@ -659,17 +658,16 @@ class Document extends DynamicModel
             }
         });
 
-        self::updating(function($model){
-            if(!isset($model->site_key)){
+        self::updating(function ($model) {
+            if (!isset($model->site_key)) {
                 $model->site_key = \XeSite::getCurrentSiteKey();
             }
         });
 
-        self::saving(function($model){
-            if(!isset($model->site_key)){
+        self::saving(function ($model) {
+            if (!isset($model->site_key)) {
                 $model->site_key = \XeSite::getCurrentSiteKey();
             }
         });
-
     }
 }

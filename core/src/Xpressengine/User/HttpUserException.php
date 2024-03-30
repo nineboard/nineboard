@@ -29,5 +29,4 @@ use Xpressengine\Support\Exceptions\XpressengineException;
  */
 class HttpUserException extends HttpXpressengineException
 {
-
 }

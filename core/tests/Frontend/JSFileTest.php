@@ -10,8 +10,8 @@ namespace Xpressengine\Tests\Frontend;
 
 use Xpressengine\Presenter\Html\Tags\JSFile;
 
-class JSFileTest extends \PHPUnit\Framework\TestCase {
-
+class JSFileTest extends \PHPUnit\Framework\TestCase
+{
     /**
      * @var JSFileStub
      */
@@ -51,10 +51,12 @@ class JSFileTest extends \PHPUnit\Framework\TestCase {
         $output = JSFileStub::output('body.append');
 
         $this->assertEquals(
-'<script src="path/to/file1.js"></script>
+            '<script src="path/to/file1.js"></script>
 <script src="path/to/file2.js"></script>
 <script src="path/to/file3.js"></script>
-<script src="path/to/file4.js"></script>', trim($output));
+<script src="path/to/file4.js"></script>',
+            trim($output)
+        );
     }
 
     public function testTarget()
@@ -64,11 +66,13 @@ class JSFileTest extends \PHPUnit\Framework\TestCase {
         $output = JSFileStub::output('body.append');
 
         $this->assertEquals(
-'<!--[if gt IE 10]><!-->;<script src="path/to/file1.js"></script>
+            '<!--[if gt IE 10]><!-->;<script src="path/to/file1.js"></script>
 <![endif]--><!--[if gt IE 10]><!-->;<script src="path/to/file2.js"></script>
 <![endif]--><!--[if gt IE 10]><!-->;<script src="path/to/file3.js"></script>
 <![endif]--><!--[if gt IE 10]><!-->;<script src="path/to/file4.js"></script>
-<![endif]-->', trim($output));
+<![endif]-->',
+            trim($output)
+        );
     }
 
     public function testAppendTo()
@@ -117,12 +121,14 @@ class JSFileTest extends \PHPUnit\Framework\TestCase {
         $output = JSFileStub::output('body.append');
 
         $this->assertEquals(
-'<!--[if gt IE 10]><!-->;<script src="path/to/file1.js"></script>
+            '<!--[if gt IE 10]><!-->;<script src="path/to/file1.js"></script>
 <![endif]--><!--[if gt IE 10]><!-->;<script src="path/to/file2.js"></script>
 <![endif]--><!--[if gt IE 10]><!-->;<script src="path/to/file3.js"></script>
 <![endif]--><script src="path/to/afterfile.js"></script>
 <!--[if gt IE 10]><!-->;<script src="path/to/file4.js"></script>
-<![endif]-->', trim($output));
+<![endif]-->',
+            trim($output)
+        );
     }
 
     public function testBefore2()
@@ -141,11 +147,13 @@ class JSFileTest extends \PHPUnit\Framework\TestCase {
         $output = JSFileStub::output('body.append');
 
         $this->assertEquals(
-'<script src="path/to/file1.js"></script>
+            '<script src="path/to/file1.js"></script>
 <script src="path/to/target.js"></script>
 <script src="path/to/file3.js"></script>
 <script src="path/to/file2.js"></script>
-<script src="path/to/file4.js"></script>', trim($output));
+<script src="path/to/file4.js"></script>',
+            trim($output)
+        );
     }
 
     public function testMin()

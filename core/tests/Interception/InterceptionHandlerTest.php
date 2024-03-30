@@ -18,7 +18,6 @@ use Xpressengine\Interception\Proxy\ProxyGenerator;
 
 class InterceptionHandlerTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -39,7 +38,6 @@ class InterceptionHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testAddAdvisor()
     {
-
         $collection = $this->getCollection();
         $collection->shouldReceive('put')->once()->with(
             \Mockery::type(Advisor::class),
@@ -78,7 +76,6 @@ class InterceptionHandlerTest extends \PHPUnit\Framework\TestCase
 
     protected function getHandler($advisorCollection = null, $generator = null)
     {
-
         if ($advisorCollection === null) {
             $advisorCollection = $this->getCollection();
         }

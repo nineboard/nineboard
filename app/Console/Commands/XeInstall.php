@@ -240,7 +240,7 @@ class XeInstall extends Command
         $this->disableDebugMode();
 
         // change directory permissions
-        if(!windows_os()) {
+        if (!windows_os()) {
             $this->info('[Setup Directory Permission]');
             $this->stepDirPermission();
         }
@@ -460,9 +460,9 @@ class XeInstall extends Command
         $this->line('Connecting Database using inputted database information..');
 
         try {
-            if($dbInfo['driver'] === 'cubrid'){
+            if ($dbInfo['driver'] === 'cubrid') {
                 $dsn = 'cubrid:host='.$dbInfo['host'].';dbname='.$dbInfo['dbname'];
-            }else{
+            } else {
                 $dsn = 'mysql:host='.$dbInfo['host'].';dbname='.$dbInfo['dbname'];
             }
             if ($dbInfo['port']) {
@@ -470,9 +470,11 @@ class XeInstall extends Command
             }
 
             $db = new PDO(
-                $dsn, $dbInfo['username'], $dbInfo['password'], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
+                $dsn,
+                $dbInfo['username'],
+                $dbInfo['password'],
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
             );
-
         } catch (\Exception $e) {
             $this->output->error('Connection failed!! Check Your Database!' . $e->getMessage());
             throw $e;

@@ -24,20 +24,17 @@ class SpotlightServiceProvider extends ServiceProvider
 
     protected function registerSiteMap()
     {
-        app()->resolving(SpotlightItemContainer::class, function(SpotlightItemContainer $container) {
+        app()->resolving(SpotlightItemContainer::class, function (SpotlightItemContainer $container) {
             $siteKey = app('xe.site')->getCurrentSiteKey();
             $siteMapMenus = app('xe.menu')->menus()->fetchBySiteKey($siteKey, 'items')->getDictionary();
 
-            foreach ($siteMapMenus as $siteMapMenu)
-            {
+            foreach ($siteMapMenus as $siteMapMenu) {
                 $container->add($siteMapMenu, 'menu');
 
-                foreach ($siteMapMenu->items as $siteMapMenuItem)
-                {
+                foreach ($siteMapMenu->items as $siteMapMenuItem) {
                     $container->add($siteMapMenuItem, 'menuItem');
 
-                    if ($siteMapMenuItem->type === 'board@board')
-                    {
+                    if ($siteMapMenuItem->type === 'board@board') {
                         $container->add($siteMapMenuItem, BoardModule::getId());
                         $boardConfig = app('xe.config')->get(sprintf("%s.%s", BoardModule::getId(), $siteMapMenuItem->id));
 
@@ -52,7 +49,7 @@ class SpotlightServiceProvider extends ServiceProvider
 
     protected function registerSettingsMenu()
     {
-        app()->resolving(SpotlightItemContainer::class, function() {
+        app()->resolving(SpotlightItemContainer::class, function () {
             $isSuper = true;
 
             if (auth()->check()) {

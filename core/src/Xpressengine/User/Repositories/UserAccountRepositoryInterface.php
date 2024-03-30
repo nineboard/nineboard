@@ -26,7 +26,6 @@ namespace Xpressengine\User\Repositories;
  */
 interface UserAccountRepositoryInterface
 {
-
     /**
      * 회원 아이디로 계정정보를 조회한다.
      *

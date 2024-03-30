@@ -93,4 +93,3 @@ class Number extends AbstractType
         return View::make('dynamicField/number/createType', ['config' => $config,])->render();
     }
 }
-

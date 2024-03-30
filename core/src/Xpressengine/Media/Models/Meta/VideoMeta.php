@@ -62,23 +62,22 @@ class VideoMeta extends Meta
     {
         parent::boot();
 
-        self::creating(function($model){
-            if(!isset($model->site_key)){
+        self::creating(function ($model) {
+            if (!isset($model->site_key)) {
                 $model->site_key = \XeSite::getCurrentSiteKey();
             }
         });
 
-        self::updating(function($model){
-            if(!isset($model->site_key)){
+        self::updating(function ($model) {
+            if (!isset($model->site_key)) {
                 $model->site_key = \XeSite::getCurrentSiteKey();
             }
         });
 
-        self::saving(function($model){
-            if(!isset($model->site_key)){
+        self::saving(function ($model) {
+            if (!isset($model->site_key)) {
                 $model->site_key = \XeSite::getCurrentSiteKey();
             }
         });
-
     }
 }

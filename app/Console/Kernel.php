@@ -9,6 +9,7 @@
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
+
 namespace App\Console;
 
 use App\ResetProvidersTrait;
@@ -112,7 +113,7 @@ class Kernel extends ConsoleKernel
      */
     protected function registerPluginMethods()
     {
-        if(app()->getInstalledVersion() != null) {
+        if (app()->getInstalledVersion() != null) {
             $configs = \DB::table('config')->where('name', 'plugin')->get();
             foreach ($configs as $config) {
                 $vars = json_dec($config->vars, true);
@@ -131,7 +132,7 @@ class Kernel extends ConsoleKernel
                         //register schedule method of plugin
                         //커맨드라인에서 URL없이 접속하기때문에, 사이트키 구분을 위해 해당 플러그인이 활성화된 사이트의 config에 붙어있는 site_key를 활용
                         if (method_exists($pluginObj, 'schedule')) {
-                            if(array_get($this->scheduledPlugins, $config->site_key) == null) {
+                            if (array_get($this->scheduledPlugins, $config->site_key) == null) {
                                 $this->scheduledPlugins[$config->site_key] = [];
                             }
                             $this->scheduledPlugins[$config->site_key][] = $pluginObj;
@@ -141,8 +142,8 @@ class Kernel extends ConsoleKernel
                         //플러그인에서 artisan 명령어를 활용할 수 있도록 등록은 해 주지만, 실제 사이트키 구분로직은 필요에 따라 내부에서 다시 구현해야함
                         if (method_exists($pluginObj, 'commandClass')) {
                             $commandClass = $pluginObj->commandClass($config->site_key);
-                            if(is_array($commandClass)) {
-                                foreach($commandClass as $command) {
+                            if (is_array($commandClass)) {
+                                foreach ($commandClass as $command) {
                                     $this->commands[] = $command;
                                 }
                             } else {
@@ -170,12 +171,12 @@ class Kernel extends ConsoleKernel
         ** register crontab -e : * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
         **/
         // plugin list in site
-        foreach($this->scheduledPlugins as $siteKey => $plugins) {
-            foreach($plugins as $pluginObj) {
+        foreach ($this->scheduledPlugins as $siteKey => $plugins) {
+            foreach ($plugins as $pluginObj) {
                 try {
                     $pluginObj->schedule($schedule, $siteKey);
                 } catch (\Exception $e) {
-                    Log::info(sprintf('Failed Schedule Working in %s site.\n%s:%s\n%s\n%s',$siteKey,$e->getFile(),$e->getLine(),$e->getMessage(),$e->getCode()));
+                    Log::info(sprintf('Failed Schedule Working in %s site.\n%s:%s\n%s\n%s', $siteKey, $e->getFile(), $e->getLine(), $e->getMessage(), $e->getCode()));
                 }
             }
         }

@@ -32,22 +32,22 @@ class Rating
     /**
      * Guest 회원 등급
      */
-    const GUEST = 'guest';
+    public const GUEST = 'guest';
 
     /**
      * 일반 회원 등급
      */
-    const USER = 'user';
+    public const USER = 'user';
 
     /**
      * 관리자 회원등급
      */
-    const MANAGER = 'manager';
+    public const MANAGER = 'manager';
 
     /**
      * 최고 관리자 회원등급
      */
-    const SUPER = 'super';
+    public const SUPER = 'super';
 
     /**
      * 회원등급 목록

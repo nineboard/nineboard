@@ -8,7 +8,6 @@
 
 namespace Xpressengine\Tests\UIObject;
 
-
 use Xpressengine\UIObject\UIObjectHandler;
 
 class UIObjectHandlerTest extends \PHPUnit\Framework\TestCase
@@ -131,7 +130,6 @@ class UIObjectHandlerTest extends \PHPUnit\Framework\TestCase
 
 class UIObjectStub
 {
-
     public function __construct()
     {
     }

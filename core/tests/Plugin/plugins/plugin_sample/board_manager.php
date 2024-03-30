@@ -10,20 +10,18 @@ namespace Xpressengine\Tests\Plugin\Sample;
 
 class BoardManager
 {
-
     /**
      * @var BoardManager
      */
-    static protected $singleton;
+    protected static $singleton;
 
-    static public function getInstance()
+    public static function getInstance()
     {
         return self::$singleton = new static();
     }
 
     final private function __construct()
     {
-
     }
 
     public function getIndex()

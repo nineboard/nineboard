@@ -99,7 +99,6 @@ class FrontendHandler
      */
     public function __call($name, array $arguments)
     {
-
         if (!isset($this->tags[$name])) {
             throw new \BadMethodCallException();
         }

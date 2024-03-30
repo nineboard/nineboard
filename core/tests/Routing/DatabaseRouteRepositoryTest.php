@@ -174,7 +174,7 @@ class DatabaseRouteRepositoryTest extends \PHPUnit\Framework\TestCase
             'settingsPrefix' => 'settings',
             'fixedPrefix' => 'plugin'
         ]);
-        
+
         $instance->expects($this->once())->method('findByUrlAndSiteKey')->with('board', 'default')->willReturn(null);
 
 

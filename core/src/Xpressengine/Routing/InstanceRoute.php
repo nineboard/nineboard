@@ -65,7 +65,7 @@ class InstanceRoute extends DynamicModel
      */
     public function MenuItem()
     {
-        return $this->belongsTo(MenuItem::class,'instance_id','id');
+        return $this->belongsTo(MenuItem::class, 'instance_id', 'id');
     }
 
     /**

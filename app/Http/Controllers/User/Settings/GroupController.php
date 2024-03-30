@@ -53,7 +53,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = $this->groups->with('userCountRelation')->where('site_key',\XeSite::getCurrentSiteKey())->orderBy('created_at')->get();
+        $groups = $this->groups->with('userCountRelation')->where('site_key', \XeSite::getCurrentSiteKey())->orderBy('created_at')->get();
 
         $config = app('xe.config')->get('user.register');
         $joinGroup = $config->get('joinGroup');
@@ -208,7 +208,7 @@ class GroupController extends Controller
         }
 
         $site_key = request()->get('site_key') == null ? \XeSite::getCurrentSiteKey() : request()->get('site_key');
-        $matched = $this->groups->where('name', 'like', '%'.$keyword.'%')->where('site_key',$site_key)->paginate()->items();
+        $matched = $this->groups->where('name', 'like', '%'.$keyword.'%')->where('site_key', $site_key)->paginate()->items();
         return XePresenter::makeApi($matched);
     }
 }

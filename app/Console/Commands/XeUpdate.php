@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace App\Console\Commands;
 
 use FilesystemIterator;
@@ -133,7 +134,7 @@ class XeUpdate extends ShouldOperation
         if ($this->input->isInteractive() && $this->confirm(
                 // Xpressengine ver.".$updateVersion."을 업데이트합니다. 최대 수분이 소요될 수 있습니다.\r\n 업데이트 하시겠습니까?
                 "The Xpressengine ver.".$updateVersion." will be updated. It may take up to a few minutes. \r\nDo you want to update?"
-            ) === false
+        ) === false
         ) {
             return;
         }
@@ -328,7 +329,7 @@ class XeUpdate extends ShouldOperation
 
             $this->output->write(" Downloading <info>v{$version}</info>: ");
             $filepath = $this->releaseProvider->download($version, $updatesPath);
-            $zip = new \ZipArchive;
+            $zip = new \ZipArchive();
             if ($zip->open($filepath) !== true) {
                 throw new \RuntimeException("fail to open zip file [$filepath]");
             }
@@ -400,7 +401,7 @@ class XeUpdate extends ShouldOperation
             $migration = new $class();
             /** @var Migration $migration */
             $this->output->write(" updating $name.. ");
-            if($migration->checkUpdated($installedVersion) === false) {
+            if ($migration->checkUpdated($installedVersion) === false) {
                 $migration->update($installedVersion);
                 $this->info("[success]");
             } else {

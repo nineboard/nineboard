@@ -55,7 +55,9 @@ class PluginScanner
         $this->pluginDirectory = $pluginDirectory;
 
         $path_char = "/";
-        if (strtoupper(substr(PHP_OS,0,3)) == "WIN") $path_char = "\\";
+        if (strtoupper(substr(PHP_OS, 0, 3)) == "WIN") {
+            $path_char = "\\";
+        }
         $this->basePath = $basePath.$path_char;
     }
 

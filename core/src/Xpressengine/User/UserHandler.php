@@ -211,17 +211,17 @@ class UserHandler
     {
         $data['rating'] = $data['rating'] ?? Rating::USER;
         $data['status'] = $data['status'] ?? $this->configManager->getVal(
-                'user.register.register_process',
-                User::STATUS_ACTIVATED
-            );
+            'user.register.register_process',
+            User::STATUS_ACTIVATED
+        );
 
         if ($this->isUseLoginId() === false) {
             $data['login_id'] = $data['email'];
         }
 
         if (isset($data['display_name']) === false && $this->configManager->getVal(
-                'user.register.use_display_name'
-            ) === false) {
+            'user.register.use_display_name'
+        ) === false) {
             $data['display_name'] = $this->isUseLoginId() === true ? $data['login_id'] : $data['email'];
         }
 

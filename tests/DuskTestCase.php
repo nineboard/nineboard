@@ -36,7 +36,7 @@ abstract class DuskTestCase extends BaseTestCase
      */
     public static function prepare()
     {
-        if(env('DUSK_STARTDRIVER', true)) {
+        if (env('DUSK_STARTDRIVER', true)) {
             static::startChromeDriver();
         }
     }
@@ -47,20 +47,23 @@ abstract class DuskTestCase extends BaseTestCase
      */
     protected function driver()
     {
-        if(env('DUSK_STARTDRIVER', true)) {
-            $options = (new ChromeOptions)->addArguments([
+        if (env('DUSK_STARTDRIVER', true)) {
+            $options = (new ChromeOptions())->addArguments([
                 'no-sandbox',
                 'disable-gpu',
                 'headless'
             ]);
             return RemoteWebDriver::create(
-                env('DUSK_HUB', 'http://localhost:9515'), DesiredCapabilities::chrome()->setCapability(
-                    ChromeOptions::CAPABILITY, $options
+                env('DUSK_HUB', 'http://localhost:9515'),
+                DesiredCapabilities::chrome()->setCapability(
+                    ChromeOptions::CAPABILITY,
+                    $options
                 )
             );
         } else {
             return RemoteWebDriver::create(
-                env('DUSK_HUB', 'http://localhost:9515'), DesiredCapabilities::chrome()
+                env('DUSK_HUB', 'http://localhost:9515'),
+                DesiredCapabilities::chrome()
             );
         }
     }

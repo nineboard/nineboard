@@ -18,7 +18,6 @@ use Xpressengine\Interception\Proxy\ProxyGenerator;
 
 class ProxyGeneratorTest extends \PHPUnit\Framework\TestCase
 {
-
     public function testConstruct()
     {
         $this->assertInstanceOf(ProxyGenerator::class, $this->getGenerator());
@@ -84,7 +83,7 @@ class ProxyGeneratorTest extends \PHPUnit\Framework\TestCase
     {
         if ($loader === 'FileLoader') {
             return \Mockery::mock(FileLoader::class);
-        } else if ($loader === 'EvalLoader') {
+        } elseif ($loader === 'EvalLoader') {
             return \Mockery::mock(EvalLoader::class);
         }
         return \Mockery::mock(Loader::class);
@@ -94,7 +93,6 @@ class ProxyGeneratorTest extends \PHPUnit\Framework\TestCase
     {
         return \Mockery::mock(Pass::class);
     }
-
 }
 
 

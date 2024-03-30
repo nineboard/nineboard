@@ -15,7 +15,6 @@ use Xpressengine\Register\Container;
 
 class PluginRegisterTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         Mockery::close();

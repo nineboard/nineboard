@@ -58,7 +58,7 @@ class EmailBroker
      */
     public function sendEmailForRegister(EmailInterface $mail, $token)
     {
-        (new class($mail) {
+        (new class ($mail) {
             use Notifiable;
 
             protected $mail;
@@ -102,7 +102,7 @@ class EmailBroker
      */
     public function sendEmailForRegisterApprove(EmailInterface $mail, $token)
     {
-        (new class($mail) {
+        (new class ($mail) {
             use Notifiable;
 
             protected $mail;
@@ -149,7 +149,7 @@ class EmailBroker
      */
     public function sendEmailForAddingEmail(EmailInterface $mail)
     {
-        (new class($mail) {
+        (new class ($mail) {
             use Notifiable;
 
             protected $mail;

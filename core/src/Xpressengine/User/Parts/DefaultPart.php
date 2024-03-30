@@ -26,11 +26,11 @@ namespace Xpressengine\User\Parts;
  */
 class DefaultPart extends RegisterFormPart
 {
-    const ID = 'default-info';
+    public const ID = 'default-info';
 
-    const NAME = 'xe::defaultInfo';
+    public const NAME = 'xe::defaultInfo';
 
-    const DESCRIPTION = 'xe::descDefaultInfo';
+    public const DESCRIPTION = 'xe::descDefaultInfo';
 
     /**
      * Indicates if the form part is implicit

@@ -10,7 +10,6 @@ use Xpressengine\Plugin\PluginHandler;
 
 class PluginSeed extends Command
 {
-
     /**
      * @var PluginHandler
      */

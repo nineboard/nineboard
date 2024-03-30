@@ -28,7 +28,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 interface RepositoryInterface
 {
-
     /**
      * update
      *

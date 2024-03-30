@@ -14,7 +14,6 @@ use Xpressengine\Interception\Proxy;
 
 class ProxyTest /*extends \PHPUnit\Framework\TestCase*/
 {
-
     /**
      * @var InterceptionHandler
      */
@@ -41,7 +40,6 @@ class ProxyTest /*extends \PHPUnit\Framework\TestCase*/
 
     public function testNewProxy()
     {
-
         $proxy = $this->targetObject;
 
         $this->assertEquals(get_class($proxy->getTargetObject()), 'Xpressengine\Tests\Interception\Document');
@@ -53,9 +51,11 @@ class ProxyTest /*extends \PHPUnit\Framework\TestCase*/
         $advisorStore = $proxy->getAdvisorCollection();
 
         $advisor1 = new Advisor(
-            'ad1', 'Xpressengine\Tests\Interception\Document@insertDocument', function ($target, $title, $content) {
-            return 'ad1('.$target($title, $content).')';
-        }
+            'ad1',
+            'Xpressengine\Tests\Interception\Document@insertDocument',
+            function ($target, $title, $content) {
+                return 'ad1('.$target($title, $content).')';
+            }
         );
         $advisorStore->put($advisor1);
 
@@ -92,7 +92,6 @@ class ProxyTest /*extends \PHPUnit\Framework\TestCase*/
 
     public function testProxyCallExistMethodOfTargetWithReferenceArgs()
     {
-
         $proxy        = $this->targetObject;
         $advisorStore = $proxy->getAdvisorCollection();
 
@@ -120,7 +119,8 @@ class ProxyTest /*extends \PHPUnit\Framework\TestCase*/
         $advisorStore = $proxy->getAdvisorCollection();
 
         $advisor1 = new Advisor(
-            'ad1', 'Xpressengine\Tests\Interception\Document@magicMethod',
+            'ad1',
+            'Xpressengine\Tests\Interception\Document@magicMethod',
             function ($target, $title, $content) {
                 return 'ad1('.$target($title, $content).')';
             }
@@ -128,7 +128,8 @@ class ProxyTest /*extends \PHPUnit\Framework\TestCase*/
         $advisorStore->put($advisor1);
 
         $advisor2 = new Advisor(
-            'ad2', 'Xpressengine\Tests\Interception\Document@magicMethod',
+            'ad2',
+            'Xpressengine\Tests\Interception\Document@magicMethod',
             function ($target, $title, $content) {
                 return 'ad2('.$target($title, $content).')';
             }

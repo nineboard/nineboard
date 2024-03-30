@@ -86,7 +86,7 @@ class UpdateController extends Controller
      */
     public function update(Request $request, Operator $operator, ReleaseProvider $releaseProvider)
     {
-        if($operator->isLocked()) {
+        if ($operator->isLocked()) {
             throw new HttpException(422, xe_trans('xe::alreadyProceeding'));
         }
 

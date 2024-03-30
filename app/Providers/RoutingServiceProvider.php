@@ -134,11 +134,11 @@ class RoutingServiceProvider extends ServiceProvider
     public function setNewRouteValidator()
     {
         Route::$validators = [
-            'method' => new MethodValidator,
-            'scheme' => new SchemeValidator,
-            'host' => new HostValidator,
-            'uri' => new UriValidator,
-            'module' => new ModuleValidator
+            'method' => new MethodValidator(),
+            'scheme' => new SchemeValidator(),
+            'host' => new HostValidator(),
+            'uri' => new UriValidator(),
+            'module' => new ModuleValidator()
         ];
     }
 
@@ -155,7 +155,6 @@ class RoutingServiceProvider extends ServiceProvider
         $this->registerFixedMacro($router);
         $this->registerSettingsMacro($router);
         $this->registerInstanceMacro($router);
-
     }
 
     /**
@@ -170,7 +169,6 @@ class RoutingServiceProvider extends ServiceProvider
     protected function registerSettingsMacro(Router $router)
     {
         $manageMacro = function ($key, Closure $callback, $routeOptions = null) {
-
             $key = str_replace('.', '/', $key);
 
             $attributes = [
@@ -201,7 +199,6 @@ class RoutingServiceProvider extends ServiceProvider
     protected function registerFixedMacro(Router $router)
     {
         $fixedMacro = function ($key, Closure $callback, $routeOptions = null) {
-
             $newKey = str_replace('@', '/', $key);
 
             $attributes = [
@@ -232,7 +229,6 @@ class RoutingServiceProvider extends ServiceProvider
     {
         static $seq = 1;
         $instanceMacro = function ($key, Closure $callback, array $routeOptions = null) use (&$seq) {
-
             $pattern = '{instanceGroup'.$seq++.'}';
             $attributes = [
                 'prefix' => $pattern,
@@ -258,7 +254,6 @@ class RoutingServiceProvider extends ServiceProvider
         };
 
         $router->macro('instance', $instanceMacro);
-
     }
 
     /**

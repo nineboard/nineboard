@@ -33,7 +33,6 @@ use Illuminate\Contracts\Support\Renderable;
  */
 class SkinEntity implements Arrayable, Jsonable
 {
-
     /**
      * @var string skin id
      */

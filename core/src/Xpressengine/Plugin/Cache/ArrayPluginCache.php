@@ -28,7 +28,6 @@ namespace Xpressengine\Plugin\Cache;
  */
 class ArrayPluginCache implements PluginCache
 {
-
     /**
      * plugin info 목록을 저장할 array
      *

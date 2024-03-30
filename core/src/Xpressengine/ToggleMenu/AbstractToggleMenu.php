@@ -46,12 +46,12 @@ abstract class AbstractToggleMenu implements ComponentInterface
      */
     protected $identifier;
 
-    const MENUTYPE_EXEC = 'exec';
+    public const MENUTYPE_EXEC = 'exec';
 
-    const MENUTYPE_LINK = 'link';
+    public const MENUTYPE_LINK = 'link';
 
-    const MENUTYPE_RAW = 'raw';
-    
+    public const MENUTYPE_RAW = 'raw';
+
     /**
      * getTitle
      *

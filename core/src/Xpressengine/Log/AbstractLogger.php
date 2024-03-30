@@ -28,9 +28,9 @@ use Xpressengine\Log\Models\Log;
  */
 abstract class AbstractLogger
 {
-    const ID = '';
+    public const ID = '';
 
-    const TITLE = '';
+    public const TITLE = '';
 
     /**
      * @var LogHandler

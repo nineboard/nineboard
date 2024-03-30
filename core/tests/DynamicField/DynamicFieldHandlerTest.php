@@ -486,7 +486,7 @@ class DynamicFieldHandlerTest extends TestCase
 
 class TestType2 extends AbstractType
 {
-    static protected $id = 'typeId';
+    protected static $id = 'typeId';
 
     /**
      * get field type name
@@ -560,7 +560,7 @@ class TestType2 extends AbstractType
 
 class TestSkin2 extends AbstractSkin
 {
-    static protected $id = 'skinId';
+    protected static $id = 'skinId';
 
     /**
      * get name of skin
@@ -592,4 +592,3 @@ class TestSkin2 extends AbstractSkin
         return ['skin_setting_rules'];
     }
 }
-

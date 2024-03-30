@@ -12,7 +12,6 @@ use Xpressengine\Presenter\Html\Tags\Html;
 
 class HtmlTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @var Html
      */
@@ -48,7 +47,7 @@ class HtmlTest extends \PHPUnit\Framework\TestCase
     public function testOutputComposer()
     {
         $html = new Html('hi');
-        $html->content(function(){
+        $html->content(function () {
             return 'hi';
         })->load();
         $output = Html::output('body.append');

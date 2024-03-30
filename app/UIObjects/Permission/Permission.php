@@ -106,7 +106,6 @@ class Permission extends AbstractUIObject
      */
     protected function loadHtmlString($title, $jsonRet)
     {
-
         $userSearchUrl = route('settings.user.search');
         $groupSearchUrl = route('manage.group.search');
         $vgroupAll = app('xe.user.virtualGroups')->all();

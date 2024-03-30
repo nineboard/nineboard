@@ -95,7 +95,7 @@ class SettingsMigration extends Migration
             $updated = false;
         }
 
-        if(Schema::hasColumn('admin_log', 'site_key') == false) {
+        if (Schema::hasColumn('admin_log', 'site_key') == false) {
             return false;
         }
 
@@ -117,7 +117,7 @@ class SettingsMigration extends Migration
             });
         }
 
-        if(Schema::hasColumn('admin_log', 'site_key') == false) {
+        if (Schema::hasColumn('admin_log', 'site_key') == false) {
             Schema::table('admin_log', function (Blueprint $table) {
                 $table->string('site_key', 50)->nullable()->default('default')->comment('site key. for multi web site support.');
                 $table->index('site_key');

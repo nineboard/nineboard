@@ -134,5 +134,4 @@ class CategoryMigration extends Migration
             });
         }
     }
-
 }

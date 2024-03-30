@@ -12,7 +12,6 @@ use Xpressengine\Presenter\Html\Tags\IconFile;
 
 class IconFileTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @var IconFileStub
      */
@@ -72,4 +71,3 @@ class IconFileStub extends IconFile
         return $file;
     }
 }
-

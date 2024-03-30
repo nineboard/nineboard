@@ -54,7 +54,7 @@ class WidgetBoxHandler
     /**
      * @var string
      */
-    const REGISTER_KEY = 'widget/presenter';
+    public const REGISTER_KEY = 'widget/presenter';
 
     /**
      * WidgetBoxHandler constructor.
@@ -77,7 +77,9 @@ class WidgetBoxHandler
      */
     public function create($data, $site_key = null)
     {
-        if($site_key == null) $site_key = \XeSite::getCurrentSiteKey();
+        if ($site_key == null) {
+            $site_key = \XeSite::getCurrentSiteKey();
+        }
         $id = array_get($data, 'id');
 
         if ($id === null) {
@@ -88,7 +90,7 @@ class WidgetBoxHandler
             throw new InvalidIDException();
         }
 
-        if ($this->repository->query()->where('site_key',$site_key)->find($id) !== null) {
+        if ($this->repository->query()->where('site_key', $site_key)->find($id) !== null) {
             throw new IDAlreadyExistsException();
         }
 

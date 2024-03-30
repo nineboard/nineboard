@@ -34,7 +34,7 @@ class ConfigHandler
     /**
      * config name
      */
-    const CONFIG_NAME = 'document';
+    public const CONFIG_NAME = 'document';
 
     /**
      * ConfigManager instance
@@ -90,14 +90,16 @@ class ConfigHandler
      * @param string $instanceId instance id
      * @return ConfigEntity
      */
-    public function get($instanceId = null,$site_key = null)
+    public function get($instanceId = null, $site_key = null)
     {
         $site_key = $site_key == null ? \XeSite::getCurrentSiteKey() : $site_key;
         if ($instanceId === null) {
             return $this->configManager->get(self::CONFIG_NAME, false, $site_key);
         } else {
             return $this->configManager->get(
-                sprintf('%s.%s', self::CONFIG_NAME, $instanceId), false, $site_key
+                sprintf('%s.%s', self::CONFIG_NAME, $instanceId),
+                false,
+                $site_key
             );
         }
     }
@@ -108,7 +110,7 @@ class ConfigHandler
      * @param string $instanceId instance id
      * @return ConfigEntity
      */
-    public function getOrDefault($instanceId,$site_key = null)
+    public function getOrDefault($instanceId, $site_key = null)
     {
         $site_key = $site_key == null ? \XeSite::getCurrentSiteKey() : $site_key;
         $config = $this->get($instanceId, $site_key);

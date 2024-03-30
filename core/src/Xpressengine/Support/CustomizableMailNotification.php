@@ -210,7 +210,7 @@ abstract class CustomizableMailNotification extends Notification
      */
     protected function createMessage()
     {
-        return new MailMessage;
+        return new MailMessage();
     }
 
     /**

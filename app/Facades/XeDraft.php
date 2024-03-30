@@ -37,6 +37,5 @@ class XeDraft extends Facade
     protected static function getFacadeAccessor()
     {
         return 'xe.draft';
-
     }
 }

@@ -26,11 +26,11 @@ namespace Xpressengine\User\Parts;
  */
 class CaptchaPart extends RegisterFormPart
 {
-    const ID = 'captcha';
+    public const ID = 'captcha';
 
-    const NAME = 'CAPTCHA';
+    public const NAME = 'CAPTCHA';
 
-    const DESCRIPTION = 'xe::descCaptcha';
+    public const DESCRIPTION = 'xe::descCaptcha';
 
     /**
      * Get the html string of the form part

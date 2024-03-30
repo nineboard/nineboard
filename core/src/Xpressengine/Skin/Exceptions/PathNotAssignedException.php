@@ -28,5 +28,4 @@ use Xpressengine\Skin\SkinException;
  */
 class PathNotAssignedException extends SkinException
 {
-
 }

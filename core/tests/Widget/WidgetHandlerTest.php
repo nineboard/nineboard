@@ -22,7 +22,6 @@ namespace Xpressengine\Support\Exceptions {
     }
 }
 
-
 namespace Xpressengine\Tests\Widget {
 
     use PHPUnit\Framework\TestCase;
@@ -157,7 +156,6 @@ namespace Xpressengine\Tests\Widget {
             $widgetClassName = $widgetHandler->getClassName('widget/xpressengine@testWidgetId');
 
             $this->assertEquals($this->fakeWidgetClassName, $widgetClassName);
-
         }
 
         /**
@@ -262,7 +260,7 @@ namespace Xpressengine\Tests\Widget {
          * @return void
          */
         public function testSetup()
-            {
+        {
             $widgetHandler = new WidgetHandler($this->register, $this->guard, $this->factory, false);
 
             $register = $this->register;
@@ -271,7 +269,6 @@ namespace Xpressengine\Tests\Widget {
             $fakeWidgetSetupString = $widgetHandler->setup('testWidgetId');
 
             $this->assertEquals('fake Setup String', $fakeWidgetSetupString);
-
         }
 
         /**
@@ -289,7 +286,6 @@ namespace Xpressengine\Tests\Widget {
             $register->shouldReceive('get')->andReturn(null);
 
             $fakeWidgetSetupString = $widgetHandler->setup('testWidgetId');
-
         }
 
         /**

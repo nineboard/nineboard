@@ -79,7 +79,7 @@ class MenuServiceProvider extends ServiceProvider
         }
 
         // 메뉴아이템의 링크를 편하게 제공하기 위한 resolver 등록
-        MenuItem::setLinkResolver(function(MenuItem $item){
+        MenuItem::setLinkResolver(function (MenuItem $item) {
             $title = xe_trans($item->getAttributeValue('title'));
 
             $basicImageId = $item->basic_image_id;

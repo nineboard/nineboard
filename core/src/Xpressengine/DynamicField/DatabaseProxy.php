@@ -31,7 +31,6 @@ use Xpressengine\Config\ConfigEntity;
  */
 class DatabaseProxy implements ProxyInterface
 {
-
     /**
      * @var DynamicFieldHandler
      */
@@ -114,7 +113,7 @@ class DatabaseProxy implements ProxyInterface
         $this->options = $options;
 
         if (isset($this->options['table']) == false) {
-            throw new Exceptions\InvalidOptionException;
+            throw new Exceptions\InvalidOptionException();
         }
 
         $this->group = $this->options['table'];

@@ -40,7 +40,8 @@ class DraftServiceProvider extends ServiceProvider
         $this->app->singleton(DraftHandler::class, function ($app) {
             $proxyClass = $app['xe.interception']->proxy(DraftHandler::class, 'XeDraft');
             return new $proxyClass(
-                new DraftRepository($app['xe.db']->connection(), $app['xe.keygen']), $app['auth']
+                new DraftRepository($app['xe.db']->connection(), $app['xe.keygen']),
+                $app['auth']
             );
         });
         $this->app->alias(DraftHandler::class, 'xe.draft');

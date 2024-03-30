@@ -72,8 +72,8 @@ Route::settings('lang', function () {
 
 Route::group(
     ['prefix' => 'lang'],
-    function() {
-        Route::match(array('GET', 'POST'),'lines/many', ['as' => 'lang.lines.many', 'uses' => 'LangController@getLinesMany']);
+    function () {
+        Route::match(array('GET', 'POST'), 'lines/many', ['as' => 'lang.lines.many', 'uses' => 'LangController@getLinesMany']);
         Route::get('lines/{key?}', ['as' => 'lang.lines.key', 'uses' => 'LangController@getLinesWithKey']);
         Route::get('search/{locale}', ['as' => 'lang.search', 'uses' => 'LangController@searchKeyword']);
     }
@@ -157,7 +157,6 @@ Route::group(
 Route::group(
     ['prefix' => 'user'],
     function () {
-
         Route::get('/{section?}', ['as' => 'user.settings', 'uses' => 'User\UserController@show']);
 
         // settings secton
@@ -301,8 +300,7 @@ Route::get('terms/{id}', ['as' => 'terms', 'uses' => 'User\TermsController@index
 Route::settings(
     'user',
     function () {
-
-        Route::group(['middleware' => ['admin']], function() {
+        Route::group(['middleware' => ['admin']], function () {
             // index
             Route::get(
                 '/',
@@ -434,7 +432,6 @@ Route::settings(
 Route::settings(
     'group',
     function () {
-
         Route::get(
             'searchGroup/{keyword?}',
             ['as' => 'manage.group.search', 'uses' => 'User\Settings\GroupController@search']
@@ -544,7 +541,6 @@ Route::settings('setting', function () {
 Route::settings(
     'menu',
     function () {
-
         Route::get(
             '/',
             [
@@ -706,8 +702,7 @@ Route::settings('extension', function () {
 });
 
 /* update */
-Route::settings('update', function(){
-
+Route::settings('update', function () {
     Route::get('/', [
         'as' => 'settings.coreupdate.show',
         'uses' => 'UpdateController@show',
@@ -719,7 +714,7 @@ Route::settings('update', function(){
     ]);
 });
 
-Route::settings('operation', function(){
+Route::settings('operation', function () {
     Route::get('/', [
         'as' => 'settings.operation.index',
         'uses' => 'UpdateController@showOperation',
@@ -829,7 +824,6 @@ Route::settings(
                         'uses' => 'Plugin\PluginManageController@makeSkin'
                     ]);
                 });
-
             });
 
             Route::group(['prefix' => '{pluginId?}'], function () {
@@ -1110,8 +1104,7 @@ Route::group(['prefix' => 'editor'], function () {
     Route::get('mention', ['as' => 'editor.mention', 'uses' => 'EditorController@mention']);
 });
 
-Route::group(['prefix'=>'widgetbox'], function() {
-
+Route::group(['prefix'=>'widgetbox'], function () {
     Route::get('create', ['as' => 'widgetbox.create', 'uses' => 'WidgetBoxController@create']);
     Route::post('/', ['as' => 'widgetbox.store', 'uses' => 'WidgetBoxController@store']);
 
@@ -1128,7 +1121,7 @@ Route::group(['prefix'=>'widgetbox'], function() {
     Route::post('{id}/permission', ['as' => 'widgetbox.permission', 'uses' => 'WidgetBoxController@storePermission']);
 });
 
-Route::group(['prefix'=>'spotlights'], function() {
+Route::group(['prefix'=>'spotlights'], function () {
     Route::get('/', ['as' => 'spotlights.index', 'uses' => 'SpotlightController@index']);
     Route::get('/{id}', ['as' => 'spotlights.show', 'uses' => 'SpotlightController@show']);
 });

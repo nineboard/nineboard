@@ -10,8 +10,8 @@ namespace Xpressengine\Tests\Skin;
 
 use Xpressengine\Skin\AbstractSkin;
 
-class AbstractSkinTest extends \PHPUnit\Framework\TestCase {
-
+class AbstractSkinTest extends \PHPUnit\Framework\TestCase
+{
     protected function tearDown()
     {
         \Mockery::close();
@@ -38,7 +38,6 @@ class AbstractSkinTest extends \PHPUnit\Framework\TestCase {
 
         $skin->setting(['config2']);
         $this->assertEquals(['config2'], $skin->setting());
-
     }
 
     public function testRender()
@@ -82,6 +81,4 @@ class TestSkin extends AbstractSkin
     {
         return 'http://foo.bar';
     }
-
-
 }

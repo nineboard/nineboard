@@ -51,7 +51,6 @@ class MediaMigration extends Migration
 
             $table->index('site_key');
             $table->index('file_id');
-
         });
 
         Schema::create('files_video', function (Blueprint $table) {

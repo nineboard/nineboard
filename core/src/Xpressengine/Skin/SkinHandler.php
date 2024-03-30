@@ -30,11 +30,10 @@ use Xpressengine\Skin\Exceptions\SkinNotFoundException;
  */
 class SkinHandler
 {
-
     /**
      * 타겟에 대한 스킨정보를 저장할 때 사용하는 Key의 구분자.
      */
-    const INSTANCE_DELIMITER = ':';
+    public const INSTANCE_DELIMITER = ':';
 
     /**
      * @var PluginRegister Container. 등록된 스킨 목록을 가지고 있다.

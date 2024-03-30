@@ -159,7 +159,7 @@ class MenuMigration extends Migration
             return false;
         }
 
-        if(Schema::hasColumn('menu_item', 'site_key') == false) {
+        if (Schema::hasColumn('menu_item', 'site_key') == false) {
             return false;
         }
 
@@ -181,7 +181,7 @@ class MenuMigration extends Migration
             $this->createMenuOrderingColumn();
         }
 
-        if(Schema::hasColumn('menu_item', 'site_key') == false) {
+        if (Schema::hasColumn('menu_item', 'site_key') == false) {
             Schema::table('menu_item', function (Blueprint $table) {
                 $table->string('site_key', 50)->nullable()->default('default')->comment('site key. for multi web site support.');
                 $table->index('site_key');
@@ -239,7 +239,6 @@ class MenuMigration extends Migration
             $item->ordering = $index + 1;
             $item->save();
         }
-
     }
 
     /**
@@ -309,7 +308,7 @@ class MenuMigration extends Migration
         $item = $menuHandler->createItem($mainMenu, $inputs, $menuTypeInput);
 
         $menuHandler->setMenuItemTheme($item, $theme, $theme);
-        app('xe.permission')->register($menuHandler->permKeyString($item), new Grant);
+        app('xe.permission')->register($menuHandler->permKeyString($item), new Grant());
 
         $this->siteDefaultConfig($mainMenu, $item->id);
 
@@ -447,10 +446,10 @@ class MenuMigration extends Migration
         $menuHandler->setMenuItemTheme($boardItem, null, null);
         $menuHandler->setMenuItemTheme($galleryItem, null, null);
 
-        app('xe.permission')->register($menuHandler->permKeyString($noticeItem), new Grant);
-        app('xe.permission')->register($menuHandler->permKeyString($blogItem), new Grant);
-        app('xe.permission')->register($menuHandler->permKeyString($boardItem), new Grant);
-        app('xe.permission')->register($menuHandler->permKeyString($galleryItem), new Grant);
+        app('xe.permission')->register($menuHandler->permKeyString($noticeItem), new Grant());
+        app('xe.permission')->register($menuHandler->permKeyString($blogItem), new Grant());
+        app('xe.permission')->register($menuHandler->permKeyString($boardItem), new Grant());
+        app('xe.permission')->register($menuHandler->permKeyString($galleryItem), new Grant());
 
         /** @var SkinHandler $skinHandler */
         $skinHandler = app('xe.skin');

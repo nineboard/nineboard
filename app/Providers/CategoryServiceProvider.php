@@ -61,7 +61,7 @@ class CategoryServiceProvider extends ServiceProvider
             $proxyClass = $app['xe.interception']->proxy(CategoryHandler::class, 'XeCategory');
 
             return new $proxyClass(
-                new CategoryRepository,
+                new CategoryRepository(),
                 new CategoryItemRepository($app['events'])
             );
         }, true);

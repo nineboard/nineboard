@@ -115,36 +115,29 @@ class ItemClass extends AbstractToggleMenu
 {
     public static function getName()
     {
-
     }
 
     public static function getDescription()
     {
-
     }
 
     public function getText()
     {
-
     }
 
     public function getType()
     {
-
     }
 
     public function getAction()
     {
-
     }
 
     public function getScript()
     {
-
     }
 }
 
 class NonItemClass
 {
-
 }

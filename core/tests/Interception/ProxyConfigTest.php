@@ -8,7 +8,6 @@
 
 namespace Xpressengine\Tests\Interception;
 
-
 use ReflectionMethod;
 use Xpressengine\Interception\Proxy\ProxyConfig;
 
@@ -39,8 +38,6 @@ class ProxyConfigTest extends \PHPUnit\Framework\TestCase
         $name = $config->getTargetName();
 
         $this->assertEquals('Xpressengine\Tests\ProxyConfigTest\TestTargetClass', $name);
-
-
     }
 
     public function testGetProxyName()
@@ -79,5 +76,3 @@ class TestTargetClass
         return "funcC";
     }
 }
-
-

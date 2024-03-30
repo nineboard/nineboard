@@ -40,7 +40,7 @@ class SettingsHandler
     /**
      * @var string basic settings prefix name
      */
-    const SETTING_CONFIG_NAME = 'settings';
+    public const SETTING_CONFIG_NAME = 'settings';
 
     /**
      * @var Tree settings menu list

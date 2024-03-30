@@ -59,13 +59,13 @@ class CSSFile
      *
      * @var string
      */
-    const LOCATION_OUTPUT = 'head.append';
+    public const LOCATION_OUTPUT = 'head.append';
 
     /**
      * The location for json response.
      * @var string
      */
-    const LOCATION_ASYNC = 'async.append';
+    public const LOCATION_ASYNC = 'async.append';
 
     /**
      * 주어진 위치에 해당하는 로드된 CSS파일 목록을 출력한다.

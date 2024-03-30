@@ -35,7 +35,7 @@ class CommentImporter extends AbstractImporter
 
         return false;
     }
-    
+
     private function getConfigItem(MenuItem $item)
     {
         $title = xe_trans($item->title);

@@ -80,7 +80,6 @@ class MediaLibraryMigration extends Migration
      */
     public function initialized()
     {
-
     }
 
     /**
@@ -138,7 +137,7 @@ class MediaLibraryMigration extends Migration
         }
 
         if (MediaLibraryFile::whereHas('originFile', function ($query) {
-                $query->where('use_count', 0);
+            $query->where('use_count', 0);
         })->exists() === true) {
             return false;
         }

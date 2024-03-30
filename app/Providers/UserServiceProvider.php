@@ -179,13 +179,15 @@ class UserServiceProvider extends ServiceProvider
         $this->app->singleton(
             'xe.user.image',
             function ($app) {
-
                 $profileImgConfig = config('xe.user.profileImage');
 
                 return new UserImageHandler(
-                    $app['xe.storage'], $app['xe.media'], function () {
-                    return Thumbnailer::getManager();
-                }, $profileImgConfig
+                    $app['xe.storage'],
+                    $app['xe.media'],
+                    function () {
+                        return Thumbnailer::getManager();
+                    },
+                    $profileImgConfig
                 );
             }
         );
@@ -303,7 +305,7 @@ class UserServiceProvider extends ServiceProvider
     protected function registerUserRepository()
     {
         $this->app->singleton(UserRepositoryInterface::class, function ($app) {
-            return new UserRepository;
+            return new UserRepository();
         });
         $this->app->alias(UserRepositoryInterface::class, 'xe.users');
     }
@@ -316,7 +318,7 @@ class UserServiceProvider extends ServiceProvider
     private function registerAccoutRepository()
     {
         $this->app->singleton(UserAccountRepositoryInterface::class, function ($app) {
-            return new UserAccountRepository;
+            return new UserAccountRepository();
         });
         $this->app->alias(UserAccountRepositoryInterface::class, 'xe.user.accounts');
     }
@@ -329,7 +331,7 @@ class UserServiceProvider extends ServiceProvider
     protected function registerGroupRepository()
     {
         $this->app->singleton(UserGroupRepositoryInterface::class, function ($app) {
-            return new UserGroupRepository;
+            return new UserGroupRepository();
         });
         $this->app->alias(UserGroupRepositoryInterface::class, 'xe.user.groups');
     }
@@ -359,12 +361,12 @@ class UserServiceProvider extends ServiceProvider
     private function registerMailRepository()
     {
         $this->app->singleton(UserEmailRepositoryInterface::class, function ($app) {
-            return new UserEmailRepository;
+            return new UserEmailRepository();
         });
         $this->app->alias(UserEmailRepositoryInterface::class, 'xe.user.emails');
 
         $this->app->singleton(PendingEmailRepositoryInterface::class, function ($app) {
-            return new PendingEmailRepository;
+            return new PendingEmailRepository();
         });
         $this->app->alias(PendingEmailRepositoryInterface::class, 'xe.user.pendingEmails');
     }
@@ -377,7 +379,7 @@ class UserServiceProvider extends ServiceProvider
     private function registerTermsRepository()
     {
         $this->app->singleton(TermsRepository::class, function ($app) {
-            return new TermsRepository;
+            return new TermsRepository();
         });
     }
 
@@ -408,7 +410,11 @@ class UserServiceProvider extends ServiceProvider
             $proxyClass = $app['xe.interception']->proxy(Guard::class, 'Auth'); // todo: 제거
             $provider = $app['auth']->createUserProvider($config['provider']);
             $guard = new $proxyClass(
-                $name, $provider, $app['session.store'], $adminAuth, $app['request']
+                $name,
+                $provider,
+                $app['session.store'],
+                $adminAuth,
+                $app['request']
             );
 
             if (method_exists($guard, 'setCookieJar')) {
@@ -592,7 +598,7 @@ class UserServiceProvider extends ServiceProvider
                 $storage = $this->app['xe.storage'];
                 $media = $this->app['xe.media'];
                 try {
-                    if($imageId !== null) {
+                    if ($imageId !== null) {
                         /** @var Storage $storage */
                         $file = $storage->find($imageId);
 
@@ -602,7 +608,7 @@ class UserServiceProvider extends ServiceProvider
                             return asset($mediaFile->url());
                         }
                     }
-                } catch(\Exception $e) {
+                } catch (\Exception $e) {
                 }
 
                 return asset($default);
@@ -637,7 +643,7 @@ class UserServiceProvider extends ServiceProvider
             'title' => 'xe::defaultSettings',
             'content' => function ($user) {
                 // dynamic field
-                $fieldTypes = array_filter($this->app['xe.dynamicField']->gets('user'), function($field) {
+                $fieldTypes = array_filter($this->app['xe.dynamicField']->gets('user'), function ($field) {
                     return $field->getConfig()->get('use');
                 });
 

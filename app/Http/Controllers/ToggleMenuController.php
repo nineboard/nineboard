@@ -88,7 +88,6 @@ class ToggleMenuController extends Controller
                 'script' => $item->getScript(),
                 'icon' => $item->getIcon(),
             ];
-
         }
 
         return api_render('toggleMenu.get', ['items' => $items]);

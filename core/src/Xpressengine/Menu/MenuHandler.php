@@ -61,7 +61,7 @@ class MenuHandler
      * @var ConfigManager
      */
     protected $configs;
-    
+
     /**
      * ModuleHandler instance
      *
@@ -88,21 +88,21 @@ class MenuHandler
      *
      * @var int
      */
-    const DUPLICATE_RETRY_CNT = 2;
+    public const DUPLICATE_RETRY_CNT = 2;
 
     /**
      * Access action keyword for permission
      *
      * @var string
      */
-    const ACCESS = 'access';
+    public const ACCESS = 'access';
 
     /**
      * Visible action keyword for permission
      *
      * @var string
      */
-    const VISIBLE = 'visible';
+    public const VISIBLE = 'visible';
 
     /**
      * MenuHandler constructor.
@@ -160,7 +160,7 @@ class MenuHandler
     public function deleteMenu(Menu $menu)
     {
         if ($menu->items->count() > 0) {
-            throw new CanNotDeleteMenuEntityHaveChildException;
+            throw new CanNotDeleteMenuEntityHaveChildException();
         }
 
         $this->deleteMenuTheme($menu);
@@ -283,7 +283,7 @@ class MenuHandler
     public function deleteItem(MenuItem $item)
     {
         if ($item->getDescendantCount() > 0) {
-            throw new CanNotDeleteMenuItemHaveChildException;
+            throw new CanNotDeleteMenuItemHaveChildException();
         }
 
         $this->deleteMenuType($item);
@@ -516,7 +516,7 @@ class MenuHandler
         $grant->add(static::VISIBLE, 'group', []);
         $grant->add(static::VISIBLE, 'user', []);
         $grant->add(static::VISIBLE, 'except', []);
-        
+
         return $grant;
     }
 

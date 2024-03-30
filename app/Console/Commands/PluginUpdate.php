@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace App\Console\Commands;
 
 /**
@@ -58,14 +59,14 @@ class PluginUpdate extends PluginCommand
         }
 
         // 안내 멘트 출력
-        if($this->input->isInteractive() && $this->confirm(
+        if ($this->input->isInteractive() && $this->confirm(
             // 위 플러그인의 새버전을 다운로드합니다.
             // 위 플러그인이 의존하는 다른 플러그인이 함께 다운로드 될 수 있으며, 수 분이 소요될수 있습니다.
             // 플러그인을 다운로드하시겠습니까?"
                 "The new version of above plugin will be downloaded. \r\n ".
                 "Dependent plugins can be installed together. \r\n ".
                 "It may take up to a few minutes. Do you want to download the plugin?"
-            ) === false
+        ) === false
         ) {
             return;
         }
@@ -82,7 +83,6 @@ class PluginUpdate extends PluginCommand
 
             // composer 실행을 마쳤습니다
             $this->warn('Composer update command is finished.'.PHP_EOL);
-
         }, function () {
             $this->printFailedPlugins();
         });

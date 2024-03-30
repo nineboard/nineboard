@@ -12,8 +12,6 @@ use Xpressengine\Presenter\Html\Tags\Meta;
 
 class MetaTest extends \PHPUnit\Framework\TestCase
 {
-
-
     /**
      * @var Meta
      */

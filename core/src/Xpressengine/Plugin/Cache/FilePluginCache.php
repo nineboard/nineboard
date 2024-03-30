@@ -28,7 +28,6 @@ use Illuminate\Cache\Repository as Cache;
  */
 class FilePluginCache implements PluginCache
 {
-
     /**
      * plugin 정보 목록을 저장할 array
      *

@@ -12,12 +12,12 @@ class ContainerPresenter extends XEUIPresenter
      *
      * @var string
      */
-    const NAME = 'Container UI';
+    public const NAME = 'Container UI';
 
     /**
      * @var boolean
      */
-    const SUPPORT_CONTAINER = true;
+    public const SUPPORT_CONTAINER = true;
 
     /**
      * Get the string contents of the presenter.
