@@ -9,6 +9,7 @@
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
+
 namespace Tests\Feature;
 
 use Tests\TestCase;

@@ -15,7 +15,6 @@ use Xpressengine\User\Repositories\PendingEmailRepository;
 
 class PendingEmailRepositoryTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -44,7 +43,7 @@ class PendingEmailRepositoryTest extends \PHPUnit\Framework\TestCase
 
 
         $relation = Mockery::mock('\Illuminate\Database\Eloquent\Relations\HasOne');
-        $relation->shouldReceive('create')->with(Mockery::on(function($d) use($self){
+        $relation->shouldReceive('create')->with(Mockery::on(function ($d) use ($self) {
             $self->assertArrayHasKey('confirmation_code', $d);
             return true;
         }))->once()->andReturn($email);
@@ -140,7 +139,4 @@ class PendingEmailRepositoryTest extends \PHPUnit\Framework\TestCase
     {
         return Mockery::mock(PendingEmail::class);
     }
-
-
 }
-

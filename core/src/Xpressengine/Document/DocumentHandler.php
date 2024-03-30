@@ -34,7 +34,6 @@ use Xpressengine\Document\Models\Revision;
  */
 class DocumentHandler
 {
-
     /**
      * @var document model class
      */
@@ -402,7 +401,7 @@ class DocumentHandler
      * @param string $instanceId instance id
      * @return ConfigEntity
      */
-    public function getConfig($instanceId,$site_key = null)
+    public function getConfig($instanceId, $site_key = null)
     {
         $site_key = $site_key == null ? \XeSite::getCurrentSiteKey() : $site_key;
         return $this->configHandler->getOrDefault($instanceId, $site_key);
@@ -415,7 +414,7 @@ class DocumentHandler
      */
     protected function newModel()
     {
-        return new $this->model;
+        return new $this->model();
     }
 
     /**
@@ -454,7 +453,7 @@ class DocumentHandler
         }
         $doc = $model->where('id', '=', $id)->first();
         if ($doc == null) {
-            throw new DocumentNotFoundException;
+            throw new DocumentNotFoundException();
         }
         return $doc;
     }

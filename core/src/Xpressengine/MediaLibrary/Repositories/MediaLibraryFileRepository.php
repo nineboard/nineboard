@@ -36,11 +36,11 @@ class MediaLibraryFileRepository
         update as traitUpdate;
     }
 
-    const ORDER_TYPE_UPDATED_DESC = 1;
-    const ORDER_TYPE_CREATED_DESC = 2;
-    const ORDER_TYPE_TITLE_ASC = 3;
-    const ORDER_TYPE_FILE_SIZE_DESC = 4;
-    const ORDER_TYPE_USER_NAME_ASC = 5;
+    public const ORDER_TYPE_UPDATED_DESC = 1;
+    public const ORDER_TYPE_CREATED_DESC = 2;
+    public const ORDER_TYPE_TITLE_ASC = 3;
+    public const ORDER_TYPE_FILE_SIZE_DESC = 4;
+    public const ORDER_TYPE_USER_NAME_ASC = 5;
 
     /**
      * @param array $attributes items attribute
@@ -203,7 +203,7 @@ class MediaLibraryFileRepository
         if (isset($attributes['mime']) === true) {
             $query = $query->whereHas('file', function ($query) use ($attributes) {
                 $query->where(function ($query) use ($attributes) {
-                    foreach($attributes['mime'] as $attr) {
+                    foreach ($attributes['mime'] as $attr) {
                         $query->orWhere('mime', 'like', $attr);
                     }
                 });
@@ -301,9 +301,7 @@ class MediaLibraryFileRepository
                 }
 
                 $fileItem->file->setAttribute('thumbnail_url', $thumbnailUrl);
-            }
-
-            else if (in_array($fileItem->file->mime, ['image/svg', 'image/svg+xml'])) {
+            } elseif (in_array($fileItem->file->mime, ['image/svg', 'image/svg+xml'])) {
                 $svg = file_get_contents($fileItem->file->url());
                 $base64Image = 'data:image/svg+xml;base64,' .base64_encode(unescape(rawurlencode($svg)));
 

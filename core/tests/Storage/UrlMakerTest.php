@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Tests\Storage;
 
 use Mockery as m;
@@ -42,7 +43,9 @@ class UrlMakerTest extends \PHPUnit\Framework\TestCase
         $mockFile->shouldReceive('getAttribute')->once()->with('id')->andReturn(1);
 
         $urlGenerator->shouldReceive('route')->once()
-            ->with(m::on(function () { return true; }), ['id' => 1])
+            ->with(m::on(function () {
+                return true;
+            }), ['id' => 1])
             ->andReturn();
 
         $instance->route($mockFile);

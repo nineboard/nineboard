@@ -58,7 +58,7 @@ class ProxyConfig
     {
         return $this->resolveRfc();
     }
-    
+
     /**
      * 프록시 클래스에서 수정해야 할 메소드 목록을 반환한다.
      * Interception은 타겟 클래스의 public 메소드만 대상으로 한다.

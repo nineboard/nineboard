@@ -26,5 +26,4 @@ namespace Xpressengine\Media\Repositories;
  */
 class AudioRepository extends MediaRepository
 {
-
 }

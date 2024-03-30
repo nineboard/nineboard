@@ -51,7 +51,7 @@ trait MimeTypeFilter
     public static function getMimeTypeScope()
     {
         if (!static::$mimeTypeScope) {
-            static::$mimeTypeScope = new MimeTypeScope;
+            static::$mimeTypeScope = new MimeTypeScope();
         }
 
         return static::$mimeTypeScope;

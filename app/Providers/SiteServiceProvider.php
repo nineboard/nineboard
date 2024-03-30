@@ -46,7 +46,7 @@ class SiteServiceProvider extends ServiceProvider
             /** @var Request $request */
             $request = $this->app['request'];
             $host = $request->getHttpHost();
-            $host = $host.str_replace('/index.php','',$request->server('SCRIPT_NAME'));
+            $host = $host.str_replace('/index.php', '', $request->server('SCRIPT_NAME'));
             $site = $this->app['xe.site']->findBy('host', $host);
         }
         $site = $site ?: $this->app['xe.site']->findBy('site_key', 'default');

@@ -36,7 +36,8 @@ use Xpressengine\User\Rating;
  */
 abstract class AbstractWidget implements ComponentInterface, Renderable
 {
-    use ComponentTrait, SupportInfoTrait;
+    use ComponentTrait;
+    use SupportInfoTrait;
 
     /**
      * @var array
@@ -132,10 +133,9 @@ abstract class AbstractWidget implements ComponentInterface, Renderable
             $args = $this->setting();
         }
 
-        try{
+        try {
             $view = $this->info('setting');
-        }
-        catch (\ErrorException  $exception) {
+        } catch (\ErrorException  $exception) {
             $view = null;
         }
 

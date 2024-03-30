@@ -46,7 +46,6 @@ class UserRepositoryTest extends \PHPUnit\Framework\TestCase
         /** @var User $user */
         /** @var UserRepository $repo */
         $this->assertEquals($user, $repo->create($data));
-
     }
 
     public function testCreateWithoutPassword()
@@ -150,7 +149,7 @@ class UserRepositoryTest extends \PHPUnit\Framework\TestCase
 
         $query = $this->makeQuery();
 
-        $validator = function($callable) use ($query) {
+        $validator = function ($callable) use ($query) {
             $callable($query);
             return true;
         };
@@ -174,7 +173,7 @@ class UserRepositoryTest extends \PHPUnit\Framework\TestCase
 
         $query = $this->makeQuery();
 
-        $validator = function($callable) use ($query) {
+        $validator = function ($callable) use ($query) {
             $callable($query);
             return true;
         };
@@ -232,5 +231,4 @@ class UserRepositoryTest extends \PHPUnit\Framework\TestCase
     {
         return Mockery::mock('\Illuminate\Database\Eloquent\Builder');
     }
-
 }

@@ -74,4 +74,3 @@ class SamplePolicy extends Policy
         return $this->check($user, $this->get($name, $siteKey), 'read');
     }
 }
-

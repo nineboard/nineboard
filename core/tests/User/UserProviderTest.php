@@ -23,7 +23,6 @@ class UserProviderTest extends \PHPUnit\Framework\TestCase
 
     public function testRetrieveByCredentialsReturnsUser()
     {
-
         $user = $this->getUser();
         $query = $this->makeQuery();
 
@@ -51,7 +50,7 @@ class UserProviderTest extends \PHPUnit\Framework\TestCase
         $user = $this->getUser();
         $query = $this->makeQuery();
 
-        $validator = function($callback) use($query, $email) {
+        $validator = function ($callback) use ($query, $email) {
             $query->shouldReceive('where')->once()->with('address', $email)->andReturnSelf();
             $callback($query);
             return true;

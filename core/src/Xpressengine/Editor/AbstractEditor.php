@@ -38,7 +38,8 @@ use Symfony\Component\DomCrawler\Crawler;
  */
 abstract class AbstractEditor implements ComponentInterface
 {
-    use ComponentTrait, MobileSupportTrait;
+    use ComponentTrait;
+    use MobileSupportTrait;
 
     /**
      * EditorHandler instance

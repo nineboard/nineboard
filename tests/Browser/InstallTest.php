@@ -34,7 +34,7 @@ class InstallTest extends DuskTestCase
     public function testInstall()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new Install);
+            $browser->visit(new Install());
 
             // 약관 동의
             $browser->pause(1000);
@@ -66,7 +66,7 @@ class InstallTest extends DuskTestCase
     public function testLogin()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(new Login);
+            $browser->visit(new Login());
             $browser->assertSee('계정에 로그인');
         });
     }

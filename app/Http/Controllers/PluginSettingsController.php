@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace App\Http\Controllers;
 
 use XePresenter;
@@ -62,7 +63,7 @@ class PluginSettingsController extends Controller
         $siteToken = $request->get('site_token');
         $config->set('site_token', $siteToken);
 
-        if($composerHome = $request->get('composer_home')) {
+        if ($composerHome = $request->get('composer_home')) {
             $config->set('composer_home', $composerHome);
         }
         app('xe.config')->modify($config);

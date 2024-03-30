@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace App\Skins\Widget;
 
 use Xpressengine\Skin\GenericSkin;

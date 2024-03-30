@@ -589,7 +589,7 @@ if (!function_exists('menu_list')) {
             $tree = $menu->getTree()->getTreeNodes();
             $loaded = \Illuminate\Database\Eloquent\Collection::make($tree)->load('ancestors');
 
-            $tree->transform(function ($menuItem, $key) use($loaded) {
+            $tree->transform(function ($menuItem, $key) use ($loaded) {
                 return $loaded->find($loaded[$key]);
             });
 
@@ -812,7 +812,6 @@ if (!function_exists('purify')) {
 
         return $purifier->purify($content);
     }
-
 }
 
 if (!function_exists('xe_error')) {
@@ -825,7 +824,8 @@ if (!function_exists('xe_error')) {
     function xe_error($message = null, $statusCode = 500)
     {
         $exception = new \Xpressengine\Support\Exceptions\HttpXpressengineException(
-            [], $statusCode
+            [],
+            $statusCode
         );
         $exception->setMessage($message);
         throw $exception;
@@ -889,24 +889,27 @@ if (!function_exists('unescape')) {
      * @param $str
      * @return string
      */
-    function unescape($str) {
+    function unescape($str)
+    {
         $ret = '';
-        $len = strlen ( $str );
-        for($i = 0; $i < $len; $i ++) {
+        $len = strlen($str);
+        for ($i = 0; $i < $len; $i ++) {
             if ($str [$i] == '%' && $str [$i + 1] == 'u') {
-                $val = hexdec ( substr ( $str, $i + 2, 4 ) );
-                if ($val < 0x7f)
-                    $ret .= chr ( $val );
-                else if ($val < 0x800)
-                    $ret .= chr ( 0xc0 | ($val >> 6) ) . chr ( 0x80 | ($val & 0x3f) );
-                else
-                    $ret .= chr ( 0xe0 | ($val >> 12) ) . chr ( 0x80 | (($val >> 6) & 0x3f) ) . chr ( 0x80 | ($val & 0x3f) );
+                $val = hexdec(substr($str, $i + 2, 4));
+                if ($val < 0x7f) {
+                    $ret .= chr($val);
+                } elseif ($val < 0x800) {
+                    $ret .= chr(0xc0 | ($val >> 6)) . chr(0x80 | ($val & 0x3f));
+                } else {
+                    $ret .= chr(0xe0 | ($val >> 12)) . chr(0x80 | (($val >> 6) & 0x3f)) . chr(0x80 | ($val & 0x3f));
+                }
                 $i += 5;
-            } else if ($str [$i] == '%') {
-                $ret .= urldecode ( substr ( $str, $i, 3 ) );
+            } elseif ($str [$i] == '%') {
+                $ret .= urldecode(substr($str, $i, 3));
                 $i += 2;
-            } else
+            } else {
                 $ret .= $str [$i];
+            }
         }
         return $ret;
     }
@@ -937,7 +940,8 @@ if (!function_exists('array_depth')) {
      * @param array $array
      * @return int
      */
-    function array_depth(array $array) {
+    function array_depth(array $array)
+    {
         $max_depth = 1;
 
         foreach ($array as $value) {
@@ -1043,7 +1047,7 @@ if (function_exists('phone_masking') === false) {
         if ($strPos !== false && $netId) {
             $a = $len - strlen($netId) - 4;
             $masking = '';
-            for($i=0; $i<$a; $i++) {
+            for ($i=0; $i<$a; $i++) {
                 $masking .= '*';
             }
 
@@ -1075,7 +1079,8 @@ if (function_exists('is_home') === false) {
      *
      * @return bool
      */
-    function is_home() {
+    function is_home()
+    {
         return app('xe.site')->getHomeInstanceId() === current_instance_id();
     }
 }
@@ -1086,7 +1091,8 @@ if (function_exists('is_settings') === false) {
      *
      * @return bool
      */
-    function is_settings() {
+    function is_settings()
+    {
         $currentRoute = request()->route();
 
         if (($currentRoute instanceof \Illuminate\Routing\Route) === false) {

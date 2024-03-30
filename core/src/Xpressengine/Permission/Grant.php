@@ -29,15 +29,15 @@ use Xpressengine\Permission\Exceptions\InvalidArgumentException;
  */
 class Grant extends Fluent
 {
-    const RATING_TYPE = 'rating';
+    public const RATING_TYPE = 'rating';
 
-    const GROUP_TYPE = 'group';
+    public const GROUP_TYPE = 'group';
 
-    const USER_TYPE = 'user';
+    public const USER_TYPE = 'user';
 
-    const EXCEPT_TYPE = 'except';
+    public const EXCEPT_TYPE = 'except';
 
-    const VGROUP_TYPE = 'vgroup';
+    public const VGROUP_TYPE = 'vgroup';
 
     /**
      * Set grant information

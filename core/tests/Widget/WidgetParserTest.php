@@ -76,7 +76,7 @@ class WidgetParserTest extends TestCase
         $handler = $this->handler;
         $parser = $this->parser;
 
-        $handler->shouldReceive('create')->andThrow(new \Exception);
+        $handler->shouldReceive('create')->andThrow(new \Exception());
 
         $testString = '<xe-widget id="xpressengine@iconBar"></xe-widget>';
         $resultString = $parser->parseXml($testString);

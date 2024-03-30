@@ -38,7 +38,6 @@ class PurifierServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('purifier', function ($app) {
-
             $config = HTMLPurifier_Config::createDefault();
             $config->autoFinalize = $app['config']['purifier.finalize'];
 

@@ -106,5 +106,4 @@ class UserGroupRepositoryTest extends \PHPUnit\Framework\TestCase
     {
         return Mockery::mock(\Illuminate\Database\Eloquent\Builder::class);
     }
-
 }

@@ -60,7 +60,7 @@ class CategoryController extends Controller
         $category = XeCategory::cates()->find($id);
 
         if ($category === null) {
-            throw new InvalidArgumentHttpException;
+            throw new InvalidArgumentHttpException();
         }
 
         return XePresenter::make('category.show', compact('category'));
@@ -109,7 +109,7 @@ class CategoryController extends Controller
         /** @var CategoryItem $item */
         $item = XeCategory::items()->find($request->get('id'));
         if (!$item || $item->category->id !== Caster::cast($id)) {
-            throw new InvalidArgumentHttpException;
+            throw new InvalidArgumentHttpException();
         }
 
         XeCategory::updateItem($item, $request->all());
@@ -134,7 +134,7 @@ class CategoryController extends Controller
         /** @var CategoryItem $item */
         $item = XeCategory::items()->find($request->get('id'));
         if (!$item || $item->category->id !== Caster::cast($id)) {
-            throw new InvalidArgumentHttpException;
+            throw new InvalidArgumentHttpException();
         }
 
         DB::beginTransaction();
@@ -164,7 +164,7 @@ class CategoryController extends Controller
         /** @var CategoryItem $item */
         $item = XeCategory::items()->find($request->get('id'));
         if (!$item || $item->category->id !== Caster::cast($id)) {
-            throw new InvalidArgumentHttpException;
+            throw new InvalidArgumentHttpException();
         }
 
         $parent = XeCategory::items()->find($request->get('parent_id'));
@@ -197,7 +197,7 @@ class CategoryController extends Controller
             /** @var CategoryItem $item */
             $item = XeCategory::items()->find($request->get('id'));
             if (!$item || $item->category->id !== Caster::cast($id)) {
-                throw new InvalidArgumentHttpException;
+                throw new InvalidArgumentHttpException();
             }
 
             $children = $item->getChildren();

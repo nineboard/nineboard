@@ -28,7 +28,6 @@ use Xpressengine\Skin\GenericSkin;
  */
 class PluginSettingsSkin extends GenericSkin
 {
-
     /**
      * The component id
      *
@@ -174,5 +173,4 @@ class PluginSettingsSkin extends GenericSkin
             'toggleMenu' => 'default',
         ]);
     }
-
 }

@@ -43,7 +43,7 @@ trait PermissionSupport
         $mode = function ($action) use ($permission) {
             return $permission->pure($action) ? 'manual' : 'inherit';
         };
-        $groups = UserGroup::where('site_key',$siteKey)->get();
+        $groups = UserGroup::where('site_key', $siteKey)->get();
 
         $arguments = [];
         foreach ($abilities as $ability) {
@@ -98,7 +98,7 @@ trait PermissionSupport
     public function permissionRegisterGrant($key, Grant $grant = null, $siteKey = null)
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
-        $grant = $grant ?: new Grant;
+        $grant = $grant ?: new Grant();
 
         app('xe.permission')->register($key, $grant, $siteKey);
     }

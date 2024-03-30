@@ -138,7 +138,6 @@ class ModuleValidatorTest extends TestCase
         $result = $moduleValidator->matches($route, $request);
 
         $this->assertEquals(true, $result);
-
     }
 
     /**
@@ -164,7 +163,6 @@ class ModuleValidatorTest extends TestCase
         $result = $moduleValidator->matches($route, $request);
 
         $this->assertEquals(true, $result);
-
     }
 
     /**
@@ -180,7 +178,7 @@ class ModuleValidatorTest extends TestCase
 
         $route->shouldReceive('getCompiled')->andReturnSelf();
         $route->shouldReceive('getHostRegex')->andReturnNull();
-        
+
         $request->shouldReceive('segment')->with(1)->andReturn('board');
         $route->shouldReceive('getAction')->andReturn([
             'as' => 'test.root.match',

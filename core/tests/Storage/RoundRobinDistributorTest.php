@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Tests\Storage;
 
 use Mockery as m;

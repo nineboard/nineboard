@@ -9,6 +9,7 @@
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
+
 namespace App\Exceptions;
 
 use Exception;
@@ -202,7 +203,8 @@ class Handler extends ExceptionHandler
     {
         if (!$this->isHttpException($e) && config('app.debug')) {
             return $this->toIlluminateResponse(
-                $this->convertExceptionToResponse($e), $e
+                $this->convertExceptionToResponse($e),
+                $e
             );
         }
 

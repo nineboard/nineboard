@@ -26,5 +26,4 @@ namespace Xpressengine\Foundation\Operations;
  */
 class PrivateOperation extends PluginOperation
 {
-
 }

@@ -27,7 +27,6 @@ namespace Xpressengine\Interception;
  */
 class AdvisorList
 {
-
     /**
      * 정렬 완료된 advisor name의 목록. 이 클래스는 next 메소드가 실행될 때마다 이 목록에 존재하는 advisor를 순서대로 꺼내서 반환한다.
      *

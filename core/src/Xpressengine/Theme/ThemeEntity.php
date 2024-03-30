@@ -29,7 +29,6 @@ use Xpressengine\Config\ConfigEntity;
  */
 class ThemeEntity implements ThemeEntityInterface
 {
-
     /**
      * @var string theme id
      */

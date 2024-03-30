@@ -114,7 +114,7 @@ class LogRepository
     {
         $class = $this->getModel();
 
-        return new $class;
+        return new $class();
     }
 
     /**

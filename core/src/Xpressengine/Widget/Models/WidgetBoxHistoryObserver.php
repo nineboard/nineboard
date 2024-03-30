@@ -7,7 +7,7 @@ use Illuminate\Support\Arr;
 
 class WidgetBoxHistoryObserver
 {
-    const WRITTEN_FIELDS = [
+    public const WRITTEN_FIELDS = [
         WidgetBoxHistory::CONTENT,
         WidgetBoxHistory::OPTIONS
     ];

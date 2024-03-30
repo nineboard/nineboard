@@ -26,5 +26,4 @@ namespace Xpressengine\Support;
  */
 class JsonException extends \InvalidArgumentException
 {
-
 }

@@ -29,7 +29,6 @@ namespace Xpressengine\Plugin\Cache;
  */
 interface PluginCache
 {
-
     /**
      * 캐시에 저장된 PluginEntity 목록을 반환한다.
      *

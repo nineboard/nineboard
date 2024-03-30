@@ -75,6 +75,7 @@ class FormTextArea extends AbstractUIObject
                 case 'id':
                     $label->attr('for', $arg);
                     // pass to default
+                    // no break
                 default:
                     $textarea->attr($key, $arg);
                     break;

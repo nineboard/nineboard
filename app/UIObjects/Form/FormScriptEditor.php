@@ -16,6 +16,7 @@ namespace App\UIObjects\Form;
 
 use Xpressengine\UIObject\AbstractUIObject;
 use XeFrontend;
+
 /**
  * Class FormScriptEditor
  *
@@ -59,7 +60,7 @@ class FormScriptEditor extends AbstractUIObject
             'assets/vendor/monaco-editor/min/vs/editor/editor.main.css',
         ];
 
-        if(request()->ajax()) {
+        if (request()->ajax()) {
             XeFrontend::js($scripts)->loadAsync();
             XeFrontend::css($stylesheets)->loadAsync();
         } else {

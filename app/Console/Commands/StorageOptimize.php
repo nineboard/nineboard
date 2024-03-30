@@ -83,7 +83,7 @@ class StorageOptimize extends Command
 
         $loop = 0;
         try {
-            while(true) {
+            while (true) {
                 $files = $this->storage->where('use_count', 0)->where('origin_id', null)->paginate(20);
                 if (count($files) < 1) {
                     break;
@@ -109,7 +109,6 @@ class StorageOptimize extends Command
         } finally {
             $this->output();
         }
-
     }
 
     /**
@@ -120,7 +119,6 @@ class StorageOptimize extends Command
     private function intercept()
     {
         intercept('XeStorage@delete', 'storage.optimize.log', function ($target, $file) {
-
             $this->bag[] = $file;
 
             return $target($file);
@@ -149,7 +147,8 @@ class StorageOptimize extends Command
                     break;
                 case 3:
                     if ($file->origin_id === null) {
-                        $this->line("\t" .
+                        $this->line(
+                            "\t" .
                             $file->disk . "\t" .
                             "<info>" . $file->clientname . "</info>\t" .
                             bytes($file->size)
@@ -157,7 +156,8 @@ class StorageOptimize extends Command
                     }
                     break;
                 case 4:
-                    $this->line("\t" .
+                    $this->line(
+                        "\t" .
                         $file->disk . "\t" .
                         "<info>" . $file->clientname . "</info>\t" .
                         bytes($file->size)

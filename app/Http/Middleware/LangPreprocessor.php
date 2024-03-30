@@ -115,7 +115,7 @@ class LangPreprocessor
         foreach ($fields as $key => $value) {
             if ($params = $this->app['xe.translator']->parsePreprocessor($key)) {
                 list($kSeq, $seq, $command) = $params;
-                switch ( $command ) {
+                switch ($command) {
                     case 'name':
                         $this->mapSeqName[$seq] = $value;
                         break;

@@ -12,7 +12,6 @@ use Xpressengine\Support\Sorter;
 
 class SorterTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @var SorterStub
      */
@@ -28,7 +27,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         $list = $this->sorter->sort();
 
         $this->assertEquals(
-            ['2', '4', '1', '3'], $list
+            ['2', '4', '1', '3'],
+            $list
         );
     }
 
@@ -55,7 +55,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         $list = $this->sorter->sort();
 
         $this->assertEquals(
-            ['2', '6', '4', '3', '5', '1'], $list
+            ['2', '6', '4', '3', '5', '1'],
+            $list
         );
     }
 
@@ -84,7 +85,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         $list = $this->sorter->sort();
 
         $this->assertEquals(
-            ['2', '4', '3', '5', '1'], $list
+            ['2', '4', '3', '5', '1'],
+            $list
         );
     }
 
@@ -103,7 +105,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         // 3 5 1 4 2
 
         $this->assertEquals(
-            ['2', '6', '4', '3', '5', '1'], $list
+            ['2', '6', '4', '3', '5', '1'],
+            $list
         );
     }
 
@@ -123,7 +126,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         // 3 5 1 4 2
 
         $this->assertEquals(
-            ['2', '6', '4', '5', '1'], $list
+            ['2', '6', '4', '5', '1'],
+            $list
         );
     }
 
@@ -148,7 +152,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         $list = $this->sorter->sort();
 
         $this->assertEquals(
-            ['2', '6', '4', '3', '5', '1'], $list
+            ['2', '6', '4', '3', '5', '1'],
+            $list
         );
     }
 
@@ -176,13 +181,15 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         $list = $this->sorter->sort();
 
         $this->assertEquals(
-            ['2', '4', '1', '3'], $list
+            ['2', '4', '1', '3'],
+            $list
         );
 
         $list = $this->sorter->sort();
 
         $this->assertEquals(
-            ['2', '4', '1', '3'], $list
+            ['2', '4', '1', '3'],
+            $list
         );
     }
 
@@ -196,13 +203,15 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         $list = $this->sorter->sort();
 
         $this->assertEquals(
-            ['2', '4', '1', '3'], $list
+            ['2', '4', '1', '3'],
+            $list
         );
 
         $list = $this->sorter->sort(['1','2','3']);
 
         $this->assertEquals(
-            ['2', '1', '3'], $list
+            ['2', '1', '3'],
+            $list
         );
     }
 
@@ -222,7 +231,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         // 3 5 1 4 2
 
         $this->assertEquals(
-            ['2', '4', '1'], $list
+            ['2', '4', '1'],
+            $list
         );
 
         $list = $this->sorter->sort();
@@ -230,7 +240,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         // 3 5 1 4 2
 
         $this->assertEquals(
-            ['2', '6', '4', '5', '1'], $list
+            ['2', '6', '4', '5', '1'],
+            $list
         );
     }
 
@@ -251,7 +262,6 @@ class SorterTest extends \PHPUnit\Framework\TestCase
 
 class SorterStub extends Sorter
 {
-
     public $relations = [];
 
     public $befores = [];

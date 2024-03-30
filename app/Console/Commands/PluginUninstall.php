@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace App\Console\Commands;
 
 use Illuminate\Filesystem\Filesystem;
@@ -65,11 +66,11 @@ class PluginUninstall extends PluginCommand
         // 위 플러그인을 삭제합니다. 플러그인을 삭제하면 사이트가 정상적으로 작동하지 않을 수 있습니다.
         $this->output->warning("Above plugin will be uninstalled. After the plugin is deleted, the site may not work well.");
         if ($this->input->isInteractive() && $this->confirm(
-                "Above plugin will be uninstalled.  \r\n ".
+            "Above plugin will be uninstalled.  \r\n ".
                 "After the plugin is uninstalled, the site may not work well. \r\n ".
                 "It may take up to a few minutes. \r\n ".
                 "Do you want to remove the plugin?"
-            ) === false
+        ) === false
         ) {
             return;
         }
@@ -134,7 +135,6 @@ class PluginUninstall extends PluginCommand
                 $this->output->success($info['name'] . ":" . $info['version'] . " plugin is uninstalled");
             }
         }
-
     }
 
     /**

@@ -26,5 +26,4 @@ class RatingTest extends \PHPUnit\Framework\TestCase
     {
         Rating::compare(Rating::USER, 'foo');
     }
-
 }

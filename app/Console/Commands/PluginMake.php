@@ -81,8 +81,6 @@ class PluginMake extends MakeCommand
 
             // composer 실행을 마쳤습니다.
             $this->warn('Composer update command is finished.'.PHP_EOL);
-
-
         }, function () use ($path) {
             $this->files->deleteDirectory($path);
         });
@@ -111,7 +109,7 @@ class PluginMake extends MakeCommand
         }
 
         // check namespace
-        if(!str_contains($namespace, '\\')) {
+        if (!str_contains($namespace, '\\')) {
             throw new \Exception('The namespace must have at least 1 delimiter(\\), use double backslash(\\\\) as delimiter');
         }
 

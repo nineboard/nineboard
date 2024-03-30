@@ -117,7 +117,6 @@ class PluginCollectionTest extends \PHPUnit\Framework\TestCase
 
     private function getPluginInfos()
     {
-
         $infos = [
             "plugin_sample" => [
                 'class' => 'Xpressengine\Tests\Plugin\Sample\PluginSample',

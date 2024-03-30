@@ -158,7 +158,9 @@ trait SupportInfoTrait
 
                 $data[$name] = count($files) == 1
                     ? $files[0]['preview']
-                    : array_map(function($file) { return $file['preview']; }, $files);
+                    : array_map(function ($file) {
+                        return $file['preview'];
+                    }, $files);
             }
         }
 

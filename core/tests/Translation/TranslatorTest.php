@@ -24,8 +24,7 @@ class TranslatorTest extends TranslationTestCase
 
     protected function setUp()
     {
-        $this->t = $this->createTranslator
-        (
+        $this->t = $this->createTranslator(
             [
                 'locales' => ['en', 'ko'],
                 'localeTexts' => [

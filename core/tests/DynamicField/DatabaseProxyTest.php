@@ -22,7 +22,6 @@ use Xpressengine\DynamicField\DatabaseProxy;
  */
 class DatabaseProxyTest extends TestCase
 {
-
     /**
      * @var m\MockInterface|\Xpressengine\DynamicField\DynamicFieldHandler
      */

@@ -18,7 +18,7 @@ class CategoryHandlerTest extends TestCase
     {
         m::close();
     }
-    
+
     public function testDeleteCate()
     {
         list($cateRepo, $itemRepo) = $this->getMocks();
@@ -118,7 +118,6 @@ class CategoryHandlerTest extends TestCase
 
             $this->assertTrue(false);
         } catch (\Exception $e) {
-
             $this->assertInstanceOf('Xpressengine\Category\Exceptions\UnableMoveToSelfException', $e);
         }
     }

@@ -59,7 +59,7 @@ class InstallController extends Controller
         $message = null;
 
         switch ($request->get('key')) {
-            case "directoryPermission" :
+            case "directoryPermission":
                 $paths = [
                     base_path('bootstrap/cache'),
                     base_path('config/' . env('APP_ENV', 'production')),
@@ -76,40 +76,40 @@ class InstallController extends Controller
                 }
                 break;
 
-            case "phpVersion" :
+            case "phpVersion":
                 $phpVersion = 70000;
                 $result = PHP_VERSION_ID < $phpVersion ? false : true;
                 break;
 
-            case 'pdo' :
+            case 'pdo':
                 $result = extension_loaded('PDO') &&
                     (extension_loaded('pdo_mysql') || extension_loaded('pdo_cubrid'));
                 break;
 
-            case "curl" :
+            case "curl":
                 $result = extension_loaded('curl');
                 break;
 
-            case "fileinfo" :
+            case "fileinfo":
                 $result = extension_loaded('fileinfo');
                 break;
 
-            case "gd" :
+            case "gd":
                 $result = extension_loaded('gd') &&
                     function_exists('imagejpeg') &&
                     function_exists('imagepng') &&
                     function_exists('imagegif');
                 break;
 
-            case "mbstring" :
+            case "mbstring":
                 $result = extension_loaded('mbstring');
                 break;
 
-            case "openssl" :
+            case "openssl":
                 $result = extension_loaded('openssl');
                 break;
 
-            case "zip" :
+            case "zip":
                 $result = extension_loaded('zip');
                 break;
         }

@@ -28,5 +28,4 @@ use Xpressengine\Support\Exceptions\XpressengineException;
  */
 class TranslationException extends XpressengineException
 {
-
 }

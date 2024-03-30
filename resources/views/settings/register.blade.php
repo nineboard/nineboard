@@ -1,6 +1,7 @@
 <?php
 use Xpressengine\User\Models\User;
 use Xpressengine\User\UserRegisterHandler;
+
 ?>
 {{ XeFrontend::css('assets/core/xe-ui/css/xe-ui-without-base.css')->load() }}
 {{ XeFrontend::css('assets/core/settings/css/admin.css')->load() }}

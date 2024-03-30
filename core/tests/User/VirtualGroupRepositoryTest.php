@@ -86,8 +86,7 @@ class VirtualGroupRepositoryTest extends \PHPUnit\Framework\TestCase
      */
     protected function makeRepository($users = null, $vGroups = null, $getter = null)
     {
-
-        $vGroups = $vGroups?:[
+        $vGroups = $vGroups ?: [
             'facebook' => [
                 'title' => 'fb_group'
             ],
@@ -98,7 +97,7 @@ class VirtualGroupRepositoryTest extends \PHPUnit\Framework\TestCase
                 'title' => 'github_group'
             ],
         ];
-        $getter = $getter?:function ($user) {
+        $getter = $getter ?: function ($user) {
             $providers = [];
             if ($user->getAccountByProvider('facebook')) {
                 $providers[] = 'facebook';
@@ -112,7 +111,7 @@ class VirtualGroupRepositoryTest extends \PHPUnit\Framework\TestCase
             return $providers;
         };
 
-        $users = $users?:$this->makeUsers();
+        $users = $users ?: $this->makeUsers();
 
         return new VirtualGroupRepository($users, $vGroups, $getter);
     }
@@ -160,6 +159,4 @@ class VirtualGroupRepositoryTest extends \PHPUnit\Framework\TestCase
     {
         return Mockery::mock('\Illuminate\Database\Eloquent\Builder');
     }
-
-
 }

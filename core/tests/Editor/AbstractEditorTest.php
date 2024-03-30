@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Tests\Frontend;
 
 use Mockery as m;

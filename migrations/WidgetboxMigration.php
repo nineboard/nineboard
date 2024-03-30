@@ -40,7 +40,7 @@ class WidgetboxMigration extends Migration
     public function install()
     {
         // create widget box table
-        if(!Schema::hasTable('widgetbox')) {
+        if (!Schema::hasTable('widgetbox')) {
             Schema::create(
                 'widgetbox',
                 function (Blueprint $table) {
@@ -61,7 +61,7 @@ class WidgetboxMigration extends Migration
         }
 
         // create widget box history table
-        if(!Schema::hasTable('widgetbox_history')) {
+        if (!Schema::hasTable('widgetbox_history')) {
             $this->createHistoryTable();
         }
     }
@@ -70,7 +70,7 @@ class WidgetboxMigration extends Migration
     {
         $siteKey = $siteKey == null ? XeSite::getCurrentSiteKey() : $siteKey;
 
-        if($siteKey != 'default') {
+        if ($siteKey != 'default') {
             $this->init($siteKey);
         }
     }
@@ -85,15 +85,15 @@ class WidgetboxMigration extends Migration
         // create widgetbox permission
         /** @var PermissionHandler $permission */
         $permission = app('xe.permission');
-        if($permission->get('widgetbox') === null) {
+        if ($permission->get('widgetbox') === null) {
             $permission->register('widgetbox', new Grant());
         }
 
         // dashboard setting
         $handler = app('xe.widgetbox');
-        $dashboard = $handler->query()->where('site_key','a')->find('dashboard');
+        $dashboard = $handler->query()->where('site_key', 'a')->find('dashboard');
 
-        if($dashboard === null) {
+        if ($dashboard === null) {
             $handler->create([
                 'id'=>'dashboard',
                 'title'=>'dashboard',
@@ -102,8 +102,8 @@ class WidgetboxMigration extends Migration
             ]);
         }
 
-        $userProfile = $handler->query()->where('site_key',$site_key)->find('user-profile');
-        if($userProfile === null) {
+        $userProfile = $handler->query()->where('site_key', $site_key)->find('user-profile');
+        if ($userProfile === null) {
             $handler->create(['id'=>'user-profile', 'title'=>'User Profile']);
         }
     }
@@ -137,7 +137,7 @@ class WidgetboxMigration extends Migration
      */
     public function update($installedVersion = null)
     {
-        if(Schema::hasColumn('widgetbox', 'site_key') == false) {
+        if (Schema::hasColumn('widgetbox', 'site_key') == false) {
             Schema::table('widgetbox', function (Blueprint $table) {
                 $table->dropPrimary('id');
                 $table->primary(['site_key','id']);

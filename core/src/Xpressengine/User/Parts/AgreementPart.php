@@ -31,11 +31,11 @@ use Xpressengine\User\UserRegisterHandler;
  */
 class AgreementPart extends RegisterFormPart
 {
-    const ID = 'agreements';
+    public const ID = 'agreements';
 
-    const NAME = 'xe::acceptTerms';
+    public const NAME = 'xe::acceptTerms';
 
-    const DESCRIPTION = 'xe::descAcceptTerms';
+    public const DESCRIPTION = 'xe::descAcceptTerms';
 
     private $enabled;
 

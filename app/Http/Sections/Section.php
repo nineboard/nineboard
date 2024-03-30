@@ -28,5 +28,4 @@ use Illuminate\Contracts\Support\Renderable;
  */
 abstract class Section implements Renderable
 {
-
 }

@@ -210,7 +210,7 @@ class ThemeController extends Controller
         $themeId = $request->get('theme');
         $theme = $themeHandler->getTheme($themeId);
 
-        if(!$theme->hasSetting()) {
+        if (!$theme->hasSetting()) {
             throw new NotSupportSettingException();
         }
 

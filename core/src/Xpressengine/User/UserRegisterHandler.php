@@ -28,9 +28,9 @@ class UserRegisterHandler
 {
     protected $config;
 
-    const TERM_AGREE_PRE = 'pre';
-    const TERM_AGREE_WITH = 'with';
-    const TERM_AGREE_NOT = 'not';
+    public const TERM_AGREE_PRE = 'pre';
+    public const TERM_AGREE_WITH = 'with';
+    public const TERM_AGREE_NOT = 'not';
 
     /**
      * UserRegisterHandler constructor.

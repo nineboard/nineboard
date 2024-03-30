@@ -15,7 +15,6 @@ use Xpressengine\Interception\ProxyInvocationHandler;
 
 class ProxyInvocationHandlerTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -57,17 +56,17 @@ class ProxyInvocationHandlerTest extends \PHPUnit\Framework\TestCase
 
         $advisorArr = [
             'a' => \Mockery::mock(Advisor::class, [
-                'getAdvice' => function($target, $a, $b) {
+                'getAdvice' => function ($target, $a, $b) {
                     return 'a'.$target($a, $b);
                 }
             ]),
             'b' => \Mockery::mock(Advisor::class, [
-                'getAdvice' => function($target, $a, $b) {
+                'getAdvice' => function ($target, $a, $b) {
                     return 'b'.$target($a, $b);
                 }
             ]),
             'c' => \Mockery::mock(Advisor::class, [
-                'getAdvice' => function($target, $a, $b) {
+                'getAdvice' => function ($target, $a, $b) {
                     return 'c'.$target($a, $b);
                 }
             ]),
@@ -98,7 +97,6 @@ class ProxyInvocationHandlerTest extends \PHPUnit\Framework\TestCase
      */
     protected function getHandler($proxyObject = null, $method = 'originMethod', $advisorList = null)
     {
-
         if ($proxyObject === null) {
             $proxyObject = $this->getProxyObject();
         }
@@ -122,7 +120,6 @@ class ProxyInvocationHandlerTest extends \PHPUnit\Framework\TestCase
      */
     protected function getAdvisorList($sortedList = null, $advisorArr = null)
     {
-
         if ($sortedList === null) {
             $sortedList = ['a', 'b', 'c'];
         }

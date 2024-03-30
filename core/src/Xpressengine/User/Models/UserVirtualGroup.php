@@ -26,5 +26,4 @@ use Xpressengine\Support\Entity;
  */
 class UserVirtualGroup extends Entity
 {
-
 }

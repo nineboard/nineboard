@@ -28,5 +28,4 @@ use Xpressengine\Settings\SettingsException;
  */
 class PermissionIDNotFoundException extends SettingsException
 {
-
 }

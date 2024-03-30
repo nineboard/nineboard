@@ -105,7 +105,6 @@ class ProfileController extends Controller
             }
 
             $this->handler->update($user, ['display_name' => $displayName, 'introduction' => $introduction]);
-
         } catch (\Exception $e) {
             XeDB::rollback();
             throw $e;

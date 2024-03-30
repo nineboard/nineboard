@@ -52,7 +52,7 @@ class TranslationServiceProvider extends ServiceProvider
     {
         $this->extendBlade();
 
-        $this->app['events']->listen(LocaleUpdated::class, function($event) {
+        $this->app['events']->listen(LocaleUpdated::class, function ($event) {
             $this->app['xe.translator']->setLocale($event->locale);
         });
 

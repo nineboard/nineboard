@@ -58,7 +58,7 @@ class WidgetBoxController extends Controller
         }
 
         $widgetbox = $handler->find($id);
-        if($widgetbox) {
+        if ($widgetbox) {
             throw new IDAlreadyExistsException();
         }
 
@@ -88,7 +88,7 @@ class WidgetBoxController extends Controller
         $inputs = $request->only(['id','title']);
 
         $widgetbox = $handler->find($inputs['id']);
-        if($widgetbox) {
+        if ($widgetbox) {
             throw new IDAlreadyExistsException();
         }
 

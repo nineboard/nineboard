@@ -24,16 +24,15 @@ namespace Xpressengine\Support;
  */
 class Sorter
 {
-
     /**
      * 두 key간의 순서를 지정할 때 사용한다. `A < B`일 경우, B가 먼저 실행되고 A가 실행됨을 나타낸다.
      */
-    const BEFORE = '<';
+    public const BEFORE = '<';
 
     /**
      * 두 key간의 순서를 지정할 때 사용한다. `A > B`일 경우, A가 먼저 실행되고 B가 실행됨을 나타낸다.
      */
-    const AFTER = '>';
+    public const AFTER = '>';
 
 
     /**
@@ -82,7 +81,6 @@ class Sorter
      */
     public function add($keys, $relation = null, $targetKeys = [])
     {
-
         foreach ((array) $keys as $key) {
             if (!in_array($key, $this->tails)) {
                 $this->tails[] = $key;

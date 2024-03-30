@@ -144,7 +144,7 @@ class PasswordValidator
      */
     protected function getMinRequired($len)
     {
-        return new class($len) {
+        return new class ($len) {
             protected $len;
 
             /**
@@ -177,7 +177,7 @@ class PasswordValidator
      */
     protected function getAlphaRequired()
     {
-        return new class() {
+        return new class () {
             /**
              * Handle validate.
              *
@@ -201,7 +201,7 @@ class PasswordValidator
      */
     protected function getNumericRequired()
     {
-        return new class() {
+        return new class () {
             /**
              * Handle validate.
              *
@@ -225,7 +225,7 @@ class PasswordValidator
      */
     protected function getSpecialCharRequired()
     {
-        return new class() {
+        return new class () {
             /**
              * Handle validate.
              *

@@ -10,11 +10,11 @@ abstract class AbstractImporter
      * @param $value
      * @return mixed
      */
-    public abstract function convert($value);
+    abstract public function convert($value);
 
     /**
      * @param $value
      * @return boolean
      */
-    public abstract function checkTarget($value);
+    abstract public function checkTarget($value);
 }

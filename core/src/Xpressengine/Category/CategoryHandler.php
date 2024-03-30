@@ -127,7 +127,7 @@ class CategoryHandler
      * @param  bool  $isUseTranslator
      * @return \Illuminate\Support\Collection<CategoryItem>
      */
-    public function createItemsByHierarchies(Category $category, array $hierarchies,  bool $isUseTranslator = false)
+    public function createItemsByHierarchies(Category $category, array $hierarchies, bool $isUseTranslator = false)
     {
         $items = \collect([]);
 

@@ -10,8 +10,8 @@ namespace Xpressengine\Tests\Frontend;
 
 use Xpressengine\Presenter\Html\Tags\BodyClass;
 
-class BodyClassTest extends \PHPUnit\Framework\TestCase {
-
+class BodyClassTest extends \PHPUnit\Framework\TestCase
+{
     protected function tearDown()
     {
         \Mockery::close();

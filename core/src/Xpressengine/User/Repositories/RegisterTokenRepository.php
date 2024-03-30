@@ -88,7 +88,7 @@ class RegisterTokenRepository
         // the database so that we can verify the token within the actual reset.
         $id = $this->createNewToken();
 
-        $payload = ['id' => $id, 'guard' => $guard, 'data' => serialize($data), 'created_at' => new Carbon];
+        $payload = ['id' => $id, 'guard' => $guard, 'data' => serialize($data), 'created_at' => new Carbon()];
 
         $result = $this->getTable()->insert($payload);
 

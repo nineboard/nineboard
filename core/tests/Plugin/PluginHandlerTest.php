@@ -17,7 +17,6 @@ use Xpressengine\Plugin\PluginRegister;
 
 class PluginHandlerTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         Mockery::close();
@@ -200,7 +199,6 @@ class PluginHandlerTest extends \PHPUnit\Framework\TestCase
         return Mockery::mock('\Illuminate\View\Factory', [
             'addNamespace' => null
         ]);
-
     }
 
     /**
@@ -245,11 +243,21 @@ class PluginHandlerTest extends \PHPUnit\Framework\TestCase
 
     private function getHandler($repo = null, $provider = null, $factory = null, $register = null, $app = null)
     {
-        if($repo === null) $repo = $this->makeRepository();
-        if($provider === null) $provider = $this->makeProvider();
-        if($factory === null) $factory = $this->makeViewFactory();
-        if($register === null) $register = $this->makeRegister();
-        if($app === null) $app = $this->makeApp();
+        if ($repo === null) {
+            $repo = $this->makeRepository();
+        }
+        if ($provider === null) {
+            $provider = $this->makeProvider();
+        }
+        if ($factory === null) {
+            $factory = $this->makeViewFactory();
+        }
+        if ($register === null) {
+            $register = $this->makeRegister();
+        }
+        if ($app === null) {
+            $app = $this->makeApp();
+        }
         return new PluginHandler($repo, $provider, $factory, $register, $app);
     }
 }

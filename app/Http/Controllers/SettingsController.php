@@ -372,7 +372,7 @@ class SettingsController extends Controller
         $site_key = $request->get('site_key') == null ? XeSite::getCurrentSiteKey() : $request->get('site_key');
         $permissionHandler->register($permissionId, $this->createAccessGrant(
             $request->only(['accessRating', 'accessGroup', 'accessUser', 'accessExcept'])
-        ),$request->get('site_key'));
+        ), $request->get('site_key'));
 
         return redirect()->back()->with('alert', ['type' => 'success', 'message' => xe_trans('xe::saved')]);
     }
@@ -385,7 +385,7 @@ class SettingsController extends Controller
      */
     protected function createAccessGrant(array $inputs)
     {
-        $grant = new Grant;
+        $grant = new Grant();
 
         $rating = array_get($inputs, 'accessRating', Rating::SUPER);
         $group = $this->innerParamParsing($inputs['accessGroup']);

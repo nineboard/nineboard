@@ -66,7 +66,7 @@ class MediaLibraryProvider extends ServiceProvider
     private function bindClasses()
     {
         $this->app->singleton(MediaLibraryHandler::class, function () {
-            return new MediaLibraryHandler;
+            return new MediaLibraryHandler();
         });
         $this->app->alias(MediaLibraryHandler::class, 'xe.media_library.handler');
 
@@ -95,12 +95,12 @@ class MediaLibraryProvider extends ServiceProvider
     private function registerRepositories()
     {
         $this->app->singleton(MediaLibraryFileRepository::class, function () {
-            return new MediaLibraryFileRepository;
+            return new MediaLibraryFileRepository();
         });
         $this->app->alias(MediaLibraryFileRepository::class, 'xe.media_library.files');
 
         $this->app->singleton(MediaLibraryFolderRepository::class, function () {
-            return new MediaLibraryFolderRepository;
+            return new MediaLibraryFolderRepository();
         });
         $this->app->alias(MediaLibraryFolderRepository::class, 'xe.media_library.folders');
     }

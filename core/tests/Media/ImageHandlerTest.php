@@ -72,7 +72,9 @@ class ImageHandlerTest extends \PHPUnit\Framework\TestCase
         $storage->shouldReceive('create')->once()->with(
             'content string',
             '',
-            m::on(function () { return true; }),
+            m::on(function () {
+                return true;
+            }),
             null,
             null,
             null,

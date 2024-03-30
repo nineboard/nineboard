@@ -31,7 +31,6 @@ use Xpressengine\User\Models\UserVirtualGroup;
  */
 class VirtualGroupRepository implements VirtualGroupRepositoryInterface
 {
-
     /**
      * @var array 가상그룹 리스트
      */

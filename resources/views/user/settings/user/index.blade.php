@@ -1,5 +1,6 @@
 <?php
 use Xpressengine\User\Models\User;
+
 ?>
 {{ app('xe.frontend')->js('assets/core/xe-ui-component/js/xe-page.js')->load() }}
 {{ app('xe.frontend')->js('assets/vendor/jqueryui/jquery-ui.min.js')->load() }}

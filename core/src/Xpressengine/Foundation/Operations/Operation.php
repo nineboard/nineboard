@@ -28,11 +28,11 @@ use Carbon\Carbon;
  */
 abstract class Operation
 {
-    const STATUS_READY     = 'ready';
-    const STATUS_RUNNING   = 'running';
-    const STATUS_SUCCEED   = 'succeed';
-    const STATUS_FAILED    = 'failed';
-    const STATUS_EXPIRED   = 'expired';
+    public const STATUS_READY     = 'ready';
+    public const STATUS_RUNNING   = 'running';
+    public const STATUS_SUCCEED   = 'succeed';
+    public const STATUS_FAILED    = 'failed';
+    public const STATUS_EXPIRED   = 'expired';
 
     /**
      * The operation data

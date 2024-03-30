@@ -26,7 +26,6 @@ namespace Xpressengine\User;
  */
 interface GroupInterface
 {
-
     /**
      * add User to this group
      *

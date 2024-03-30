@@ -19,7 +19,6 @@ namespace Xpressengine\Tests\Frontend {
 
     class FrontendHandlerTest extends TestCase
     {
-
         protected function tearDown()
         {
             \Mockery::close();
@@ -72,7 +71,6 @@ namespace Xpressengine\Tests\Frontend {
             $reflTags->setAccessible(true);
 
             $this->assertEquals($tags, $reflTags->getValue($frontend));
-
         }
 
         /**
@@ -96,7 +94,6 @@ namespace Xpressengine\Tests\Frontend {
 
         protected function setUp()
         {
-
             parent::setUp();
         }
 
@@ -120,7 +117,6 @@ namespace Xpressengine\Tests\Frontend {
 
         public function __construct($file)
         {
-
             $this->file = $file;
         }
 

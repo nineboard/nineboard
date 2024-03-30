@@ -30,8 +30,7 @@ use Xpressengine\Register\Container;
  */
 class ProxyManager
 {
-
-    const REGISTER_KEY = 'DATABASE_PROXY';
+    public const REGISTER_KEY = 'DATABASE_PROXY';
 
     /**
      * @var VirtualConnectionInterface
@@ -133,7 +132,7 @@ class ProxyManager
     {
         $proxy = $this->container->get(self::REGISTER_KEY, $name);
         if ($proxy == null) {
-            throw new Exceptions\NotExistsProxyException;
+            throw new Exceptions\NotExistsProxyException();
         }
 
         return $proxy;

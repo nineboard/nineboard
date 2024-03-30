@@ -39,16 +39,16 @@ return [
 
     'compiled' => realpath(storage_path('framework/views')),
 
-	/*
-	|--------------------------------------------------------------------------
-	| Error View Path
-	|--------------------------------------------------------------------------
-	|
-	| This option using by Exception/Handler.
-	|  - if use file in the plugin : 'path' => 'plugin_name::view.path'
-	|  - without theme : 'theme' => false
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Error View Path
+    |--------------------------------------------------------------------------
+    |
+    | This option using by Exception/Handler.
+    |  - if use file in the plugin : 'path' => 'plugin_name::view.path'
+    |  - without theme : 'theme' => false
+    |
+    */
     'error' => [
         'path' => 'errors',
         'theme' => true,

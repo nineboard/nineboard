@@ -5,6 +5,7 @@
  * @license   http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link      https://xpressengine.io
  */
+
 namespace Xpressengine\Tests\Theme;
 
 require_once 'TestTheme.php';
@@ -19,7 +20,6 @@ use Xpressengine\Theme\ThemeHandler;
 
 class ThemeHandlerTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @var ThemeHandler
      */
@@ -33,7 +33,6 @@ class ThemeHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testGetTheme()
     {
-
         $config = $this->getConfig();
         $config->shouldReceive('get')
             ->with('theme.settings.theme/pluginA@blue', true)
@@ -113,7 +112,6 @@ class ThemeHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testDeselectTheme()
     {
-
         $config = $this->getConfig();
         $config->shouldReceive('get')
             ->andReturnNull();
@@ -148,7 +146,6 @@ class ThemeHandlerTest extends \PHPUnit\Framework\TestCase
 
         $this->getHandler(null, $config)->setSiteTheme('theme/pluginA@blue');
         $this->getHandler(null, $config)->setSiteTheme('theme/pluginA@blue', 'mobile');
-
     }
 
     public function testGetSiteTheme()
@@ -311,7 +308,8 @@ class ThemeHandlerTest extends \PHPUnit\Framework\TestCase
     }
 }
 
-class ThemeHandlerStub extends ThemeHandler {
+class ThemeHandlerStub extends ThemeHandler
+{
     /**
      * make and return ThemeEntity
      *
@@ -326,7 +324,8 @@ class ThemeHandlerStub extends ThemeHandler {
     }
 }
 
-class ThemeEntityStub extends ThemeEntity {
+class ThemeEntityStub extends ThemeEntity
+{
     /**
      * get and set config
      *
@@ -338,6 +337,4 @@ class ThemeEntityStub extends ThemeEntity {
     {
         return null;
     }
-
 }
-

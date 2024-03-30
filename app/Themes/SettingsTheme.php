@@ -58,7 +58,7 @@ class SettingsTheme extends AbstractTheme
         $selectedMenu = \XeSettings::getSelectedMenu($isSuper);
 
         $installedVersion = app()->getInstalledVersion();
-        if(__XE_VERSION__ !== $installedVersion) {
+        if (__XE_VERSION__ !== $installedVersion) {
             app('xe.frontend')->js([
                 'assets/core/xe-ui-component/js/xe-page.js',
                 'assets/core/xe-ui-component/js/xe-form.js'
@@ -103,5 +103,4 @@ class SettingsTheme extends AbstractTheme
     {
         return '';
     }
-
 }

@@ -24,5 +24,4 @@ use Xpressengine\Widget\WidgetException;
  */
 class IDNotFoundException extends WidgetException
 {
-
 }

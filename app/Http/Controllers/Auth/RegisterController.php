@@ -9,6 +9,7 @@
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -136,7 +137,8 @@ class RegisterController extends Controller
         if ($agreeType === UserRegisterHandler::TERM_AGREE_PRE && count($terms) > 0 &&  //가입 정보 이전에 약관 동의 출력 여부
             (
                 $isAllRequireTermAgree === false || //필수 조건이 있는데 선택 안했을 경우
-                ($requireTerms->count() === 0 && $request->session()->has('pass_agree') === false))
+                ($requireTerms->count() === 0 && $request->session()->has('pass_agree') === false)
+            )
                 //약관에 선택 약관만 존재하는데 session에 약관 동의에 대한 데이터가 없을 경우
         ) {
             return \XePresenter::make('register.agreement', compact('terms'));
@@ -595,14 +597,10 @@ class RegisterController extends Controller
             $this->validate($request, [
                 'login_id' => ['login_id', Rule::unique('user', 'login_id')]
             ]);
-        }
-
-        catch (ValidationException $exception) {
+        } catch (ValidationException $exception) {
             $valid = false;
             $message = Arr::first($exception->errors()['login_id']);
-        }
-
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             throw $e;
         }
 

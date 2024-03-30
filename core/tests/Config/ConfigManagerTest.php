@@ -55,7 +55,6 @@ class ConfigManagerTest extends TestCase
         } catch (\Exception $e) {
             $this->assertInstanceOf('Xpressengine\Config\Exceptions\DuplicateException', $e);
         }
-
     }
 
     public function testGetReturnsDefaultWhenNotExists()
@@ -305,7 +304,6 @@ class ConfigManagerTest extends TestCase
         } catch (\Exception $e) {
             $this->assertInstanceOf('Xpressengine\Config\Exceptions\NotExistsException', $e);
         }
-
     }
 
     public function testPutChangeAllAndReturns()
@@ -389,7 +387,9 @@ class ConfigManagerTest extends TestCase
         $repo->shouldReceive('save')->twice();
 
 
-        $this->invokeMethod($instance, 'convey', [$mockConfig, function () { return true; }, null]);
+        $this->invokeMethod($instance, 'convey', [$mockConfig, function () {
+            return true;
+        }, null]);
     }
 
     public function testRemove()

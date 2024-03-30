@@ -103,7 +103,7 @@ class ModuleHandler
         $moduleId = full_module_id($moduleId);
         $moduleName = $this->register->get($moduleId);
         if ($moduleName === null) {
-            throw new NotFoundModuleException;
+            throw new NotFoundModuleException();
         }
         $menuTypeObj = new $moduleName();
         return $menuTypeObj;

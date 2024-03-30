@@ -12,7 +12,6 @@ use Xpressengine\Plugin\AbstractPlugin;
 
 class PluginSample2 extends AbstractPlugin
 {
-
     /**
      * @return boolean
      */
@@ -48,8 +47,5 @@ class PluginSample2 extends AbstractPlugin
 
     public function boot()
     {
-
     }
-
-
 }

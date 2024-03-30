@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace App\Console\Commands;
 
 /**
@@ -67,7 +68,7 @@ class PluginInstall extends PluginCommand
                 "Above plugin will be downloaded. \r\n ".
                 "Dependent plugins can be downloaded together. \r\n ".
                 "It may take up to a few minutes. Do you want to download the plugin?"
-            ) === false
+        ) === false
         ) {
             return;
         }
@@ -84,7 +85,6 @@ class PluginInstall extends PluginCommand
 
             // composer 실행을 마쳤습니다.
             $this->warn('Composer update command is finished.'.PHP_EOL);
-
         }, function () {
             $this->printFailedPlugins();
         });

@@ -15,7 +15,6 @@ use Xpressengine\Skin\SkinInstanceStore;
 
 class SkinHandlerTest extends \PHPUnit\Framework\TestCase
 {
-
     /**
      * @var SkinHandler
      */

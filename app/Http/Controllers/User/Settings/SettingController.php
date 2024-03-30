@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace App\Http\Controllers\User\Settings;
 
 use App\Http\Controllers\Controller;
@@ -35,7 +36,6 @@ use Xpressengine\User\UserHandler;
  */
 class SettingController extends Controller
 {
-
     protected $users;
 
     /**

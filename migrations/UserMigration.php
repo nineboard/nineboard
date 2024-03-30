@@ -271,8 +271,10 @@ class UserMigration extends Migration
         }
 
         $need_sitekey_table = ['user_group','user_term_agrees','user_terms'];
-        foreach($need_sitekey_table as $table){
-            if ($this->checkSiteKeyColumn($table) == false) return false;
+        foreach ($need_sitekey_table as $table) {
+            if ($this->checkSiteKeyColumn($table) == false) {
+                return false;
+            }
         }
 
         return true;
@@ -314,8 +316,8 @@ class UserMigration extends Migration
         }
 
         $need_sitekey_table = ['user_group','user_term_agrees','user_terms'];
-        foreach($need_sitekey_table as $table_name){
-            if(Schema::hasColumn($table_name, 'site_key') == false) {
+        foreach ($need_sitekey_table as $table_name) {
+            if (Schema::hasColumn($table_name, 'site_key') == false) {
                 Schema::table($table_name, function (Blueprint $table) {
 //                    $table->dropPrimary('id');
 

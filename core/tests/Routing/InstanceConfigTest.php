@@ -28,7 +28,6 @@ use Xpressengine\Routing\InstanceConfig;
  */
 class InstanceConfigTest extends TestCase
 {
-
     /**
      * testInstanceConfig
      *

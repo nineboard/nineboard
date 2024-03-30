@@ -28,7 +28,9 @@ use Xpressengine\Permission\Instance;
  */
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequestsTrait;
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequestsTrait;
 
     /**
      * Authorize a given action for the current user.

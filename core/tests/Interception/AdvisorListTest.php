@@ -13,7 +13,6 @@ use Xpressengine\Interception\AdvisorList;
 
 class AdvisorListTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -29,7 +28,6 @@ class AdvisorListTest extends \PHPUnit\Framework\TestCase
 
     public function testNext()
     {
-
         $advisorList = $this->getAdvisorList();
 
         $this->assertEquals($advisorList->next(), 'A');
@@ -49,7 +47,6 @@ class AdvisorListTest extends \PHPUnit\Framework\TestCase
      */
     protected function getAdvisorList($sortedList = null, $advisorArr = null)
     {
-
         if ($sortedList === null) {
             $sortedList = ['a', 'b', 'c'];
         }

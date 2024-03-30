@@ -30,7 +30,6 @@ use Xpressengine\Plugin\PluginRegister;
  */
 class ThemeHandler
 {
-
     /**
      * @var ThemeEntity[] 모든 테마 목록
      */

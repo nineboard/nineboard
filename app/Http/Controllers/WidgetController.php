@@ -65,7 +65,6 @@ class WidgetController extends Controller
         return XePresenter::makeApi([
             'code' => $code,
         ]);
-
     }
 
     /**
@@ -123,7 +122,7 @@ class WidgetController extends Controller
 
         // skin form
         $skinForm = null;
-        if($skin !== null) {
+        if ($skin !== null) {
             $skin = $skinHandler->get($skin);
             $skinForm = $skin->renderSetting();
         }

@@ -31,7 +31,6 @@ use Xpressengine\Trash\Exceptions\NotFoundRecycleBinException;
  */
 class TrashManager
 {
-
     /**
      * @var Container
      */
@@ -42,7 +41,7 @@ class TrashManager
      */
     protected $conn;
 
-    const REGISTER_KEY = 'trash';
+    public const REGISTER_KEY = 'trash';
 
     /**
      * create instance
@@ -89,7 +88,7 @@ class TrashManager
     {
         $names = $this->bins();
         if (empty($names[$name])) {
-            throw new NotFoundRecycleBinException;
+            throw new NotFoundRecycleBinException();
         }
 
         return $names[$name];
@@ -126,7 +125,7 @@ class TrashManager
         foreach ($bins as $bin) {
             if (is_subclass_of($bin, '\Xpressengine\Trash\RecycleBinInterface') === false ||
                 is_subclass_of($bin, '\Xpressengine\Trash\RecycleBinInterface') === false) {
-                throw new Exceptions\InvalidRecycleBinException;
+                throw new Exceptions\InvalidRecycleBinException();
             }
         }
 

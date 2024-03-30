@@ -51,7 +51,7 @@ class MenuRepository
      *
      * @var int
      */
-    const DUPLICATE_RETRY_CNT = 2;
+    public const DUPLICATE_RETRY_CNT = 2;
 
     /**
      * MenuRepository constructor.

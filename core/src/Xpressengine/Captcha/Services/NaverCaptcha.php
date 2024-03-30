@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace Xpressengine\Captcha\Services;
 
 use Illuminate\Http\Request;
@@ -204,7 +205,7 @@ class NaverCaptcha implements CaptchaInterface
         ]);
 
         if (!$key = array_get(json_dec($response->getBody()->getContents(), true), 'key')) {
-            throw new WrongResponseException;
+            throw new WrongResponseException();
         }
 
         return $key;

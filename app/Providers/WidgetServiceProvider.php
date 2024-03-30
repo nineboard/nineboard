@@ -81,7 +81,7 @@ class WidgetServiceProvider extends ServiceProvider
         $this->app->singleton(WidgetBoxHandler::class, function ($app) {
             $proxyClass = $app['xe.interception']->proxy(WidgetBoxHandler::class, 'XeWidgetBox');
             $widgetHandler = new $proxyClass(
-                new WidgetBoxRepository,
+                new WidgetBoxRepository(),
                 $app['xe.permission']
             );
             return $widgetHandler;

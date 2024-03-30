@@ -102,6 +102,7 @@ class FormSelect extends AbstractUIObject
                 case 'id':
                     $label->attr('for', $arg);
                     // pass to default
+                    // no break
                 default:
                     if (is_string($arg)) {
                         $select->attr($key, $arg);

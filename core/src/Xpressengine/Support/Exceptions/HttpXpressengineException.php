@@ -47,7 +47,6 @@ class HttpXpressengineException extends XpressengineException implements HttpExc
         array $headers = [],
         $code = 0
     ) {
-
         if ($statusCode !== null) {
             $this->statusCode = $statusCode;
         }

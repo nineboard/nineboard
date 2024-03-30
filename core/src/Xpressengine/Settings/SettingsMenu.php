@@ -121,7 +121,6 @@ class SettingsMenu extends Entity implements NodeInterface, JsonSerializable
      */
     public function hasVisibleChild()
     {
-
         if ($this->hasVisibleChild !== null) {
             return $this->hasVisibleChild;
         }

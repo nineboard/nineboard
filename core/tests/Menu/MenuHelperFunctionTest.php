@@ -61,6 +61,5 @@ class MenuHelperFunctionTest extends TestCase
      */
     public function setUp()
     {
-
     }
 }

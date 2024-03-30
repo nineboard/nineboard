@@ -29,9 +29,9 @@ use Illuminate\Support\Facades\Facade;
  */
 class XePlugin extends Facade
 {
-    const STATUS_ACTIVATED = 'activated';
-    const STATUS_DEACTIVATED = 'deactivated';
-    const STATUS_INSTALLED = 'installed';
+    public const STATUS_ACTIVATED = 'activated';
+    public const STATUS_DEACTIVATED = 'deactivated';
+    public const STATUS_INSTALLED = 'installed';
 
     /**
      * Get the registered name of the component.

@@ -32,9 +32,9 @@ use Xpressengine\Config\ConfigEntity;
  */
 class DynamicFieldSection extends Section
 {
-    const CACHE_SESSION_NAME = 'DF_CACHE';
-    const STEP_SESSION_NAME = 'DF_STEP';
-    const UPDATE_FLAG_SESSION_NAME = 'DF_UPDATE_FLAG';
+    public const CACHE_SESSION_NAME = 'DF_CACHE';
+    public const STEP_SESSION_NAME = 'DF_STEP';
+    public const UPDATE_FLAG_SESSION_NAME = 'DF_UPDATE_FLAG';
 
     /**
      * @var string

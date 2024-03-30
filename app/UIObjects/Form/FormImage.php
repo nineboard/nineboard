@@ -72,7 +72,6 @@ class FormImage extends AbstractUIObject
      */
     protected function loadAssets()
     {
-
         $scripts = [
             'assets/vendor/jQuery-File-Upload/js/canvas-to-blob.min.js',
             'assets/vendor/jQuery-File-Upload/js/load-image.all.min.js',
@@ -92,7 +91,7 @@ class FormImage extends AbstractUIObject
             'assets/vendor/jQuery-File-Upload/css/jquery.fileupload-ui.css',
         ];
 
-        if(request()->ajax()) {
+        if (request()->ajax()) {
             XeFrontend::js($scripts)->loadAsync();
             XeFrontend::css($stylesheets)->loadAsync();
         } else {

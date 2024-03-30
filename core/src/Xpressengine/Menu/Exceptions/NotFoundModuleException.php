@@ -28,5 +28,4 @@ use Xpressengine\Menu\MenuException;
  */
 class NotFoundModuleException extends MenuException
 {
-
 }

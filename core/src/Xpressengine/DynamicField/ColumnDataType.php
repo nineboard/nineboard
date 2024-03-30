@@ -26,29 +26,29 @@ namespace Xpressengine\DynamicField;
  */
 class ColumnDataType
 {
-    const INTEGER = 'integer';
-    const BIGINTEGER = 'bigInteger';
-    const MEDIUMINTEGER = 'mediumInteger';
-    const SMALLINTEGER = 'smallInteger';
-    const TINYINTEGER = 'tinyInteger';
+    public const INTEGER = 'integer';
+    public const BIGINTEGER = 'bigInteger';
+    public const MEDIUMINTEGER = 'mediumInteger';
+    public const SMALLINTEGER = 'smallInteger';
+    public const TINYINTEGER = 'tinyInteger';
 
-    const FLOAT = 'float';
-    const DOUBLE = 'double';
-    const DECIMAL = 'decimal';
+    public const FLOAT = 'float';
+    public const DOUBLE = 'double';
+    public const DECIMAL = 'decimal';
 
-    const BOOLEAN = 'boolean';
-    const ENUM = 'enum';
+    public const BOOLEAN = 'boolean';
+    public const ENUM = 'enum';
 
-    const BINARY = 'binary';
+    public const BINARY = 'binary';
 
-    const CHAR = 'char';
-    const STRING = 'string';
-    const TEXT = 'text';
-    const MEDIUMTEXT = 'mediumText';
-    const LONGTEXT = 'longText';
+    public const CHAR = 'char';
+    public const STRING = 'string';
+    public const TEXT = 'text';
+    public const MEDIUMTEXT = 'mediumText';
+    public const LONGTEXT = 'longText';
 
-    const DATE = 'date';
-    const DATETIME = 'dateTime';
-    const TIMESTAMP = 'timestamp';
-    const TIME = 'time';
+    public const DATE = 'date';
+    public const DATETIME = 'dateTime';
+    public const TIMESTAMP = 'timestamp';
+    public const TIME = 'time';
 }

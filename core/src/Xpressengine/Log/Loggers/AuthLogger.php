@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace Xpressengine\Log\Loggers;
 
 use Illuminate\Contracts\Foundation\Application;
@@ -28,12 +29,12 @@ use Xpressengine\Log\Models\Log;
  */
 class AuthLogger extends AbstractLogger
 {
-    const ID = 'auth';
+    public const ID = 'auth';
 
-    const TITLE = '로그인';
+    public const TITLE = '로그인';
 
-    const LOGIN = 0;
-    const LOGOUT = 1;
+    public const LOGIN = 0;
+    public const LOGOUT = 1;
 
     protected $app;
 

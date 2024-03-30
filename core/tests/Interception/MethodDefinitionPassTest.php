@@ -8,7 +8,6 @@
 
 namespace Xpressengine\Tests\Interception;
 
-
 use Mockery;
 use ReflectionClass;
 use Xpressengine\Interception\Proxy\Pass\MethodDefinitionPass;
@@ -71,5 +70,3 @@ class TestTargetClass
         return "funcC";
     }
 }
-
-

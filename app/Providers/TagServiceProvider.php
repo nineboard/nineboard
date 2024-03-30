@@ -52,7 +52,7 @@ class TagServiceProvider extends ServiceProvider
         $this->app->singleton(TagHandler::class, function ($app) {
             $proxyClass = $app['xe.interception']->proxy(TagHandler::class, 'XeTag');
 
-            return new $proxyClass(new TagRepository, new SimpleDecomposer);
+            return new $proxyClass(new TagRepository(), new SimpleDecomposer());
         });
         $this->app->alias(TagHandler::class, 'xe.tag');
     }

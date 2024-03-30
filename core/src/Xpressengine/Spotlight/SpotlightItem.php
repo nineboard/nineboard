@@ -23,8 +23,7 @@ class SpotlightItem implements Arrayable, JsonSerializable
     {
         $required = ['id', 'title', 'link'];
 
-        foreach ($required as $key)
-        {
+        foreach ($required as $key) {
             if (is_null(array_get($inputs, $key))) {
                 throw new \InvalidArgumentException(sprintf('Required value %s does not exist.', $key));
             }

@@ -67,7 +67,6 @@ class MethodDefinitionPass implements Pass
      */
     protected function renderParams(\ReflectionMethod $method)
     {
-
         $methodParams = array();
         /**
          * @var \ReflectionParameter[] $params

@@ -40,7 +40,7 @@ class ConfigServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ConfigManager::class, function ($app) {
             $repo = new DatabaseRepository($app['xe.db']->connection());
-            
+
             if ($app['config']['app.debug'] !== true) {
                 $repo = new CacheDecorator(
                     $repo,

@@ -30,7 +30,6 @@ use Xpressengine\Support\Sorter;
  */
 class AdvisorCollection
 {
-
     /**
      * @var Advisor[] 추가된 advisor들의 목록(인스턴스 목록)
      */
@@ -150,7 +149,6 @@ class AdvisorCollection
      */
     protected function getPointCutBox($class, $method)
     {
-
         if (!isset($this->advisorMap->$class)) {
             $this->advisorMap->$class = new \stdClass();
         }

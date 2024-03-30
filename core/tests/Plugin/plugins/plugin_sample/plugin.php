@@ -8,14 +8,12 @@
 
 namespace Xpressengine\Tests\Plugin\Sample;
 
-
 use Route;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Xpressengine\Plugin\AbstractPlugin;
 
 class PluginSample extends AbstractPlugin
 {
-
     /**
      * @return boolean
      */
@@ -53,7 +51,9 @@ class PluginSample extends AbstractPlugin
     public function boot()
     {
         // 라우트 등록
-        intercept('Plugin@addPluginRoutes', 'route_for_pluginsample',
+        intercept(
+            'Plugin@addPluginRoutes',
+            'route_for_pluginsample',
             function ($target, &$args) {
                 $routes = $args[0];
                 $this->registerAssignedRoute($routes);
@@ -62,14 +62,12 @@ class PluginSample extends AbstractPlugin
         );
 
         $args::get('/manage', function () {
-           return 'hihihi';
+            return 'hihihi';
         });
     }
 
     public function registerAssignedRoute(&$routes)
     {
-
-
         $routes->{$this->pluginId} = function () {
 
             // for static action
@@ -98,7 +96,6 @@ class PluginSample extends AbstractPlugin
             });
 
             Route::get('{bid}/{act?}', function ($bid, $act = null) {
-
                 $act    = $act ?: \Input::get('act', 'list');
                 $board  = Board::getInstance();
                 $method = 'get'.studly_case($act);

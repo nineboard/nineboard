@@ -28,5 +28,4 @@ use Xpressengine\UIObject\UIObjectException;
  */
 class UIObjectNotFoundException extends UIObjectException
 {
-
 }

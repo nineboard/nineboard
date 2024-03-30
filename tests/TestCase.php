@@ -9,6 +9,7 @@
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
+
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;

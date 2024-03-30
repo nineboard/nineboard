@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        http://www.xpressengine.com
  */
+
 namespace Xpressengine\Editor;
 
 use Xpressengine\Support\Exceptions\XpressengineException;
@@ -27,5 +28,4 @@ use Xpressengine\Support\Exceptions\XpressengineException;
  */
 class EditorException extends XpressengineException
 {
-
 }

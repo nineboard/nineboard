@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace App\Facades;
 
 use Illuminate\Support\Facades\Facade;
@@ -28,7 +29,6 @@ use Illuminate\Support\Facades\Facade;
  */
 class XeEditor extends Facade
 {
-
     /**
      * Get the registered name of the component.
      *

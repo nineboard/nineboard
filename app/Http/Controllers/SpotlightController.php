@@ -29,8 +29,8 @@ class SpotlightController extends Controller
         $keyword = $request->get('keyword');
         $link = $request->get('link');
 
-        $items = $container->search($keyword)->when($link, function($items, $link) {
-            return $items->filter(function(SpotlightItem $item) use($link) {
+        $items = $container->search($keyword)->when($link, function ($items, $link) {
+            return $items->filter(function (SpotlightItem $item) use ($link) {
                 return $item->getLink() === $link;
             });
         });

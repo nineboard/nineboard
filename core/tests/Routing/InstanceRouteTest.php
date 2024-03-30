@@ -23,7 +23,6 @@ use Xpressengine\Routing\InstanceRoute;
  */
 class InstanceRouteTest extends TestCase
 {
-
     /**
      * testInstanceRoute
      *

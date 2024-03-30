@@ -16,15 +16,15 @@ final class SpotlightItemContainer
 
     public static function bootSingleton()
     {
-        app()->singleton(self::class, function() {
+        app()->singleton(self::class, function () {
             $container = new self();
 
-            $container->extendImporter('array', new Importers\ArrayImporter);
-            $container->extendImporter('menu', new Importers\MenuImporter);
-            $container->extendImporter('menuItem', new Importers\MenuItemImporter);
-            $container->extendImporter(BoardModule::getId(), new Importers\BoardModuleImporter);
-            $container->extendImporter('board@comment', new Importers\CommentImporter);
-            $container->extendImporter('settingsMenu', new Importers\SettingsMenuImporter);
+            $container->extendImporter('array', new Importers\ArrayImporter());
+            $container->extendImporter('menu', new Importers\MenuImporter());
+            $container->extendImporter('menuItem', new Importers\MenuItemImporter());
+            $container->extendImporter(BoardModule::getId(), new Importers\BoardModuleImporter());
+            $container->extendImporter('board@comment', new Importers\CommentImporter());
+            $container->extendImporter('settingsMenu', new Importers\SettingsMenuImporter());
 
             return $container;
         });
@@ -59,7 +59,7 @@ final class SpotlightItemContainer
      */
     public function getSelected($url)
     {
-        return $this->items->first(function(SpotlightItem $item) use($url) {
+        return $this->items->first(function (SpotlightItem $item) use ($url) {
             return $item->getLink() === $url;
         });
     }
@@ -71,10 +71,10 @@ final class SpotlightItemContainer
 
     public function search($keyword = null)
     {
-        return $this->items->when($keyword, function($items, $keyword) {
+        return $this->items->when($keyword, function ($items, $keyword) {
             $pattern  = sprintf("*%s*", strtolower($keyword));
 
-            return $items->filter(function(SpotlightItem $item) use($pattern) {
+            return $items->filter(function (SpotlightItem $item) use ($pattern) {
                 return str_is($pattern, strtolower($item->getTitle()))
                     || str_is($pattern, strtolower($item->getDescription()));
             });
@@ -85,7 +85,7 @@ final class SpotlightItemContainer
     {
         $item = $this->convert($value, $importerKey);
 
-        if (! is_array ($item)) {
+        if (! is_array($item)) {
             $item = array($item);
         }
 
@@ -111,7 +111,7 @@ final class SpotlightItemContainer
     private function convert($value, $importerKey = null)
     {
         $importer = $importerKey ? $this->importers[$importerKey] : $this->getTargetImporter($value);
-        return $importer !== null ? $importer->convert($value): $value;
+        return $importer !== null ? $importer->convert($value) : $value;
     }
 
     /**

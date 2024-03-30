@@ -14,7 +14,6 @@ use Xpressengine\User\Repositories\UserAccountRepository;
 
 class UserAccountRepositoryTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -51,7 +50,6 @@ class UserAccountRepositoryTest extends \PHPUnit\Framework\TestCase
         /** @var UserAccountRepository $repo */
         /** @var User $user */
         $this->assertEquals($account, $repo->create($user, $data));
-
     }
 
     public function testFindByUserId()
@@ -121,7 +119,4 @@ class UserAccountRepositoryTest extends \PHPUnit\Framework\TestCase
     {
         return Mockery::mock('\Xpressengine\User\Models\UserAccount');
     }
-
-
 }
-

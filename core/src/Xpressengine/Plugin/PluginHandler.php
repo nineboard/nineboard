@@ -46,17 +46,17 @@ class PluginHandler
     /**
      * 활성화 된 상태
      */
-    const STATUS_ACTIVATED = 'activated';
+    public const STATUS_ACTIVATED = 'activated';
 
     /**
      * 비활성화 된 상태
      */
-    const STATUS_DEACTIVATED = 'deactivated';
+    public const STATUS_DEACTIVATED = 'deactivated';
 
     /**
      * 플러그인이 package name에 지정해야 하는 vendor
      */
-    const PLUGIN_VENDOR_NAME = 'xpressengine-plugin';
+    public const PLUGIN_VENDOR_NAME = 'xpressengine-plugin';
 
     /**
      * 등록된 플러그인을 목록
@@ -280,7 +280,6 @@ class PluginHandler
      */
     public function deactivatePlugin($pluginId)
     {
-
         $entity = $this->getPlugin($pluginId);
 
         // 비활성화하려는 플러그인이 활성화되어있는 상태인지 체크한다.

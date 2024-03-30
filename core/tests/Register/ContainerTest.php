@@ -12,7 +12,6 @@ use Xpressengine\Register\Container as Container;
 
 class ContainerTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -34,7 +33,8 @@ class ContainerTest extends \PHPUnit\Framework\TestCase
         $repo = $this->getRepoProperty($container);
 
         $this->assertEquals(
-            ['module/board/skin' => ['blue' => 'My\\Class\\Blue', 'white' => 'My\\Class\\White']], $repo
+            ['module/board/skin' => ['blue' => 'My\\Class\\Blue', 'white' => 'My\\Class\\White']],
+            $repo
         );
 
         return $container;
@@ -111,7 +111,8 @@ class ContainerTest extends \PHPUnit\Framework\TestCase
         $repo = $this->getRepoProperty($container);
 
         $this->assertEquals(
-            ['module/board/skin' => ['My\\Class\\Blue', 'My\\Class\\White']], $repo
+            ['module/board/skin' => ['My\\Class\\Blue', 'My\\Class\\White']],
+            $repo
         );
 
         return $container;

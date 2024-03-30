@@ -215,7 +215,6 @@ class Request extends \Illuminate\Http\Request
         }
 
         return $path;
-
     }
 
     /**

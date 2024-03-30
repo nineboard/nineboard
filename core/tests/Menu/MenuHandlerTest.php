@@ -20,7 +20,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testDeleteMenu()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['deleteMenuTheme'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -42,7 +42,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testRemoveThrowsExceptionWhenHasItem()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['deleteMenuTheme'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -66,7 +66,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testCreateItem()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['setHierarchy', 'setOrder', 'storeMenuType'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -104,7 +104,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testUpdateItem()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['updateMenuType'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -123,7 +123,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testDeleteItem()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['deleteMenuType'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -141,8 +141,8 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testDeleteItemThrowsExceptionWhenHasItem()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
-        $instance = new MenuHandler($menus, $items, $configs, $modules,  $routes);
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
+        $instance = new MenuHandler($menus, $items, $configs, $modules, $routes);
 
         $mockMenuItem = m::mock('Xpressengine\Menu\Models\MenuItem');
         $mockMenuItem->shouldReceive('getDescendantCount')->andReturn(1);
@@ -158,8 +158,8 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testSetOrder()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
-        $instance = new MenuHandler($menus, $items, $configs, $modules,  $routes);
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
+        $instance = new MenuHandler($menus, $items, $configs, $modules, $routes);
 
         $collection = m::mock('stdClass');
         $collection->shouldReceive('filter')->andReturn($collection);
@@ -183,7 +183,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testMoveItem()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['unlinkHierarchy', 'linkHierarchy'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -220,7 +220,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
         $items->shouldReceive('update')->once()->with($mockMenuItem, ['menuId' => 'menuKey'])->andReturn($mockMenuItem);
         $mockMenuItem->shouldReceive('hasMacro')->andReturn(false);
         $mockMenuItem->shouldReceive('getAttribute')->with('descendants')->andReturn([]);
-        
+
         $items->shouldReceive('find')->once()->with('itemKey')->andReturn($mockMenuItem);
 
         $instance->moveItem($mockMenu, $mockMenuItem, $mockMenuItemNewParent);
@@ -228,7 +228,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testSetMenuTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -249,7 +249,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testGetMenuTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -269,7 +269,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testUpdateMenuTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -293,7 +293,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testDeleteMenuTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -311,7 +311,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testSetMenuItemTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -331,7 +331,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testGetMenuItemTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -350,7 +350,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testUpdateMenuItemTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -373,7 +373,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testDeleteMenuItemTheme()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])
@@ -390,7 +390,7 @@ class MenuHandlerTest extends \PHPUnit\Framework\TestCase
 
     public function testMoveItemConfig()
     {
-        list($menus, $items, $configs, $modules,  $routes) = $this->getMocks();
+        list($menus, $items, $configs, $modules, $routes) = $this->getMocks();
         $instance = $this->getMockBuilder(MenuHandler::class)
             ->setMethods(['menuKeyString'])
             ->setConstructorArgs([$menus, $items, $configs, $modules,  $routes])

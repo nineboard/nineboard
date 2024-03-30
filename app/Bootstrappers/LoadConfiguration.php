@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace App\Bootstrappers;
 
 use Illuminate\Contracts\Config\Repository as RepositoryContract;
@@ -81,5 +82,4 @@ class LoadConfiguration extends BaseLoadConfiguration
             $repository->set($key, array_replace_recursive($origin, require $path));
         }
     }
-
 }

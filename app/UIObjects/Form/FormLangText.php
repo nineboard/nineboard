@@ -46,12 +46,12 @@ class FormLangText extends AbstractUIObject
 
         $value = array_get($args, 'value');
 
-        if($value !== null) {
+        if ($value !== null) {
             array_set($args, 'langKey', $value);
         }
 
         $label = array_get($args, 'label', '');
-        if($label) {
+        if ($label) {
             $label = '<label>'.$label.'</label>';
         }
 

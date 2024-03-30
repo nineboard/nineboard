@@ -29,7 +29,6 @@ use Illuminate\Database\Query\Builder;
  */
 interface ProxyInterface
 {
-
     /**
      * set connection
      *

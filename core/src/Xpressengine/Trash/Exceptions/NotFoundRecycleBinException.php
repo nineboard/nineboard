@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace Xpressengine\Trash\Exceptions;
 
 use Xpressengine\Trash\TrashException;
@@ -27,5 +28,4 @@ use Xpressengine\Trash\TrashException;
  */
 class NotFoundRecycleBinException extends TrashException
 {
-
 }

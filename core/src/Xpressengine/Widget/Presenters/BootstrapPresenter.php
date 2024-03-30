@@ -34,14 +34,14 @@ class BootstrapPresenter extends AbstractPresenter
      *
      * @var string
      */
-    const NAME = 'Bootstrap';
+    public const NAME = 'Bootstrap';
 
     /**
      * The number of columns supported by the presenter
      *
      * @var int
      */
-    const COLS = 12;
+    public const COLS = 12;
 
     /**
      * Get HTML wrapper for row contents

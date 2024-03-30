@@ -35,7 +35,6 @@ use Xpressengine\Config\ConfigManager;
  */
 class PluginCollection implements Countable, Arrayable, IteratorAggregate, Jsonable
 {
-
     /**
      * @var PluginEntity[]
      */

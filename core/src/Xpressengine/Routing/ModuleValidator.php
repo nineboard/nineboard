@@ -50,15 +50,15 @@ class ModuleValidator implements ValidatorInterface
     /**
      * this is not instance route
      */
-    const THIS_IS_NOT_INSTANCE_ROUTE = true;
+    public const THIS_IS_NOT_INSTANCE_ROUTE = true;
     /**
      * route not match
      */
-    const NOT_MATCH_INSTANCE_ROUTE_SOURCE = false;
+    public const NOT_MATCH_INSTANCE_ROUTE_SOURCE = false;
     /**
      * route match
      */
-    const INSTANCE_ROUTE_MATCHED = true;
+    public const INSTANCE_ROUTE_MATCHED = true;
 
     /**
      * boot

@@ -70,7 +70,7 @@ class StorageServiceProvider extends ServiceProvider
             $proxyClass = $app['xe.interception']->proxy(Storage::class, 'XeStorage');
 
             return new $proxyClass(
-                new FileRepository,
+                new FileRepository(),
                 new FilesystemHandler($app['filesystem']),
                 $app['auth']->guard(),
                 $app['xe.keygen'],

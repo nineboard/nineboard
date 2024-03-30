@@ -31,7 +31,6 @@ use Xpressengine\Interception\ProxyInvocationHandler;
  */
 trait ProxyTrait
 {
-
     /**
      * Advisor 저장소
      *

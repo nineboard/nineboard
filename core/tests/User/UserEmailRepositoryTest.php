@@ -14,7 +14,6 @@ use Xpressengine\User\Repositories\UserEmailRepository;
 
 class UserEmailRepositoryTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -175,7 +174,4 @@ class UserEmailRepositoryTest extends \PHPUnit\Framework\TestCase
     {
         return Mockery::mock('\Xpressengine\User\Models\UserEmail');
     }
-
-
 }
-

@@ -70,7 +70,6 @@ class FilePluginCacheTest extends \PHPUnit\Framework\TestCase
 
     private function getPluginInfos()
     {
-
         $infos = [
             "plugin_sample" => [
                 'class' => 'Xpressengine\Tests\Plugin\Sample\PluginSample',
@@ -93,7 +92,7 @@ class FilePluginCacheTest extends \PHPUnit\Framework\TestCase
 
     protected function getCache(Repository $repo = null, $cacheKey = 'list')
     {
-        if($repo === null) {
+        if ($repo === null) {
             $repo = $this->makeRepo();
         }
 

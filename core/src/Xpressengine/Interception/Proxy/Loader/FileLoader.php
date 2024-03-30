@@ -75,7 +75,6 @@ class FileLoader implements Loader
      */
     public function hasProxyFile($proxyName)
     {
-
         return file_exists($this->getProxyPath($proxyName));
     }
 

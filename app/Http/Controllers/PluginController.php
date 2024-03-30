@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace App\Http\Controllers;
 
 use Illuminate\Auth\Access\AuthorizationException;
@@ -240,7 +241,7 @@ class PluginController extends Controller
         $plugins = $request->get('plugin');
 
         foreach ($plugins as $id => $info) {
-            if(array_get($info, 'update', false)) {
+            if (array_get($info, 'update', false)) {
                 if (!$handler->getPlugin($id)) {
                     return back()->with('alert', [
                         'type' => 'danger',

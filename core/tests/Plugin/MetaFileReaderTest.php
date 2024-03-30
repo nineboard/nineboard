@@ -12,7 +12,6 @@ use Xpressengine\Plugin\MetaFileReader;
 
 class MetaFileReaderTest extends \PHPUnit\Framework\TestCase
 {
-
     protected function tearDown()
     {
         \Mockery::close();
@@ -32,7 +31,6 @@ class MetaFileReaderTest extends \PHPUnit\Framework\TestCase
 
 class MetaFileReaderStub extends MetaFileReader
 {
-
     protected function getFileContents($fileName)
     {
         return '{

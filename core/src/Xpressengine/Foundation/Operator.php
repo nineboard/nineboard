@@ -53,9 +53,9 @@ class Operator
      */
     protected $operations;
 
-    const TYPE_CORE = 'core';
-    const TYPE_PLUGIN = 'plugin';
-    const TYPE_PRIVATE = 'private';
+    public const TYPE_CORE = 'core';
+    public const TYPE_PLUGIN = 'plugin';
+    public const TYPE_PRIVATE = 'private';
 
     /**
      * Operator constructor.

@@ -68,7 +68,7 @@ abstract class ComponentMakeCommand extends MakeCommand
      */
     protected function getPlugin()
     {
-        if(!$plugin = $this->handler->getPlugin($name = $this->getPluginName())) {
+        if (!$plugin = $this->handler->getPlugin($name = $this->getPluginName())) {
             throw new \Exception("Unable to find a plugin to locate the skin file. plugin[$name] is not found.");
         }
 
@@ -96,7 +96,7 @@ abstract class ComponentMakeCommand extends MakeCommand
 
             $autoload = $this->getOriginComposerData('autoload');
             $prefix = array_first((array)($autoload->{'psr-4'} ?? []));
-            $path = $prefix ? rtrim($prefix,'/') . '/' . $path : $path;
+            $path = $prefix ? rtrim($prefix, '/') . '/' . $path : $path;
         }
 
         return $path;
@@ -171,7 +171,7 @@ abstract class ComponentMakeCommand extends MakeCommand
     protected function getClassFile($path, $className)
     {
         $path = $path."/$className.php";
-        if(file_exists($this->getPlugin()->getPath($path))) {
+        if (file_exists($this->getPlugin()->getPath($path))) {
             throw new \Exception("file[$path] already exists.");
         }
         return $path;
@@ -202,7 +202,7 @@ abstract class ComponentMakeCommand extends MakeCommand
      */
     protected function getDescriptionInput()
     {
-        if(!$description = $this->option('description')) {
+        if (!$description = $this->option('description')) {
             $description = 'The '.$this->componentType.' supported by '.ucfirst($this->getPlugin()->getId()).' plugin.';
         }
         return $description;
@@ -234,7 +234,7 @@ abstract class ComponentMakeCommand extends MakeCommand
     {
         $data = unserialize(serialize($this->getOriginComposerData())); // clone
         $component = data_get($data, 'extra.xpressengine.component');
-        if(isset($component->$id)) {
+        if (isset($component->$id)) {
             throw new \Exception(sprintf('component[%s] already exists.', $id));
         }
 
@@ -301,13 +301,13 @@ abstract class ComponentMakeCommand extends MakeCommand
         $plugin = $this->getPlugin();
 
         // delete path
-        if(is_writable($plugin->getPath($path))) {
+        if (is_writable($plugin->getPath($path))) {
             $this->files->deleteDirectory($plugin->getPath($path));
         }
 
         // unregister component from composer.json
         $composerFile = $plugin->getPath('composer.json');
-        if($this->originComposerData !== null && is_writable($composerFile)) {
+        if ($this->originComposerData !== null && is_writable($composerFile)) {
             $this->files->put($composerFile, json_format(json_encode($this->originComposerData)));
         }
     }

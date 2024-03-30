@@ -58,7 +58,6 @@ class UserRepository implements UserRepositoryInterface
      */
     public function update(UserInterface $user, array $data = [])
     {
-
         if ($user->isDirty('password') || (!empty($data['password']) && $user->password !== $data['password'])) {
             $model = $this->createModel();
             $data['password_updated_at'] = $model->freshTimestamp();

@@ -550,7 +550,6 @@ class PluginManageController extends Controller
                 'name' => $pluginName,
                 '--no-interaction' => true
             ]);
-
         } catch (\Exception $e) {
             return back()->with('alert', ['type' => 'danger', 'message' => $e->getMessage()]);
         }

@@ -10,8 +10,8 @@ namespace Xpressengine\Tests\UIObject;
 
 use Xpressengine\UIObject\AbstractUIObject;
 
-class AbstractUIObjectTest extends \PHPUnit\Framework\TestCase {
-
+class AbstractUIObjectTest extends \PHPUnit\Framework\TestCase
+{
     public function testSeq()
     {
         TestUIObject::$sequence = 0;
@@ -32,9 +32,7 @@ class AbstractUIObjectTest extends \PHPUnit\Framework\TestCase {
         $uio = new TestUIObject([]);
 
         $this->assertEquals('<div>template</div>', $uio->render());
-
     }
-
 }
 
 class TestUIObject extends AbstractUIObject

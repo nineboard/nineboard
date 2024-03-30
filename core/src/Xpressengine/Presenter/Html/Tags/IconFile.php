@@ -186,7 +186,6 @@ class IconFile
      */
     public function render()
     {
-
         if ($this->isAppleTouchIcon) {
             unset($this->attributes['type']);
         }

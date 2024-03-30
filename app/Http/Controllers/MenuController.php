@@ -75,7 +75,8 @@ class MenuController extends Controller
         // 메뉴 타이틀 user 다국어
         XeFrontend::translation($transKey);
 
-        return XePresenter::make('menu.index',
+        return XePresenter::make(
+            'menu.index',
             ['siteKey' => $siteKey, 'menus' => $menus, 'home' => $homeMenuId, 'maxDepth' => $menuMaxDepth]
         );
     }
@@ -125,7 +126,6 @@ class MenuController extends Controller
             XeMenu::setMenuTheme($menu, $desktopTheme, $mobileTheme);
 
             $this->permissionRegisterGrant($menu->getKey(), XeMenu::getDefaultGrant());
-
         } catch (Exception $e) {
             XeDB::rollback();
             $request->flash();
@@ -181,7 +181,6 @@ class MenuController extends Controller
                 'description' => $request->get('menuDescription'),
             ]);
             XeMenu::updateMenuTheme($menu, $desktopTheme, $mobileTheme);
-
         } catch (Exception $e) {
             XeDB::rollback();
             $request->flash();
@@ -230,7 +229,6 @@ class MenuController extends Controller
         XeDB::commit();
         return redirect()->route('settings.menu.index')
             ->with('alert', ['type' => 'success', 'message' => xe_trans('xe::deleted')]);
-
     }
 
     /**
@@ -499,7 +497,6 @@ class MenuController extends Controller
 
         XeDB::beginTransaction();
         try {
-
             XeMenu::updateItem($item, [
                 'title' => $itemInput['itemTitle'],
                 'url' => $url,
@@ -517,7 +514,6 @@ class MenuController extends Controller
             ], $menuTypeInput);
 
             XeMenu::updateMenuItemTheme($item, $desktopTheme, $mobileTheme);
-
         } catch (Exception $e) {
             XeDB::rollback();
             $request->flash();
@@ -528,7 +524,6 @@ class MenuController extends Controller
 
         return redirect()->route('settings.menu.index')
             ->with('alert', ['type' => 'success', 'message' => xe_trans('xe::saved')]);
-
     }
 
     /**
@@ -651,7 +646,6 @@ class MenuController extends Controller
 
             XeMenu::deleteMenuItemTheme($item);
             $this->permissionUnregister(XeMenu::permKeyString($item));
-
         } catch (Exception $e) {
             XeDB::rollback();
             return redirect()->back()->with('alert', ['type' => 'danger', 'message' => $e->getMessage()]);
@@ -719,8 +713,6 @@ class MenuController extends Controller
                 XeMenu::permKeyString($item),
                 [MenuHandler::ACCESS, MenuHandler::VISIBLE]
             );
-
-
         } catch (Exception $e) {
             XeDB::rollback();
             $request->flash();
@@ -729,7 +721,7 @@ class MenuController extends Controller
 
         XeDB::commit();
 
-		return redirect()->back()->with('alert', ['type' => 'success', 'message' => xe_trans('xe::saved')]);
+        return redirect()->back()->with('alert', ['type' => 'success', 'message' => xe_trans('xe::saved')]);
     }
 
     /**
@@ -748,7 +740,6 @@ class MenuController extends Controller
         XeDB::beginTransaction();
 
         try {
-
             $item = XeMenu::items()->find($itemId);
             /** @var Menu $menu */
             if (!$parent = XeMenu::items()->find($parentId)) {

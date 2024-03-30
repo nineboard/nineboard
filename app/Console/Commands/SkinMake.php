@@ -97,7 +97,6 @@ class SkinMake extends ComponentMakeCommand
         $this->copyStubDirectory($plugin->getPath($path));
 
         try {
-
             $this->makeUsable($attr);
             $this->info('Generate the skin');
 
@@ -159,21 +158,21 @@ class SkinMake extends ComponentMakeCommand
         $id = $this->option('id');
         $plugin = $this->getPlugin();
 
-        if(!$id) {
+        if (!$id) {
             $id = $plugin->getId().'@'.strtolower($this->argument('name'));
         } else {
-            if(strpos('skin/', $id) === 0) {
+            if (strpos('skin/', $id) === 0) {
                 $id = substr($id, 5);
             }
 
-            if(strpos($id, '@') === false) {
+            if (strpos($id, '@') === false) {
                 $id = $plugin->getId().'@'.$id;
             }
         }
 
         $skin = app('xe.skin')->get($id = $this->getSkinTarget().'/skin/'.$id);
 
-        if($skin !== null) {
+        if ($skin !== null) {
             throw new \Exception("Skin[$id] already exists.");
         }
 

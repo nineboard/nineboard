@@ -69,7 +69,7 @@ class UserController extends Controller
     {
         $site_key = \XeSite::getCurrentSiteKey();
         // get site groups
-        $groups = $this->handler->groups()->query()->where('site_key',$site_key)->get();
+        $groups = $this->handler->groups()->query()->where('site_key', $site_key)->get();
 
         $query = $this->handler->users()->query();
         $allUserCount = $query->count();
@@ -86,7 +86,7 @@ class UserController extends Controller
         if ($group = $request->get('group')) {
             $query = $query->whereHas(
                 'groups',
-                function (Builder $q) use ($group,$site_key) {
+                function (Builder $q) use ($group, $site_key) {
                     $q->where('group_id', $group);
                 }
             );
@@ -168,7 +168,7 @@ class UserController extends Controller
             ];
         }
 
-        $groupList = $this->handler->groups()->query()->where('site_key',\XeSite::getCurrentSiteKey())->get();
+        $groupList = $this->handler->groups()->query()->where('site_key', \XeSite::getCurrentSiteKey())->get();
         $groups = $this->getGroupInfo($groupList);
         $status = $this->getUserStatus();
 
@@ -266,7 +266,7 @@ class UserController extends Controller
             }
         }
 
-        $groupList = $this->handler->groups()->query()->where('site_key',\XeSite::getCurrentSiteKey())->get();
+        $groupList = $this->handler->groups()->query()->where('site_key', \XeSite::getCurrentSiteKey())->get();
         $groups = $this->getGroupInfo($groupList);
 
         foreach ($user->groups as $group) {

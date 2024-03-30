@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Facade;
  */
 class XeDocument extends Facade
 {
-
     /**
      * facade access keyword
      *

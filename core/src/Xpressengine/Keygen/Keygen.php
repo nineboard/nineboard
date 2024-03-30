@@ -31,6 +31,7 @@
  * $id = $generator->generate();  // 25769c6c-d34d-4bfe-ba98-e0ee856f3e7a
  * ```
  */
+
 namespace Xpressengine\Keygen;
 
 use Ramsey\Uuid\Uuid;

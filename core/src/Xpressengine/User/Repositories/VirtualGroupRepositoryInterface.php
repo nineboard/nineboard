@@ -26,7 +26,6 @@ use Xpressengine\User\Models\UserVirtualGroup;
  */
 interface VirtualGroupRepositoryInterface
 {
-
     /**
      * 주어진 id에 해당하는 가상그룹 정보를 반환한다.
      *

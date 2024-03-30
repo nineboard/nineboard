@@ -12,7 +12,6 @@ use Xpressengine\Interception\InterceptionHandler;
 
 class InterceptionTest /*extends \PHPUnit\Framework\TestCase*/
 {
-
     protected function tearDown()
     {
         \Mockery::close();

@@ -31,16 +31,15 @@ use Xpressengine\Register\Container;
  */
 class PluginRegister
 {
-
     /**
      * 등록 아이디에서 등록 플러그인과 고유 아이디를 구분하는 구분자
      */
-    const NAME_DELIMITER = '@';
+    public const NAME_DELIMITER = '@';
 
     /**
      * key delimiter
      */
-    const KEY_DELIMITER = '/';
+    public const KEY_DELIMITER = '/';
 
     /**
      * register container

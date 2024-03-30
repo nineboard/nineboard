@@ -9,6 +9,7 @@
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
+
 namespace App\Http\Controllers\Auth;
 
 use App\Events\PreResetUserPasswordEvent;
@@ -30,18 +31,18 @@ use Xpressengine\User\UserHandler;
  * @license     https://opensource.org/licenses/MIT MIT
  * @link        https://laravel.com
  */
-class PasswordController extends Controller {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Password Reset Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller is responsible for handling password reset requests
-	| and uses a simple trait to include this behavior. You're free to
-	| explore this trait and override any methods you wish to tweak.
-	|
-	*/
+class PasswordController extends Controller
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Password Reset Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller is responsible for handling password reset requests
+    | and uses a simple trait to include this behavior. You're free to
+    | explore this trait and override any methods you wish to tweak.
+    |
+    */
 
     /**
      * The Guard implementation.
@@ -106,8 +107,7 @@ class PasswordController extends Controller {
 
         $email = $request->get('email');
 
-        switch ($result)
-        {
+        switch ($result) {
             case PasswordBroker::RESET_LINK_SENT:
                 return redirect()->back()->with('status', PasswordBroker::RESET_LINK_SENT)->with('email', $email);
 
@@ -131,10 +131,10 @@ class PasswordController extends Controller {
         $email = $request->get('email');
 
         if (is_null($token)) {
-            throw new NotFoundHttpException;
+            throw new NotFoundHttpException();
         }
 
-        return XePresenter::make('password', compact('email','token'));
+        return XePresenter::make('password', compact('email', 'token'));
     }
 
     /**
@@ -174,6 +174,7 @@ class PasswordController extends Controller {
                     return redirect(route('login'))->with('status', PasswordBroker::PASSWORD_RESET);
                 }
 
+                // no break
             case PasswordBroker::INVALID_USER:
                 return redirect()->back()
                     ->withInput($request->only('email'))

@@ -46,7 +46,7 @@ class LangController extends Controller
     {
         $namespace = $request->get('namespace');
         $keyword = $request->get('keyword');
-        
+
         XeFrontend::translation([
             'xe::saved', 'xe::failed'
         ]);
@@ -151,26 +151,26 @@ class LangController extends Controller
         $query->orderBy('item', 'asc');
         $query->orderBy('id', 'desc');
 
-        $query->when(Arr::get($conditions, 'namespace'), function($query, $namespace) {
+        $query->when(Arr::get($conditions, 'namespace'), function ($query, $namespace) {
             $query->where('namespace', $namespace);
         });
 
-        $query->when(Arr::get($conditions, 'keyword'), function($query, $keyword) {
-            $query->where(function($query) use($keyword) {
+        $query->when(Arr::get($conditions, 'keyword'), function ($query, $keyword) {
+            $query->where(function ($query) use ($keyword) {
                 return $query->where('item', $keyword)
                     ->orWhere('value', 'LIKE', '%'.$keyword.'%');
             });
         });
 
-        $query->when(Arr::get($conditions, 'item'), function($query, $item) {
+        $query->when(Arr::get($conditions, 'item'), function ($query, $item) {
             $query->where('item', $item);
         });
 
-        $query->when(Arr::get($conditions, 'locale'), function($query, $locale) {
+        $query->when(Arr::get($conditions, 'locale'), function ($query, $locale) {
             $query->where('locale', $locale);
         });
 
-        $query->when(Arr::get($conditions, 'value'), function($query, $value) {
+        $query->when(Arr::get($conditions, 'value'), function ($query, $value) {
             $query->where('value', 'LIKE', '%'.$value.'%');
         });
 

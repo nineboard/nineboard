@@ -11,6 +11,7 @@
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
  * @link        https://xpressengine.io
  */
+
 namespace Xpressengine\Interception;
 
 use Xpressengine\Interception\Proxy\Loader\Loader;
@@ -30,7 +31,6 @@ use Xpressengine\Interception\Proxy\ProxyGenerator;
  */
 class InterceptionHandler
 {
-
     /**
      * @var AdvisorCollection advisor 저장소. 이 클래스를 통해 등록되는 모든 advisor는 AdvisorCollection에 저장된다.
      */

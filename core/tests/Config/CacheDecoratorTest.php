@@ -18,7 +18,7 @@ class CacheDecoratorTest extends TestCase
     {
         m::close();
     }
-    
+
     public function testFind()
     {
         list($repo, $cache) = $this->getMocks();
@@ -26,7 +26,7 @@ class CacheDecoratorTest extends TestCase
             ->setConstructorArgs([$repo, $cache])
             ->setMethods(['getData'])->getMock();
 
-        $mockItem1 = new \stdClass;
+        $mockItem1 = new \stdClass();
         $mockItem1->name = 'foo';
         $mockItem2 = m::mock('Xpressengine\Config\ConfigEntity');
         $mockItem2->name = 'foo.bar';
@@ -34,7 +34,7 @@ class CacheDecoratorTest extends TestCase
             $mockItem1, $mockItem2
         ]);
 
-        $mockItem3 = new \stdClass;
+        $mockItem3 = new \stdClass();
         $mockItem3->name = 'baz';
         $instance->expects($this->at(1))->method('getData')->with('default', 'baz')->willReturn([
             $mockItem3
@@ -54,7 +54,7 @@ class CacheDecoratorTest extends TestCase
             ->setConstructorArgs([$repo, $cache])
             ->setMethods(['getData'])->getMock();
 
-        $mockItem1 = new \stdClass;
+        $mockItem1 = new \stdClass();
         $mockItem1->name = 'foo';
         $mockItem2 = m::mock('Xpressengine\Config\ConfigEntity');
         $mockItem2->name = 'foo.bar';
@@ -91,7 +91,7 @@ class CacheDecoratorTest extends TestCase
         $descendant = $instance->fetchDescendant('default', 'foo');
         $this->assertEquals(3, count($descendant));
     }
-    
+
     private function getMocks()
     {
         return [

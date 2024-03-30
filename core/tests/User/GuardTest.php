@@ -14,8 +14,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Xpressengine\User\Guard;
 use Xpressengine\User\Models\Guest;
 
-class GuardTest extends \PHPUnit\Framework\TestCase {
-
+class GuardTest extends \PHPUnit\Framework\TestCase
+{
     protected function tearDown()
     {
         \Mockery::close();

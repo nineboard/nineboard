@@ -8,7 +8,6 @@ use Xpressengine\Plugin\PluginHandler;
 
 class PluginMigrateMake extends Command
 {
-
     /**
      * @var PluginHandler
      */

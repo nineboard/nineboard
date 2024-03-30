@@ -187,6 +187,5 @@ class ConfigHandlerTest extends TestCase
         $this->assertEquals('prefix_group_id', $handler->getTableName($config));
         $this->assertEquals('prefix_revision_group_id', $handler->getRevisionTableName($config));
         $this->assertTrue($handler->isTableMethodCreate($config));
-
     }
 }

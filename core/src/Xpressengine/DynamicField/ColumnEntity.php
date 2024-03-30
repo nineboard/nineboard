@@ -130,7 +130,7 @@ class ColumnEntity extends Entity
         }
 
         if (method_exists($table, $this->{'dataType'}) === false) {
-            throw new Exceptions\InvalidColumnEntityException;
+            throw new Exceptions\InvalidColumnEntityException();
         }
 
         $params = $this->{'params'} != null ? $this->{'params'} : [];

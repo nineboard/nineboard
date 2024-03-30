@@ -29,7 +29,6 @@ use Closure;
  */
 class ProxyInvocationHandler
 {
-
     /**
      * @var Object 이 Proxy에 지정된 대상 오브젝트
      */

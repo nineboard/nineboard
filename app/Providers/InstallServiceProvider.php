@@ -37,7 +37,7 @@ class InstallServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::get('/', function() {
+        Route::get('/', function () {
             return redirect()->route('install.index');
         });
 
@@ -61,6 +61,5 @@ class InstallServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 }
